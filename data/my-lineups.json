@@ -1,0 +1,49 @@
+{
+  "_bron": "formule1meester.nl /ajax/team_lineup/ronde-N — account SleuF1, team 'Strakka Haas F1', opgehaald 5 september 2026",
+  "_doel": "Grondwaarheid om het scoremodel tegen te valideren. 'pnt' is wat de site toekende, inclusief jokerverdubbeling waar 'joker' true is.",
+  "rondes": [
+    { "ronde": 1,  "coureurs": [["BEA",161,false],["OCO",113,false]], "onderdelen": [["ALP",66],["RAC",93],["AUD",49],["RAC",93]], "voorspelling": ["RUS","PIA","VER"], "bonus": 25, "totaal": 600 },
+    { "ronde": 2,  "coureurs": [["BEA",219,false],["GAS",213,false]], "onderdelen": [["HAS",108],["ALP",116],["AUD",35],["AUD",35]], "voorspelling": ["RUS","ANT","LEC"], "bonus": 0, "totaal": 726 },
+    { "ronde": 3,  "coureurs": [["BEA",4,false],["TSU",131,false]],   "onderdelen": [["FER",153],["ALP",84],["RAC",76],["AUD",75]], "voorspelling": ["RUS","RUS","LEC"], "bonus": 25, "totaal": 548 },
+    { "ronde": 4,  "coureurs": [["LAW",-9,false],["BEA",131,false]],  "onderdelen": [["RBR",82],["ALP",83],["AUD",20],["ALP",83]], "voorspelling": ["ANT","ANT","NOR"], "bonus": 25, "totaal": 415 },
+    { "ronde": 5,  "coureurs": [["ANT",686,true],["ALB",10,false]],   "onderdelen": [["RAC",71],["RAC",71],["AUD",77],["WIL",50]], "voorspelling": ["ANT","ANT","ANT"], "bonus": 25, "totaal": 990 },
+    { "ronde": 6,  "coureurs": [["LEC",118,true],["LAW",251,false]],  "onderdelen": [["ALP",86],["AUD",67],["ALP",86],["HAS",40]], "voorspelling": ["LEC","LEC","HAM"], "bonus": 0, "totaal": 648 },
+    { "ronde": 7,  "coureurs": [["ANT",122,false],["LAW",201,false]], "onderdelen": [["RAC",103],["ALP",93],["ALP",93],["RAC",103]], "voorspelling": ["ANT","ANT","HAM"], "bonus": 0, "totaal": 715 },
+    { "ronde": 8,  "coureurs": [["ANT",257,false],["LAW",191,false]], "onderdelen": [["RAC",94],["RBR",153],["ALP",58],["RAC",94]], "voorspelling": ["ANT","ANT","HAM"], "bonus": 0, "totaal": 847 },
+    { "ronde": 9,  "coureurs": [["ANT",188,false],["LAW",242,false]], "onderdelen": [["RAC",132],["RBR",116],["ALP",92],["RAC",132]], "voorspelling": ["ANT","ANT","HAM"], "bonus": 25, "totaal": 927 },
+    { "ronde": 10, "coureurs": [["LEC",267,false],["HAM",230,false]], "onderdelen": [["RAC",89],["ALP",80],["RAC",89],["ALP",80]], "voorspelling": ["HAM","HAM","HAM"], "bonus": 0, "totaal": 835 },
+    { "ronde": 11, "coureurs": [["LEC",248,false],["HAM",239,false]], "onderdelen": [["RAC",97],["ALP",63],["RAC",97],["RBR",151]], "voorspelling": ["HAM","HAM","HAM"], "bonus": 0, "totaal": 895 },
+    { "ronde": 12, "coureurs": [["PIA",244,false],["NOR",352,false]], "onderdelen": [["MER",209],["ALP",84],["RAC",87],["RBR",86]], "voorspelling": ["RUS","RUS","LEC"], "bonus": 0, "totaal": 1062 },
+    { "ronde": 13, "coureurs": [["HAM",207,false],["VER",245,false]], "onderdelen": [["FER",87],["RBR",110],["ALP",126],["RAC",89]], "voorspelling": ["RUS","RUS","HAM"], "bonus": 25, "totaal": 889,
+      "_toelichting": "Punten berekend uit de uitslag; nog niet geverifieerd tegen de site. Bonus: Russell op plek 2 raak (25), Antonelli won dus slot 1 mis, Verstappen werd derde dus Hamilton mis." }
+  ],
+  "ronde13_ingezonden": {
+    "_let_op": "Vlak voor de deadline is één Alpine-motor ingeruild voor de Red Bull Ford van Racing Bulls.",
+    "auto1": { "coureur": "HAM", "chassis": "FER", "motor": "ALP" },
+    "auto2": { "coureur": "VER", "chassis": "RBR", "motor": "RAC" },
+    "coureurs": ["HAM","VER"],
+    "onderdelen": ["FER","RBR","ALP","RAC"],
+    "voorspelling": ["RUS","RUS","HAM"],
+    "teamwaarde": 86149000
+  },
+  "ronde14_ingezonden": {
+    "_bevestigd": "Gelezen van /ajax/team_lineup/ronde-14 op 12 september, ná invoeren. Norris, Lawson, W17, RB22, motor Mercedes, motor Ferrari, teamwaarde € 93.911.000, voorspelling Antonelli/Leclerc/Verstappen, geen joker. Komt exact overeen met het advies.",
+    "auto1": { "coureur": "NOR", "chassis": "MER", "motor": "MER" },
+    "auto2": { "coureur": "LAW", "chassis": "RBR", "motor": "FER" },
+    "coureurs": ["NOR", "LAW"],
+    "onderdelen": ["MER", "MER", "RBR", "FER"],
+    "voorspelling": ["ANT", "LEC", "VER"],
+    "joker": null,
+    "teamwaarde": 93911000,
+    "verwacht_totaal": 1065,
+    "verwacht_per_element": { "NOR": 271, "LAW": 179, "MER": 171, "RBR": 123, "FER": 152 },
+    "_waarom_niet_de_top": "De optimizer zette een variant met 2x Ferrari op 1074. Bewust niet gekozen: die haalt 39 procent van zijn score uit McLaren en dat hangt volledig aan Norris alleen. De Mercedes-variant zit op 32 procent verdeeld over Antonelli en Russell.",
+    "_fp3": "Madrid FP3: 1 Antonelli, 2 Leclerc, 3 Piastri, 4 Norris, 5 Verstappen, 6 Russell, 7 Lawson. Hamilton rond P8 met een rode vlag, Bearman zwaar gecrasht."
+  },
+
+  "stand_na_ronde12": { "score": 9208, "positie_algemeen": 1148, "positie_ronde": 1104 },
+  "stand_na_ronde13": {
+    "score": 10097,
+    "_controle": "10097 min 9208 is 889, precies het totaal dat het model voor ronde 13 uitrekende. Het rondetotaal klopt dus; de losse elementwaarden zijn nog niet tegen de site gelegd."
+  }
+}

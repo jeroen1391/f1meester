@@ -1,0 +1,11 @@
+# Bouwresultaat. De echte publicatie staat in de website-repo; dit bestand is
+# alleen om lokaal te controleren of de pagina rendert voordat je pusht.
+dist/
+
+node_modules/
+
+# Windows en editors
+Thumbs.db
+desktop.ini
+.DS_Store
+*.swp

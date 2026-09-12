@@ -1,0 +1,56 @@
+{
+  "notitie": "",
+
+  "_hoe": [
+    "Hier zet je alles wat de vorm van de laatste rondes niet weet: vrije trainingen,",
+    "gridstraffen, coureurswissels, weer, motorwissels, blessures.",
+    "Per code kun je drie dingen opgeven:",
+    "  \"LAW\": 1.15            factor — 15 procent meer punten dan zijn vormgemiddelde",
+    "  \"VER\": { \"delta\": -40 }  vast aantal punten eraf",
+    "  \"NOR\": { \"punten\": 300 } harde overschrijving, vervangt het vormgemiddelde",
+    "Zet een code in \"uitgesloten\" om hem helemaal buiten de berekening te houden,",
+    "bijvoorbeeld een coureur die dit weekend vervangen wordt."
+  ],
+
+  "_gridstraffen_let_op": [
+    "Belangrijk en tegenintuïtief: in dit spel telt de UITSLAG VAN DE KWALIFICATIE,",
+    "niet de startopstelling. Het reglement zegt letterlijk dat terugzettingen op de",
+    "grid niet worden doorgevoerd. Een gridstraf kost dus NUL kwalificatiepunten.",
+    "Alleen de race wordt geraakt.",
+    "",
+    "Rekenvoorbeeld voor een coureur die vooraan hoort te staan: een weekend zonder",
+    "sprint is maximaal 90 kwalificatiepunten en 225 racepunten, dus de race is 71",
+    "procent van zijn totaal. Zakt hij door een straf van P1 naar ongeveer P6 in de",
+    "race, dan verliest hij 225 min 144 is 81 racepunten, en nul in de kwalificatie.",
+    "Dat is ongeveer 26 procent van zijn weekend, niet 40.",
+    "",
+    "Trek een gridstraf dus NOOIT als vast bedrag van het totaal af. Schat waar hij",
+    "in de race eindigt, en laat de kwalificatie met rust. Dat is precies het punt",
+    "waarop de meeste concurrenten hun inschatting te zwaar maken."
+  ],
+
+  "_vrije_trainingen": [
+    "FP3 aan het eind is bijna altijd een kwalificatiesimulatie op lage brandstof.",
+    "Dat voorspelt de kwalificatie, niet de race. Lange runs in FP2 voorspellen het",
+    "racetempo. Omdat de race 2,5 keer zoveel waard is als de kwalificatie, weegt een",
+    "goede lange run zwaarder dan een snelle ronde op zaterdagmiddag."
+  ],
+
+  "notitie_ronde14": [
+    "FP3 Madrid, 12 september: 1 Antonelli, 2 Leclerc, 3 Piastri, 4 Norris, 5 Verstappen,",
+    "6 Russell, 7 Lawson, 8 Hulkenberg. Hamilton rond P8 en veroorzaakte de eerste rode vlag,",
+    "Bearman crashte zwaar met nog een minuut te gaan. Sessie twee keer stilgelegd, dus de",
+    "long runs zeggen hier weinig; dit is vooral een kwalificatiebeeld.",
+    "Bijstellingen bewust klein gehouden: FP3 voorspelt de kwalificatie en die is maar 29",
+    "procent van een weekend zonder sprint."
+  ],
+
+  "coureurs": {
+    "HAM": 0.85,
+    "BEA": 0.7,
+    "ANT": 1.05,
+    "LEC": 1.05
+  },
+  "onderdelen": {},
+  "uitgesloten": []
+}

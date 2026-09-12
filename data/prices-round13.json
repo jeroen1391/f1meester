@@ -1,0 +1,42 @@
+{
+  "_bron": "formule1meester.nl /#opstelling-wijzigen — opgehaald 5 september 2026, ronde 13 (Monza)",
+  "_let_op": "Chassis en motor van dezelfde renstal hebben altijd dezelfde prijs en scoren altijd hetzelfde aantal punten. Ze zijn dus uitwisselbaar; wat telt is hoeveel onderdelen je van een renstal afneemt (maximaal 2).",
+  "budget": { "totaal": 89344000, "resterend": 2552000, "jokers_over": 4 },
+  "coureurs": {
+    "BOT": { "naam": "Valtteri Bottas",    "team": "CAD", "prijs": 1498000 },
+    "PER": { "naam": "Sergio Perez",       "team": "CAD", "prijs": 1506000 },
+    "ALB": { "naam": "Alexander Albon",    "team": "WIL", "prijs": 1875000 },
+    "STR": { "naam": "Lance Stroll",       "team": "AST", "prijs": 3636000 },
+    "SAI": { "naam": "Carlos Sainz",       "team": "WIL", "prijs": 3821000 },
+    "HUL": { "naam": "Nico Hulkenberg",    "team": "AUD", "prijs": 3862000 },
+    "OCO": { "naam": "Esteban Ocon",       "team": "HAS", "prijs": 4014000 },
+    "BOR": { "naam": "Gabriel Bortoleto",  "team": "AUD", "prijs": 4249000 },
+    "ALO": { "naam": "Fernando Alonso",    "team": "AST", "prijs": 4573000 },
+    "BEA": { "naam": "Oliver Bearman",     "team": "HAS", "prijs": 4777000 },
+    "LIN": { "naam": "Arvid Lindblad",     "team": "RAC", "prijs": 4845000 },
+    "COL": { "naam": "Franco Colapinto",   "team": "ALP", "prijs": 5221000 },
+    "TSU": { "naam": "Yuki Tsunoda",       "team": "RAC", "prijs": 6757000 },
+    "GAS": { "naam": "Pierre Gasly",       "team": "ALP", "prijs": 7517000 },
+    "LAW": { "naam": "Liam Lawson",        "team": "RBR", "prijs": 8162000 },
+    "PIA": { "naam": "Oscar Piastri",      "team": "MCL", "prijs": 23449000 },
+    "VER": { "naam": "Max Verstappen",     "team": "RBR", "prijs": 25633000 },
+    "NOR": { "naam": "Lando Norris",       "team": "MCL", "prijs": 26697000 },
+    "LEC": { "naam": "Charles Leclerc",    "team": "FER", "prijs": 27039000 },
+    "HAM": { "naam": "Lewis Hamilton",     "team": "FER", "prijs": 31708000 },
+    "RUS": { "naam": "George Russell",     "team": "MER", "prijs": 33473000 },
+    "ANT": { "naam": "Kimi Antonelli",     "team": "MER", "prijs": 35233000 }
+  },
+  "onderdelen": {
+    "CAD": { "chassis": "Unknown",    "motor": "Ferrari",        "prijs": 747000 },
+    "WIL": { "chassis": "FW48",       "motor": "Mercedes",       "prijs": 1418000 },
+    "AUD": { "chassis": "R26",        "motor": "Audi",           "prijs": 2023000 },
+    "AST": { "chassis": "AMR26",      "motor": "Honda",          "prijs": 2046000 },
+    "HAS": { "chassis": "VF26",       "motor": "Ferrari",        "prijs": 2341000 },
+    "RAC": { "chassis": "VCARB 03",   "motor": "Red Bull Ford",  "prijs": 2539000 },
+    "ALP": { "chassis": "A526",       "motor": "Mercedes",       "prijs": 3182000 },
+    "RBR": { "chassis": "RB22",       "motor": "Red Bull Ford",  "prijs": 8404000 },
+    "MCL": { "chassis": "MCL40",      "motor": "Mercedes",       "prijs": 12533000 },
+    "FER": { "chassis": "SF26",       "motor": "Ferrari",        "prijs": 14683000 },
+    "MER": { "chassis": "W17",        "motor": "Mercedes",       "prijs": 17173000 }
+  }
+}

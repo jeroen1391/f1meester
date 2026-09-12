@@ -1,0 +1,691 @@
+<title>Strakka Pit Wall</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;700;900&display=swap">
+<style>
+/* Merkgids Formula 1: Warm Red #FF1E00 alleen als highlight, Carbon Black #15151E en
+   Off-White #F7F4F1 in de grote vlakken, gezet uit Titillium. Layout spiegelt de
+   invoerpagina 'Opstelling wijzigen' van formule1meester.nl. */
+:root{
+  --red:#FF1E00; --black:#15151E; --off:#F7F4F1; --white:#FFF;
+  --ground:#F7F4F1; --card:#FFF; --sunk:#EFEBE7; --band:#1B2430;
+  --ink:#15151E; --body:#3A3A44; --mute:#6B6B75; --faint:#9A9AA2;
+  --line:#D9D5D1; --line-soft:#E9E5E1; --redsoft:#FDE7E3;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --ground:#15151E; --card:#1D1D28; --sunk:#242430; --band:#0E1620;
+  --ink:#F7F4F1; --body:#C9C9D1; --mute:#9C9CA6; --faint:#70707B;
+  --line:#31313D; --line-soft:#26262F; --redsoft:#3A1712;
+}}
+:root[data-theme="dark"]{
+  --ground:#15151E; --card:#1D1D28; --sunk:#242430; --band:#0E1620;
+  --ink:#F7F4F1; --body:#C9C9D1; --mute:#9C9CA6; --faint:#70707B;
+  --line:#31313D; --line-soft:#26262F; --redsoft:#3A1712;
+}
+*{box-sizing:border-box}
+body{background:var(--ground);color:var(--body);font-family:"Titillium Web",system-ui,-apple-system,Segoe UI,sans-serif;
+  font-size:15px;line-height:1.55;margin:0;padding:0 0 60px;-webkit-font-smoothing:antialiased;font-variant-numeric:tabular-nums}
+button,input,select,textarea{font-family:inherit;font-size:inherit;color:inherit}
+button{cursor:pointer;background:none;border:none}
+:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+.wrap{max-width:1060px;margin:0 auto;padding:0 18px}
+
+header.top{background:var(--black);color:var(--off);border-bottom:4px solid var(--red)}
+.top-in{max-width:1060px;margin:0 auto;padding:16px 18px 14px;display:flex;gap:18px;align-items:flex-end;flex-wrap:wrap}
+.eyebrow{text-transform:uppercase;letter-spacing:.2em;font-size:10px;font-weight:700;color:var(--red);margin:0 0 4px}
+h1{font-size:26px;margin:0;color:var(--white);text-transform:uppercase;letter-spacing:.04em;font-weight:900;line-height:1}
+.sub{font-size:13px;color:#A0A0AA;margin:6px 0 0}
+.doel{margin-left:auto;text-align:right;font-size:13px;color:#A0A0AA}
+.doel b{color:var(--white);font-weight:700;display:block;font-size:15px}
+
+/* budgetbalk zoals op de invoerpagina */
+.budget{background:var(--card);border-bottom:1px solid var(--line)}
+.budget-in{max-width:1060px;margin:0 auto;padding:11px 18px;display:flex;gap:34px;flex-wrap:wrap;font-size:14px}
+.budget-in div span{color:var(--mute)}
+.budget-in div b{color:var(--ink);font-weight:700;margin-left:6px}
+.budget-in .over.krap b{color:var(--red)}
+
+.blok{background:var(--card);border:1px solid var(--line);margin-top:16px}
+.blokkop{background:var(--band);color:var(--off);padding:9px 14px;text-transform:uppercase;letter-spacing:.13em;font-size:11.5px;font-weight:700;
+  display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.blokkop span{text-transform:none;letter-spacing:.02em;font-weight:400;font-size:12px;opacity:.72}
+
+.autogrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:stretch}
+@media(max-width:760px){.autogrid{grid-template-columns:1fr}.autoart{display:none}}
+.slotrij{display:grid;grid-template-columns:1fr 92px;border-bottom:1px solid var(--line-soft)}
+.slotrij:last-child{border-bottom:none}
+.slotveld{padding:9px 12px;display:flex;flex-direction:column;gap:3px;min-width:0}
+.slotveld .rol{text-transform:uppercase;letter-spacing:.13em;font-size:9px;font-weight:700;color:var(--faint)}
+.slotveld select{width:100%;padding:5px 6px;border:1px solid var(--line);background:var(--card);font-size:14.5px;font-weight:700;color:var(--ink)}
+.slotveld .meta{font-size:12px;color:var(--mute);display:flex;justify-content:space-between;gap:8px}
+.slotveld .meta b{color:var(--ink);font-weight:700}
+.jokercel{border-left:1px solid var(--line-soft);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:6px}
+.jokercel .lab{text-transform:uppercase;letter-spacing:.1em;font-size:9px;font-weight:700;color:var(--faint)}
+.jokerbtn{width:26px;height:26px;border-radius:50%;border:2px solid var(--line);color:var(--faint);font-size:14px;line-height:1;font-weight:700;display:grid;place-items:center}
+.jokerbtn[aria-pressed="true"]{background:var(--red);border-color:var(--red);color:#fff}
+.autoart{position:relative;background:var(--card);border-left:1px solid var(--line-soft);overflow:hidden}
+.autoart .nr{position:absolute;right:10px;top:-6px;font-size:78px;font-weight:900;color:var(--ink);opacity:.05;line-height:1;pointer-events:none}
+.vormpaneel{position:relative;padding:11px 14px;display:flex;flex-direction:column;gap:8px;height:100%}
+.vormkop{text-transform:uppercase;letter-spacing:.13em;font-size:9px;font-weight:700;color:var(--faint);display:flex;justify-content:space-between;gap:8px}
+.vormkop em{font-style:normal;text-transform:none;letter-spacing:.02em;font-weight:400;color:var(--faint)}
+.vormvoet{margin-top:auto;font-size:11.5px;color:var(--mute);border-top:1px solid var(--line-soft);padding-top:7px;line-height:1.4}
+.vormvoet b{color:var(--ink);font-weight:700}
+
+/* nieuwsvenster */
+.nws{display:grid;gap:8px}
+.nws article{padding-left:9px;border-left:2px solid var(--line)}
+.nws article.raakt{border-left-color:var(--red)}
+.nws h4{margin:0;font-size:13px;font-weight:700;color:var(--ink);line-height:1.3}
+.nws p{margin:1px 0 0;font-size:12px;color:var(--mute);line-height:1.35}
+.nws .raakt p{color:var(--body)}
+.nws .bron{font-size:10.5px;color:var(--faint)}
+
+/* fp3 + teamvorm */
+.fp3{display:grid;grid-template-columns:1fr 1fr;gap:2px 12px}
+.fp3 div{display:flex;gap:6px;font-size:12px;align-items:baseline}
+.fp3 div b{color:var(--ink);font-weight:700;min-width:14px;text-align:right;font-size:11px}
+.fp3 div span{color:var(--body);font-weight:600}
+.fp3 div i{font-style:normal;color:var(--faint);margin-left:auto;font-size:11px}
+.tv{display:grid;gap:3px}
+.tvrij{display:grid;grid-template-columns:62px 1fr 30px;gap:7px;align-items:center;font-size:12px}
+.tvrij .nm{color:var(--body);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.tvbar{height:7px;background:var(--ink);opacity:.28;border-radius:0 2px 2px 0}
+.tvrij.mijn .tvbar{background:var(--red);opacity:1}
+.tvrij.mijn .nm{color:var(--ink);font-weight:700}
+.tvrij .v{text-align:right;color:var(--ink);font-weight:700;font-size:11.5px}
+
+.waarschuwing{background:var(--redsoft);border-left:3px solid var(--red);padding:9px 14px;font-size:13.5px;color:var(--body)}
+.waarschuwing b{color:var(--red);font-weight:700}
+
+.bonusrij{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding:14px}
+@media(max-width:660px){.bonusrij{grid-template-columns:1fr}}
+.bonusveld .rol{text-transform:uppercase;letter-spacing:.13em;font-size:9px;font-weight:700;color:var(--faint);display:block;margin-bottom:4px}
+.bonusveld select{width:100%;padding:6px 7px;border:1px solid var(--line);background:var(--card);font-size:14.5px;font-weight:700;color:var(--ink)}
+.bonusveld .kans{font-size:12px;color:var(--mute);margin-top:4px}
+.bonusuitleg{padding:0 14px 13px;font-size:13px;color:var(--mute)}
+
+.balk{display:flex;gap:9px;flex-wrap:wrap;align-items:center;padding:14px 0 2px}
+.btn{padding:10px 18px;font-weight:700;font-size:14px;text-transform:uppercase;letter-spacing:.08em;border:1px solid var(--line);background:var(--card);color:var(--body)}
+.btn.rood{background:var(--red);color:#fff;border-color:var(--red)}
+.btn.rood:hover{background:#E01A00}
+.btn.zwart{background:var(--black);color:var(--off);border-color:var(--black)}
+.btn:hover{filter:brightness(1.04)}
+.score{margin-left:auto;text-align:right}
+.score b{font-size:30px;font-weight:900;color:var(--ink);line-height:1}
+.score span{display:block;font-size:12px;color:var(--mute)}
+.score .delta{font-size:13px;font-weight:700;color:var(--ink)}
+.score .delta.min{color:var(--red)}
+
+.fold{margin-top:26px;border-top:3px solid var(--red);padding-top:4px}
+.foldlabel{text-transform:uppercase;letter-spacing:.18em;font-size:10px;font-weight:700;color:var(--faint);padding:8px 0 0}
+
+.tekst{padding:13px 14px;font-size:14.5px}
+.tekst p{margin:0 0 9px}.tekst p:last-child{margin-bottom:0}
+.tekst b{color:var(--ink);font-weight:700}
+
+.check{padding:12px 14px;display:grid;gap:8px}
+.check label{display:flex;gap:9px;align-items:flex-start;font-size:14px;cursor:pointer}
+.check input[type=checkbox]{margin-top:3px;accent-color:var(--red);flex:none}
+.check .om{font-size:12.5px;color:var(--mute);display:block}
+.nieuwsvelden{display:grid;gap:9px;padding:0 14px 13px}
+.nieuwsvelden .rij{display:grid;grid-template-columns:1fr 90px 74px;gap:7px;align-items:center}
+@media(max-width:560px){.nieuwsvelden .rij{grid-template-columns:1fr}}
+.nieuwsvelden select,.nieuwsvelden textarea,.nieuwsvelden input{width:100%;padding:6px 8px;border:1px solid var(--line);background:var(--card);font-size:13.5px}
+.nieuwsvelden textarea{min-height:56px;resize:vertical}
+.penlijst{display:grid;gap:5px}
+.pen{display:flex;justify-content:space-between;align-items:center;background:var(--redsoft);border-left:3px solid var(--red);padding:5px 9px;font-size:13px}
+.pen button{color:var(--red);font-weight:700;font-size:15px}
+
+.alt{display:grid;grid-template-columns:auto 1fr auto;gap:12px;padding:10px 14px;border-bottom:1px solid var(--line-soft);align-items:center;width:100%;text-align:left}
+.alt:last-child{border-bottom:none}
+.alt:hover{background:var(--sunk)}
+.alt .rk{font-size:12px;font-weight:700;color:var(--faint);width:14px}
+.alt .om{font-size:13px;color:var(--mute);line-height:1.4}
+.alt .om b{color:var(--ink);font-weight:700;font-size:14.5px}
+.alt .sc{text-align:right;font-weight:700;color:var(--ink)}
+.alt .sc small{display:block;font-size:11.5px;color:var(--mute);font-weight:400}
+
+table.stand{width:100%;border-collapse:collapse}
+table.stand th{text-align:left;font-size:9.5px;text-transform:uppercase;letter-spacing:.13em;color:var(--faint);padding:9px 10px 6px;font-weight:700}
+table.stand td{padding:6px 10px;border-top:1px solid var(--line-soft);font-size:14px}
+table.stand td.r{text-align:right}
+table.stand tr.ik td{background:var(--redsoft);font-weight:700;color:var(--ink)}
+table.stand .pos{color:var(--faint);width:22px}
+
+.jokerplan{padding:12px 14px;display:grid;gap:7px}
+.jr{display:grid;grid-template-columns:56px 1fr auto;gap:10px;align-items:baseline;font-size:14px;padding:5px 0;border-top:1px solid var(--line-soft)}
+.jr:first-child{border-top:none}
+.jr .rn{font-weight:700;color:var(--ink)}
+.jr .adv{font-size:12.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+.jr .adv.ja{color:var(--red)}
+.jr .adv.nee{color:var(--faint)}
+.jr .om{font-size:12.5px;color:var(--mute)}
+
+.goedgekeurd{background:var(--black);color:var(--off);border-left:4px solid var(--red);padding:13px 15px;margin-top:14px}
+.goedgekeurd h3{margin:0 0 7px;font-size:13px;text-transform:uppercase;letter-spacing:.12em;color:var(--red);font-weight:700}
+.goedgekeurd ol{margin:0;padding-left:19px;font-size:13.5px;color:#D6D6DD}
+.goedgekeurd b{color:#fff}
+.goedgekeurd .st{font-size:11.5px;color:#83838E;margin:9px 0 0}
+
+footer{max-width:1060px;margin:26px auto 0;padding:15px 18px 0;border-top:3px solid var(--red);font-size:12.5px;color:var(--faint);line-height:1.6}
+footer b{color:var(--mute);font-weight:600}
+</style>
+
+<header class="top">
+  <div class="top-in">
+    <div>
+      <p class="eyebrow">Formule 1 Meester &middot; Strakka Haas F1</p>
+      <h1>Ronde 14 &mdash; Spanje</h1>
+      <p class="sub">The Madring &middot; deadline zaterdag 12 september 15:55, vijf minuten voor de kwalificatie</p>
+    </div>
+    <div class="doel">
+      <b>Doel: 1e in de subleague</b>
+      954 achter op GrijzeLeverWorst &middot; 10 rondes &middot; 95 per ronde in te lopen
+    </div>
+  </div>
+</header>
+
+<div class="budget"><div class="budget-in">
+  <div><span>Totaal budget:</span><b id="bTot">&euro; 96.935.000</b></div>
+  <div class="over" id="bOverWrap"><span>Resterend budget:</span><b id="bOver">&euro; 0</b></div>
+  <div><span>Jokers:</span><b id="bJok">4</b></div>
+  <div><span>Verwacht:</span><b id="bPts">&mdash;</b></div>
+</div></div>
+
+<main class="wrap">
+
+  <div class="waarschuwing" id="waarschuwing" hidden></div>
+
+  <section class="blok">
+    <div class="blokkop">Stel auto 1 samen <span id="kop1"></span></div>
+    <div class="autogrid">
+      <div id="auto1"></div>
+      <div class="autoart"><div class="nr">1</div><div id="art1"></div></div>
+    </div>
+  </section>
+
+  <section class="blok">
+    <div class="blokkop">Stel auto 2 samen <span id="kop2"></span></div>
+    <div class="autogrid">
+      <div id="auto2"></div>
+      <div class="autoart"><div class="nr">2</div><div id="art2"></div></div>
+    </div>
+  </section>
+
+  <section class="blok">
+    <div class="blokkop">Bonusvragen <span>25 punten per juiste plek</span></div>
+    <div class="bonusrij" id="bonusrij"></div>
+    <p class="bonusuitleg" id="bonusuitleg"></p>
+  </section>
+
+  <div class="balk">
+    <button class="btn rood" id="btnAdvies">Advies overnemen</button>
+    <button class="btn zwart" id="btnGoed">Goedkeuren</button>
+    <button class="btn" id="btnWis">Bijstellingen wissen</button>
+    <div class="score">
+      <b id="scGetal">&mdash;</b>
+      <span id="scOnder">punten verwacht</span>
+      <span class="delta" id="scDelta"></span>
+    </div>
+  </div>
+
+  <div class="goedgekeurd" id="goedgekeurd" hidden></div>
+
+  <!-- ---------- onder de vouw ---------- -->
+  <div class="fold"><p class="foldlabel">Onderbouwing en controle</p></div>
+
+  <section class="blok">
+    <div class="blokkop">Waarom deze keuze</div>
+    <div class="tekst" id="waarom"></div>
+  </section>
+
+  <section class="blok">
+    <div class="blokkop">Check op laatste nieuws <span>vóór je opslaat</span></div>
+    <div class="check" id="nieuwscheck"></div>
+    <div class="nieuwsvelden">
+      <div class="rij">
+        <select id="penDrv"></select>
+        <select id="penPos"></select>
+        <button class="btn" id="penAdd" style="padding:6px 0;font-size:12.5px">Gridstraf</button>
+      </div>
+      <div class="penlijst" id="penLijst"></div>
+      <div class="rij" style="grid-template-columns:1fr 164px">
+        <select id="uitDrv"></select>
+        <button class="btn" id="uitAdd" style="padding:6px 0;font-size:12.5px">Sluit uit</button>
+      </div>
+      <div class="penlijst" id="uitLijst"></div>
+      <textarea id="notitie" placeholder="Aantekeningen: wat zag je in FP2 en FP3, weersverwachting, teamnieuws…"></textarea>
+    </div>
+  </section>
+
+  <section class="blok">
+    <div class="blokkop">Alternatieven <span>volledig doorgerekend</span></div>
+    <div id="altlijst"></div>
+  </section>
+
+  <section class="blok">
+    <div class="blokkop">Jokerplan <span>4 over, 10 rondes</span></div>
+    <div class="jokerplan" id="jokerplan"></div>
+  </section>
+
+  <section class="blok">
+    <div class="blokkop">Subleague &mdash; Keihard in je achterbak</div>
+    <table class="stand"><thead><tr><th></th><th>Speler</th><th class="r">Score</th><th class="r">Ronde 13</th><th class="r">Jokers</th><th class="r">Bonus</th></tr></thead>
+    <tbody id="standbody"></tbody></table>
+  </section>
+
+</main>
+
+<footer class="wrap">
+  Vormgeving volgens de merkgids van Formula 1: <b>F1 Warm Red #FF1E00</b> als highlight, <b>Carbon Black #15151E</b> en <b>Off-White #F7F4F1</b> in de grote vlakken, gezet uit Titillium.
+  Scoremodel geverifieerd tegen 72 werkelijk toegekende waarden over ronde 1 t/m 12 &mdash; alle 72 exact.
+  Uitslagen, prijzen en subleaguedata van formule1meester.nl, opgehaald 5 september 2026.
+</footer>
+
+<script>
+"use strict";
+const RESULTS={
+r1:{q:["1:RUS:MER","2:ANT:MER","3:LAW:RBR","4:LEC:FER","5:PIA:MCL","6:NOR:MCL","7:HAM:FER","8:TSU:RAC","9:LIN:RAC","10:BOR:AUD","11:HUL:AUD","12:BEA:HAS","13:OCO:HAS","14:GAS:ALP","15:ALB:WIL","16:COL:ALP","17:ALO:AST","18:PER:CAD","19:BOT:CAD","DNQ:SAI:WIL","DNQ:VER:RBR","DNQ:STR:AST"],r:["1:RUS:MER","2:ANT:MER","3:LEC:FER","4:HAM:FER","5:NOR:MCL","6:VER:RBR","7:BEA:HAS","8:LIN:RAC","9:BOR:AUD","10:GAS:ALP","11:OCO:HAS","12:ALB:WIL","13:TSU:RAC","14:COL:ALP","15:SAI:WIL","16:PER:CAD","DNF:STR:AST","DNF:ALO:AST","DNF:BOT:CAD","DNF:LAW:RBR","DNS:PIA:MCL","DNS:HUL:AUD"]},
+r2:{q:["1:ANT:MER","2:RUS:MER","3:HAM:FER","4:LEC:FER","5:PIA:MCL","6:NOR:MCL","7:GAS:ALP","8:VER:RBR","9:LAW:RBR","10:BEA:HAS","11:HUL:AUD","12:COL:ALP","13:OCO:HAS","14:TSU:RAC","15:LIN:RAC","16:BOR:AUD","17:SAI:WIL","18:ALB:WIL","19:ALO:AST","20:BOT:CAD","21:STR:AST","22:PER:CAD"],s:["1:RUS:MER","2:LEC:FER","3:HAM:FER","4:NOR:MCL","5:ANT:MER","6:PIA:MCL","7:TSU:RAC","8:BEA:HAS","9:VER:RBR","10:OCO:HAS","11:GAS:ALP","12:SAI:WIL","13:BOR:AUD","14:COL:ALP","15:LAW:RBR","16:ALB:WIL","17:ALO:AST","18:STR:AST","19:PER:CAD","DNF:HUL:AUD","DNF:BOT:CAD","DNF:LIN:RAC"],r:["1:ANT:MER","2:RUS:MER","3:HAM:FER","4:LEC:FER","5:BEA:HAS","6:GAS:ALP","7:TSU:RAC","8:LAW:RBR","9:SAI:WIL","10:COL:ALP","11:HUL:AUD","12:LIN:RAC","13:BOT:CAD","14:OCO:HAS","15:PER:CAD","DNF:VER:RBR","DNF:ALO:AST","DNF:STR:AST","DNS:PIA:MCL","DNS:NOR:MCL","DNS:BOR:AUD","DNS:ALB:WIL"]},
+r3:{q:["1:ANT:MER","2:RUS:MER","3:PIA:MCL","4:LEC:FER","5:NOR:MCL","6:HAM:FER","7:GAS:ALP","8:LAW:RBR","9:BOR:AUD","10:LIN:RAC","11:VER:RBR","12:OCO:HAS","13:HUL:AUD","14:TSU:RAC","15:COL:ALP","16:SAI:WIL","17:ALB:WIL","18:BEA:HAS","19:PER:CAD","20:BOT:CAD","21:ALO:AST","22:STR:AST"],r:["1:ANT:MER","2:PIA:MCL","3:LEC:FER","4:RUS:MER","5:NOR:MCL","6:HAM:FER","7:GAS:ALP","8:VER:RBR","9:TSU:RAC","10:OCO:HAS","11:HUL:AUD","12:LAW:RBR","13:BOR:AUD","14:LIN:RAC","15:SAI:WIL","16:COL:ALP","17:PER:CAD","18:ALO:AST","19:BOT:CAD","20:ALB:WIL","DNF:STR:AST","DNF:BEA:HAS"]},
+r4:{q:["1:ANT:MER","2:VER:RBR","3:LEC:FER","4:NOR:MCL","5:RUS:MER","6:HAM:FER","7:PIA:MCL","8:COL:ALP","9:GAS:ALP","10:HUL:AUD","11:TSU:RAC","12:BEA:HAS","13:SAI:WIL","14:OCO:HAS","15:ALB:WIL","16:LIN:RAC","17:ALO:AST","18:STR:AST","19:BOT:CAD","20:PER:CAD","21:BOR:AUD","DSQ:LAW:RBR"],s:["1:NOR:MCL","2:PIA:MCL","3:LEC:FER","4:RUS:MER","5:VER:RBR","6:ANT:MER","7:HAM:FER","8:GAS:ALP","9:LAW:RBR","10:COL:ALP","11:OCO:HAS","12:BEA:HAS","13:SAI:WIL","14:TSU:RAC","15:ALO:AST","16:PER:CAD","17:STR:AST","18:ALB:WIL","19:BOT:CAD","DNF:HUL:AUD","DNF:LIN:RAC","DSQ:BOR:AUD"],r:["1:ANT:MER","2:NOR:MCL","3:PIA:MCL","4:RUS:MER","5:VER:RBR","6:HAM:FER","7:COL:ALP","8:LEC:FER","9:SAI:WIL","10:ALB:WIL","11:BEA:HAS","12:BOR:AUD","13:OCO:HAS","14:LIN:RAC","15:ALO:AST","16:PER:CAD","17:STR:AST","18:BOT:CAD","DNF:HUL:AUD","DNF:TSU:RAC","DNF:GAS:ALP","DNF:LAW:RBR"]},
+r5:{q:["1:RUS:MER","2:ANT:MER","3:NOR:MCL","4:PIA:MCL","5:HAM:FER","6:VER:RBR","7:LAW:RBR","8:LEC:FER","9:LIN:RAC","10:COL:ALP","11:HUL:AUD","12:TSU:RAC","13:BOR:AUD","14:GAS:ALP","15:SAI:WIL","16:BEA:HAS","17:OCO:HAS","18:ALB:WIL","19:ALO:AST","20:PER:CAD","21:STR:AST","22:BOT:CAD"],s:["1:RUS:MER","2:NOR:MCL","3:ANT:MER","4:PIA:MCL","5:LEC:FER","6:HAM:FER","7:VER:RBR","8:LIN:RAC","9:COL:ALP","10:SAI:WIL","11:TSU:RAC","12:BOR:AUD","13:OCO:HAS","14:PER:CAD","15:HUL:AUD","16:STR:AST","17:BOT:CAD","18:BEA:HAS","19:ALB:WIL","20:GAS:ALP","21:LAW:RBR","DNF:ALO:AST"],r:["1:ANT:MER","2:HAM:FER","3:VER:RBR","4:LEC:FER","5:LAW:RBR","6:COL:ALP","7:TSU:RAC","8:GAS:ALP","9:SAI:WIL","10:BEA:HAS","11:PIA:MCL","12:HUL:AUD","13:BOR:AUD","14:OCO:HAS","15:STR:AST","16:BOT:CAD","DNF:PER:CAD","DNF:NOR:MCL","DNF:RUS:MER","DNF:ALO:AST","DNF:ALB:WIL","DNS:LIN:RAC"]},
+r6:{q:["1:ANT:MER","2:VER:RBR","3:HAM:FER","4:LEC:FER","5:LAW:RBR","6:RUS:MER","7:PIA:MCL","8:NOR:MCL","9:GAS:ALP","10:TSU:RAC","11:ALB:WIL","12:SAI:WIL","13:HUL:AUD","14:COL:ALP","15:LIN:RAC","16:BOR:AUD","17:OCO:HAS","18:PER:CAD","19:BEA:HAS","20:BOT:CAD","21:ALO:AST","22:STR:AST"],r:["1:ANT:MER","2:HAM:FER","3:LAW:RBR","4:PIA:MCL","5:TSU:RAC","6:LIN:RAC","7:GAS:ALP","8:ALB:WIL","9:OCO:HAS","10:ALO:AST","11:BOR:AUD","12:RUS:MER","13:HUL:AUD","14:COL:ALP","15:PER:CAD","16:SAI:WIL","DNF:LEC:FER","DNF:STR:AST","DNF:NOR:MCL","DNF:BEA:HAS","DNF:BOT:CAD","DNF:VER:RBR"]},
+r7:{q:["1:RUS:MER","2:HAM:FER","3:ANT:MER","4:NOR:MCL","5:VER:RBR","6:LAW:RBR","7:PIA:MCL","8:TSU:RAC","9:HUL:AUD","10:LEC:FER","11:LIN:RAC","12:BOR:AUD","13:COL:ALP","14:GAS:ALP","15:BEA:HAS","16:SAI:WIL","17:OCO:HAS","18:ALB:WIL","19:PER:CAD","20:BOT:CAD","21:STR:AST","22:ALO:AST"],r:["1:HAM:FER","2:RUS:MER","3:NOR:MCL","4:VER:RBR","5:PIA:MCL","6:LAW:RBR","7:GAS:ALP","8:TSU:RAC","9:LIN:RAC","10:COL:ALP","11:BOR:AUD","12:SAI:WIL","13:OCO:HAS","14:PER:CAD","15:LEC:FER","16:ANT:MER","17:BEA:HAS","DNF:ALB:WIL","DNF:ALO:AST","DNF:HUL:AUD","DNF:BOT:CAD","DNF:STR:AST"]},
+r8:{q:["1:RUS:MER","2:LEC:FER","3:HAM:FER","4:ANT:MER","5:VER:RBR","6:NOR:MCL","7:PIA:MCL","8:LAW:RBR","9:TSU:RAC","10:LIN:RAC","11:GAS:ALP","12:BOR:AUD","13:BEA:HAS","14:HUL:AUD","15:OCO:HAS","16:COL:ALP","17:SAI:WIL","18:ALB:WIL","19:PER:CAD","20:BOT:CAD","21:ALO:AST","22:STR:AST"],r:["1:RUS:MER","2:VER:RBR","3:ANT:MER","4:PIA:MCL","5:HAM:FER","6:LAW:RBR","7:NOR:MCL","8:LEC:FER","9:TSU:RAC","10:LIN:RAC","11:BOR:AUD","12:HUL:AUD","13:GAS:ALP","14:BEA:HAS","15:COL:ALP","16:OCO:HAS","17:ALB:WIL","18:ALO:AST","DNF:STR:AST","DNF:SAI:WIL","DNF:PER:CAD","DNF:BOT:CAD"]},
+r9:{q:["1:ANT:MER","2:LEC:FER","3:HAM:FER","4:RUS:MER","5:LAW:RBR","6:NOR:MCL","7:VER:RBR","8:PIA:MCL","9:LIN:RAC","10:TSU:RAC","11:BOR:AUD","12:GAS:ALP","13:HUL:AUD","14:BEA:HAS","15:SAI:WIL","16:ALB:WIL","17:OCO:HAS","18:BOT:CAD","19:COL:ALP","20:PER:CAD","21:STR:AST","22:ALO:AST"],s:["1:ANT:MER","2:HAM:FER","3:NOR:MCL","4:RUS:MER","5:LEC:FER","6:VER:RBR","7:PIA:MCL","8:TSU:RAC","9:LAW:RBR","10:LIN:RAC","11:GAS:ALP","12:COL:ALP","13:HUL:AUD","14:BOR:AUD","15:BEA:HAS","16:OCO:HAS","17:SAI:WIL","18:ALB:WIL","19:BOT:CAD","20:ALO:AST","21:STR:AST","22:PER:CAD"],r:["1:LEC:FER","2:RUS:MER","3:HAM:FER","4:NOR:MCL","5:LAW:RBR","6:TSU:RAC","7:LIN:RAC","8:BOR:AUD","9:COL:ALP","10:GAS:ALP","11:PIA:MCL","12:BEA:HAS","13:OCO:HAS","14:PER:CAD","15:ANT:MER","16:BOT:CAD","17:SAI:WIL","18:ALO:AST","19:STR:AST","20:VER:RBR","DNF:ALB:WIL","DNF:HUL:AUD"]},
+r10:{q:["1:ANT:MER","2:VER:RBR","3:NOR:MCL","4:RUS:MER","5:LEC:FER","6:HAM:FER","7:PIA:MCL","8:LIN:RAC","9:BOR:AUD","10:LAW:RBR","11:TSU:RAC","12:GAS:ALP","13:COL:ALP","14:HUL:AUD","15:SAI:WIL","16:BEA:HAS","17:ALB:WIL","18:OCO:HAS","19:BOT:CAD","20:PER:CAD","21:ALO:AST","22:STR:AST"],r:["1:ANT:MER","2:LEC:FER","3:VER:RBR","4:HAM:FER","5:PIA:MCL","6:LAW:RBR","7:NOR:MCL","8:BOR:AUD","9:LIN:RAC","10:COL:ALP","11:GAS:ALP","12:TSU:RAC","13:HUL:AUD","14:BEA:HAS","15:ALB:WIL","16:SAI:WIL","17:OCO:HAS","18:BOT:CAD","19:ALO:AST","DNF:STR:AST","DNF:PER:CAD","DNF:RUS:MER"]},
+r11:{q:["1:NOR:MCL","2:HAM:FER","3:LEC:FER","4:ANT:MER","5:PIA:MCL","6:VER:RBR","7:RUS:MER","8:LAW:RBR","9:LIN:RAC","10:HUL:AUD","11:TSU:RAC","12:GAS:ALP","13:COL:ALP","14:BOR:AUD","15:OCO:HAS","16:ALO:AST","17:BEA:HAS","18:SAI:WIL","19:ALB:WIL","20:STR:AST","21:BOT:CAD","22:PER:CAD"],r:["1:NOR:MCL","2:VER:RBR","3:ANT:MER","4:LEC:FER","5:HAM:FER","6:LAW:RBR","7:RUS:MER","8:TSU:RAC","9:HUL:AUD","10:LIN:RAC","11:BOR:AUD","12:GAS:ALP","13:STR:AST","14:ALO:AST","15:COL:ALP","16:OCO:HAS","17:ALB:WIL","18:SAI:WIL","19:BEA:HAS","DNF:PIA:MCL","DNF:PER:CAD","DNF:BOT:CAD"]},
+r12:{q:["1:NOR:MCL","2:RUS:MER","3:ANT:MER","4:PIA:MCL","5:HAM:FER","6:LEC:FER","7:VER:RBR","8:LAW:RBR","9:BOR:AUD","10:LIN:RAC","11:GAS:ALP","12:TSU:RAC","13:HUL:AUD","14:COL:ALP","15:OCO:HAS","16:ALB:WIL","17:SAI:WIL","18:ALO:AST","19:STR:AST","20:BEA:HAS","21:BOT:CAD","22:PER:CAD"],s:["1:RUS:MER","2:LEC:FER","3:NOR:MCL","4:ANT:MER","5:PIA:MCL","6:VER:RBR","7:HAM:FER","8:GAS:ALP","9:BOR:AUD","10:LIN:RAC","11:LAW:RBR","12:COL:ALP","13:TSU:RAC","14:OCO:HAS","15:BEA:HAS","16:ALB:WIL","17:STR:AST","18:ALO:AST","19:BOT:CAD","20:SAI:WIL","21:PER:CAD","DNF:HUL:AUD"],r:["1:NOR:MCL","2:ANT:MER","3:RUS:MER","4:HAM:FER","5:LEC:FER","6:PIA:MCL","7:LAW:RBR","8:HUL:AUD","9:ALO:AST","10:GAS:ALP","11:TSU:RAC","12:LIN:RAC","13:BOR:AUD","14:COL:ALP","15:PER:CAD","16:SAI:WIL","17:ALB:WIL","DNF:BOT:CAD","DNF:OCO:HAS","DNF:STR:AST","DNF:BEA:HAS","DNF:VER:RBR"]},
+r13:{q:["1:GAS:ALP","2:RUS:MER","3:PIA:MCL","4:LEC:FER","5:HAM:FER","6:VER:RBR","7:ANT:MER","8:COL:ALP","9:NOR:MCL","10:LIN:RAC","11:BOR:AUD","12:BEA:HAS","13:HUL:AUD","14:LAW:RBR","15:SAI:WIL","16:OCO:HAS","17:TSU:RAC","18:ALB:WIL","19:BOT:CAD","20:PER:CAD","21:ALO:AST","22:STR:AST"],r:["1:ANT:MER","2:RUS:MER","3:VER:RBR","4:NOR:MCL","5:PIA:MCL","6:HAM:FER","7:GAS:ALP","8:LIN:RAC","9:COL:ALP","10:TSU:RAC","11:BOR:AUD","12:HUL:AUD","13:SAI:WIL","14:LAW:RBR","15:BEA:HAS","16:OCO:HAS","17:ALB:WIL","18:PER:CAD","19:BOT:CAD","DNF:ALO:AST","DNF:STR:AST","DNF:LEC:FER"]}};
+const DRIVERS={BOT:["Valtteri Bottas","CAD",1535000],PER:["Sergio Perez","CAD",1559000],ALB:["Alexander Albon","WIL",1941000],
+STR:["Lance Stroll","AST",3673000],SAI:["Carlos Sainz","WIL",3915000],HUL:["Nico Hulkenberg","AUD",3962000],
+OCO:["Esteban Ocon","HAS",4165000],BOR:["Gabriel Bortoleto","AUD",4423000],ALO:["Fernando Alonso","AST",4449000],
+BEA:["Oliver Bearman","HAS",4783000],LIN:["Arvid Lindblad","RAC",5011000],COL:["Franco Colapinto","ALP",5255000],
+TSU:["Yuki Tsunoda","RAC",6892000],GAS:["Pierre Gasly","ALP",7667000],LAW:["Liam Lawson","RBR",8325000],
+PIA:["Oscar Piastri","MCL",24131000],VER:["Max Verstappen","RBR",25932000],NOR:["Lando Norris","MCL",27230000],
+LEC:["Charles Leclerc","FER",27579000],HAM:["Lewis Hamilton","FER",32862000],RUS:["George Russell","MER",33622000],
+ANT:["Kimi Antonelli","MER",35937000]};
+const TEAMS={CAD:["Cadillac","Unknown","Ferrari",769000],WIL:["Williams","FW48","Mercedes",1458000],
+AUD:["Audi","R26","Audi",2091000],AST:["Aston Martin","AMR26","Honda",2024000],HAS:["Haas","VF26","Ferrari",2380000],
+RAC:["Racing Bulls","VCARB 03","Red Bull Ford",2689000],ALP:["Alpine","A526","Mercedes",3228000],
+RBR:["Red Bull","RB22","Red Bull Ford",8478000],MCL:["McLaren","MCL40","Mercedes",12836000],
+FER:["Ferrari","SF26","Ferrari",15106000],MER:["Mercedes","W17","Mercedes",17386000]};
+const HUIDIG={coureurs:["HAM","VER"],onderdelen:["FER","RBR","ALP","RAC"]};
+const STAND=[["GrijzeLeverWorst",11051,5,11,901],["Pedaf1",10140,6,6,880],["SleuF1",10097,4,6,889],["RolloThomassi",9632,4,8,674],
+["Adtssss...",9096,3,6,830],["Kamertjes verhoerder uit BaZ",8845,6,3,888],["ApexTwins",7573,6,6,462],["Markiezzz",7491,6,4,669]];
+const JOKERPLAN=[
+ [14,"Spanje — The Madring","nee","Gloednieuw circuit, geen enkele vorm om op te bouwen"],
+ [15,"Azerbeidzjan — Baku","nee","Straatcircuit met veel uitval"],
+ [16,"Bahrain — Sepang","nee","Eerste F1-race daar sinds 2017, plus kans op hoosbuien"],
+ [17,"Singapore","ja","Enige sprintweekend dat rest: plafond 360 in plaats van 315"],
+ [18,"Verenigde Staten — Austin","ja","Bekend circuit, betrouwbare vorm"],
+ [19,"Mexico","nee","Reserve"],
+ [20,"Brazilië","ja","Bekend circuit, hoge scores mogelijk"],
+ [21,"Las Vegas","nee","Straatcircuit, koud, veel uitval"],
+ [22,"Qatar","ja","Bekend circuit, laatste kans met marge"],
+ [23,"Abu Dhabi","nee","Reserve als er eerder een joker overblijft"]];
+const BUDGET=96935000, JOKERS_OVER=4, ACHTERSTAND=954, RONDES_TE_GAAN=10;
+
+/* Puntentabellen en verwachte punten komen uit VERWACHT, gegenereerd door
+   f1meester/src/expectations.js met dezelfde motor als optimize.js. Deze pagina
+   rekent ze bewust niet meer zelf uit: toen dat nog wel gebeurde liep ze achter
+   op het model, en toonde ze Mercedes op 166 en Ferrari op 160 terwijl het advies
+   al met 171 en 152 was berekend. */
+const P_DRV=VERWACHT.tabel.coureur, P_CMP=VERWACHT.tabel.onderdeel;
+const PEN_DRV=VERWACHT.tabel.strafCoureur, PEN_CMP=VERWACHT.tabel.strafOnderdeel;
+const SI={s:0,q:1,r:2};
+const ROUNDS=Object.keys(RESULTS).sort((a,b)=>+a.slice(1)-+b.slice(1));
+const VENSTER=5, WIN=ROUNDS.slice(-VENSTER);
+
+function pts(tab,pen,pos,ses){ if(typeof pos==='number'){const r=tab[pos-1];return r?r[SI[ses]]:0;} return pen[pos]??0; }
+
+const S={sel:{a1:{c:'NOR',ch:'MER',mo:'MER'},a2:{c:'LAW',ch:'RBR',mo:'FER'}},
+  joker:null, bonus:['ANT','LEC','VER'], pens:{}, excl:new Set(), notitie:'', checks:{}, goedgekeurd:null};
+const $=id=>document.getElementById(id);
+const eur=n=>'€ '+n.toLocaleString('nl-NL');
+const eurK=n=>'€'+(n/1e6).toFixed(3).replace('.',',')+'m';
+
+function baseDrv(c){return VERWACHT.coureurs[c]?VERWACHT.coureurs[c].verwacht:0;}
+function baseCmp(t){return VERWACHT.onderdelen[t]?VERWACHT.onderdelen[t].verwacht:0;}
+function expDrv(c){
+  if(S.excl.has(c))return 0;
+  let v=baseDrv(c);
+  /* Gridstraf: alleen de race verandert, de kwalificatie blijft staan. */
+  if(S.pens[c]!=null){ const oud=VERWACHT.coureurs[c]?VERWACHT.coureurs[c].raceGemiddeld:0;
+    v+=(P_DRV[S.pens[c]-1]?P_DRV[S.pens[c]-1][2]:0)-oud; }
+  return v;
+}
+function expCmp(t){
+  if(S.excl.has(t))return 0;
+  let v=baseCmp(t);
+  /* Ruil het racedeel van déze coureur, niet de helft van het hele onderdeel:
+     de twee coureurs van een renstal dragen zelden evenveel bij. */
+  for(const c of Object.keys(S.pens)) if(DRIVERS[c][1]===t){
+    const deel=VERWACHT.onderdelen[t]&&VERWACHT.onderdelen[t].raceGemiddeldPerCoureur;
+    const oud=(deel&&deel[c]!=null)?deel[c]:0;
+    v+=(P_CMP[S.pens[c]-1]?P_CMP[S.pens[c]-1][2]:0)-oud;
+  }
+  return v;
+}
+
+/* ---- optimizer ---- */
+let COMBOCACHE=null;
+function combos(teams){const out=[];(function b(st,cur){if(cur.length===4){out.push(cur.slice());return;}
+  for(let i=st;i<teams.length;i++){const t=teams[i];let n=0;for(const x of cur)if(x===t)n++;if(n>=2)continue;
+  cur.push(t);b(i,cur);cur.pop();}})(0,[]);return out;}
+function solve(){
+  const dc=Object.keys(DRIVERS).filter(c=>!S.excl.has(c));
+  const tc=Object.keys(TEAMS).filter(t=>!S.excl.has(t));
+  const key=tc.join(',');
+  if(!COMBOCACHE||COMBOCACHE.key!==key)COMBOCACHE={key,list:combos(tc)};
+  const eD={},eT={};
+  for(const c of dc)eD[c]=expDrv(c); for(const t of tc)eT[t]=expCmp(t);
+  const out=[];
+  for(let i=0;i<dc.length;i++)for(let j=i+1;j<dc.length;j++){
+    const c1=dc[i],c2=dc[j],kd=DRIVERS[c1][2]+DRIVERS[c2][2];
+    if(kd>BUDGET)continue;
+    const pd=eD[c1]+eD[c2],t1=DRIVERS[c1][1],t2=DRIVERS[c2][1];
+    for(const combo of COMBOCACHE.list){
+      let k=kd,p=pd,ok=true;const cnt={};cnt[t1]=1;cnt[t2]=(cnt[t2]??0)+1;
+      for(const t of combo){cnt[t]=(cnt[t]??0)+1;if(cnt[t]>2){ok=false;break;}k+=TEAMS[t][3];p+=eT[t];}
+      if(!ok||k>BUDGET)continue;
+      out.push({coureurs:[c1,c2],onderdelen:combo,kosten:k,punten:p});
+    }
+  }
+  out.sort((a,b)=>b.punten-a.punten);
+  return out.slice(0,30);
+}
+function naarAutos(k){
+  const cnt={};for(const t of k.onderdelen)cnt[t]=(cnt[t]??0)+1;
+  const ch=[],mo=[];
+  for(const t of Object.keys(cnt))if(cnt[t]===2){ch.push(t);mo.push(t);}
+  for(const t of Object.keys(cnt))if(cnt[t]===1){if(ch.length<2)ch.push(t);else mo.push(t);}
+  const [d1,d2]=k.coureurs,m=(a,b,d)=>(a===DRIVERS[d][1]?1:0)+(b===DRIVERS[d][1]?1:0);
+  let best=null;
+  for(const c of [[ch[0],ch[1]],[ch[1],ch[0]]])for(const o of [[mo[0],mo[1]],[mo[1],mo[0]]]){
+    const s=m(c[0],o[0],d1)+m(c[1],o[1],d2); if(!best||s>best.s)best={s,c,o};
+  }
+  return {a1:{c:d1,ch:best.c[0],mo:best.o[0]},a2:{c:d2,ch:best.c[1],mo:best.o[1]}};
+}
+
+/* ---- huidige selectie ---- */
+function plekken(){
+  const s=S.sel;
+  return [{a:1,rol:'Coureur',soort:'d',code:s.a1.c},{a:1,rol:'Chassis',soort:'c',code:s.a1.ch},{a:1,rol:'Motor',soort:'m',code:s.a1.mo},
+          {a:2,rol:'Coureur',soort:'d',code:s.a2.c},{a:2,rol:'Chassis',soort:'c',code:s.a2.ch},{a:2,rol:'Motor',soort:'m',code:s.a2.mo}];
+}
+function prijsVan(p){return p.soort==='d'?DRIVERS[p.code][2]:TEAMS[p.code][3];}
+function puntenVan(p){return p.soort==='d'?expDrv(p.code):expCmp(p.code);}
+function teamVan(p){return p.soort==='d'?DRIVERS[p.code][1]:p.code;}
+function totalen(){
+  const pl=plekken();
+  let kosten=0,punten=0;
+  pl.forEach((p,i)=>{kosten+=prijsVan(p);punten+=puntenVan(p)*(S.joker===i?2:1);});
+  const cnt={};for(const p of pl){const t=teamVan(p);cnt[t]=(cnt[t]??0)+1;}
+  const fouten=[];
+  if(S.sel.a1.c===S.sel.a2.c)fouten.push('Je hebt twee keer dezelfde coureur opgesteld.');
+  for(const t of Object.keys(cnt))if(cnt[t]>2)fouten.push(cnt[t]+' onderdelen van '+TEAMS[t][0]+' — maximaal 2 toegestaan.');
+  if(kosten>BUDGET)fouten.push('Je zit '+eur(kosten-BUDGET)+' boven je budget.');
+  return {kosten,punten,fouten,cnt};
+}
+
+/* ---- tekenen ---- */
+/* Nieuws wordt hier ingebakken: een gepubliceerde pagina mag zelf het web niet op.
+   Ik ververs dit bij elke ronde-update. 'betreft' bevat renstal- of coureurcodes;
+   een bericht wordt gemarkeerd zodra jouw opstelling er iets van bevat. */
+const BIJGEWERKT='12 september 2026';
+const NIEUWS=[
+ {kop:'Madrid is gloednieuw — geen enkele coureur reed hier',
+  tekst:'De Madring is 5,4 km met 22 bochten, 57 ronden, snelheden tot 340 km/u, forse hoogteverschillen en de langste bankeerbocht van de kalender. Circuithistorie bestaat niet, dus het model leunt volledig op recente vorm. Wat je vrijdag en zaterdag ziet weegt hier zwaarder dan waar ook.',
+  bron:'formula1.com · 7 sep', betreft:[]},
+ {kop:'Drie coureurs over hun motorlimiet — straffen kunnen elk moment vallen',
+  tekst:'Antonelli, Albon en Lawson zijn alle drie over de toegestane vier motoren heen en kregen in Monza al een gridstraf. Elke volgende wissel geeft opnieuw een straf. Onthoud: dat kost hier géén kwalificatiepunten, alleen het raceresultaat zakt.',
+  bron:'formula1.com · 5 sep', betreft:['MER','ANT','WIL','ALB','RBR','LAW']},
+ {kop:'Ferrari valt uit in Monza — onderdelen halveren',
+  tekst:'Leclerc viel uit, Hamilton werd zesde. De Ferrari-onderdelen kwamen op 87 punten uit terwijl het model 172 verwachtte. Wie Hamilton én een Ferrari-onderdeel opstelt, verliest bij zo\'n uitvalbeurt op twee plekken tegelijk.',
+  bron:'formule1meester.nl · 6 sep', betreft:['FER','HAM','LEC']},
+ {kop:'Gasly nauwelijks duurder na pole en 221 punten',
+  tekst:'Van €7.517.000 naar €7.667.000, een stijging van 2 procent. Het prijsalgoritme reageert traag op één sterke ronde, dus een coureur met een circuitspecifiek voordeel blijft goedkoop. Dat is te benutten.',
+  bron:'formule1meester.nl · 7 sep', betreft:['ALP','GAS']}
+];
+/* Madrid heeft nog geen sessies gereden; dit is de laatste uitslag, Monza.
+   Zaterdag 12 september vervang ik dit door FP3 van de Madring. */
+const FP3=[['ANT','MER'],['RUS','MER'],['VER','RBR'],['NOR','MCL'],['PIA','MCL'],
+           ['HAM','FER'],['GAS','ALP'],['LIN','RAC'],['COL','ALP'],['TSU','RAC']];
+
+function nieuwsPaneel(){
+  const gekozen=new Set();
+  for(const p of plekken()){ gekozen.add(p.code); gekozen.add(teamVan(p)); }
+  const items=NIEUWS.map(n=>{
+    const raakt=n.betreft.some(b=>gekozen.has(b));
+    return '<article class="'+(raakt?'raakt':'')+'"><h4>'+n.kop+'</h4><p>'+n.tekst
+      +'</p><p class="bron">'+n.bron+(raakt?' · raakt jouw opstelling':'')+'</p></article>';
+  }).join('');
+  return '<div class="vormpaneel"><div class="vormkop">Laatste nieuws<em>'+BIJGEWERKT+'</em></div>'
+    +'<div class="nws">'+items+'</div>'
+    +'<div class="vormvoet">Alleen berichten die de uitslag kunnen raken. Een <b>rode streep</b> betekent dat jouw huidige opstelling erdoor geraakt wordt. Straffen die na de kwalificatie vallen kun je niet meer verwerken.</div></div>';
+}
+function fp3Paneel(){
+  const fp3=FP3.map((f,i)=>'<div><b>'+(i+1)+'</b><span>'+f[0]+'</span><i>'+f[1]+'</i></div>').join('');
+  const gekozen=new Set(plekken().map(teamVan));
+  const rangschik=Object.keys(TEAMS).map(t=>({t,v:expCmp(t)})).sort((a,b)=>b.v-a.v);
+  const max=Math.max(...rangschik.map(r=>r.v),1);
+  const tv=rangschik.map(r=>'<div class="tvrij'+(gekozen.has(r.t)?' mijn':'')+'">'
+    +'<span class="nm">'+TEAMS[r.t][0]+'</span>'
+    +'<span class="tvbar" style="width:'+Math.max(3,Math.round(r.v/max*100))+'%" title="'+TEAMS[r.t][0]+': '+Math.round(r.v)+' punten per ronde"></span>'
+    +'<span class="v">'+Math.round(r.v)+'</span></div>').join('');
+  return '<div class="vormpaneel"><div class="vormkop">Laatste uitslag &mdash; Monza<em>ronde 13</em></div>'
+    +'<div class="fp3">'+fp3+'</div>'
+    +'<div class="vormkop" style="margin-top:4px">Teamvorm<em>punten per onderdeel, laatste 5 rondes</em></div>'
+    +'<div class="tv">'+tv+'</div>'
+    +'<div class="vormvoet">De Madring heeft nog geen sessies gereden. <b>Zaterdag 12 september komt hier FP3 te staan</b>, en dat is deze ronde belangrijker dan gewoonlijk: zonder circuithistorie is de training je enige bron over dit circuit.</div></div>';
+}
+function drvOpties(sel){
+  return Object.keys(DRIVERS).sort((a,b)=>DRIVERS[b][2]-DRIVERS[a][2])
+    .map(c=>'<option value="'+c+'"'+(c===sel?' selected':'')+'>'+DRIVERS[c][0]+'</option>').join('');
+}
+function teamOpties(sel,veld){
+  return Object.keys(TEAMS).sort((a,b)=>TEAMS[b][3]-TEAMS[a][3])
+    .map(t=>'<option value="'+t+'"'+(t===sel?' selected':'')+'>'+(veld==='ch'?TEAMS[t][1]:TEAMS[t][2])+'</option>').join('');
+}
+function tekenAuto(nr){
+  const s=nr===1?S.sel.a1:S.sel.a2, off=(nr-1)*3;
+  const rijen=[
+    {rol:'Coureur',veld:'c',code:s.c,naam:DRIVERS[s.c][0],onder:TEAMS[DRIVERS[s.c][1]][0],prijs:DRIVERS[s.c][2],pt:expDrv(s.c),opts:drvOpties(s.c)},
+    {rol:'Chassis',veld:'ch',code:s.ch,naam:TEAMS[s.ch][1],onder:TEAMS[s.ch][0],prijs:TEAMS[s.ch][3],pt:expCmp(s.ch),opts:teamOpties(s.ch,'ch')},
+    {rol:'Motor',veld:'mo',code:s.mo,naam:TEAMS[s.mo][2],onder:TEAMS[s.mo][0],prijs:TEAMS[s.mo][3],pt:expCmp(s.mo),opts:teamOpties(s.mo,'mo')}
+  ];
+  $('auto'+nr).innerHTML=rijen.map((r,i)=>{
+    const idx=off+i, aan=S.joker===idx;
+    return '<div class="slotrij"><div class="slotveld">'
+      +'<span class="rol">'+r.rol+'</span>'
+      +'<select data-auto="'+nr+'" data-veld="'+r.veld+'" aria-label="'+r.rol+' auto '+nr+'">'+r.opts+'</select>'
+      +'<span class="meta"><span>'+r.onder+'</span><span>'+eur(r.prijs)+' &middot; <b>'+Math.round(r.pt*(aan?2:1))+'p</b></span></span>'
+      +'</div><div class="jokercel"><span class="lab">Joker</span>'
+      +'<button class="jokerbtn" data-joker="'+idx+'" aria-pressed="'+aan+'" aria-label="Joker op '+r.naam+'">'+(aan?'★':'+')+'</button>'
+      +'</div></div>';
+  }).join('');
+  $('art'+nr).innerHTML = nr===1 ? nieuwsPaneel() : fp3Paneel();
+  const kosten=rijen.reduce((a,r)=>a+r.prijs,0);
+  $('kop'+nr).textContent=eur(kosten);
+}
+function bonusKans(pos,code){
+  if(!code)return null;
+  let n=0;for(const r of WIN){const rr=RESULTS[r].r;if(!rr)continue;
+    for(const e of rr){const a=e.split(':');if(Number(a[0])===pos&&a[1]===code)n++;}}
+  return {n,uit:WIN.length};
+}
+function besteBonus(pos){
+  const tel={};
+  for(const r of WIN){const rr=RESULTS[r].r;if(!rr)continue;
+    for(const e of rr){const a=e.split(':');if(Number(a[0])===pos&&!S.excl.has(a[1]))tel[a[1]]=(tel[a[1]]??0)+1;}}
+  const b=Object.keys(tel).map(c=>[c,tel[c]]).sort((x,y)=>y[1]-x[1])[0];
+  return b?b[0]:null;
+}
+function tekenBonus(){
+  $('bonusrij').innerHTML=[1,2,3].map(pos=>{
+    const cur=S.bonus[pos-1], k=bonusKans(pos,cur);
+    return '<div class="bonusveld"><span class="rol">'+pos+'e plaats race</span>'
+      +'<select data-bonus="'+pos+'"><option value="">kies coureur</option>'
+      +Object.keys(DRIVERS).sort((a,b)=>DRIVERS[a][0].localeCompare(DRIVERS[b][0]))
+        .map(c=>'<option value="'+c+'"'+(c===cur?' selected':'')+'>'+DRIVERS[c][0]+'</option>').join('')
+      +'</select><span class="kans">'+(k?('eindigde hier '+k.n+' van de laatste '+k.uit+' races'):'nog niets gekozen')+'</span></div>';
+  }).join('');
+  const dubbel=S.bonus.filter(Boolean).length!==new Set(S.bonus.filter(Boolean)).size;
+  $('bonusuitleg').innerHTML= dubbel
+    ? '<b style="color:var(--red)">Let op:</b> je hebt dezelfde coureur op meerdere plekken. Dat kan, maar hij kan er maar één worden — je maximum zakt daarmee van 75 naar 25 punten. In twaalf rondes leverde dubbelen jou nul extra punten op.'
+    : 'Drie losse weddenschappen van 25 punten. Per plek telt alleen wie daar exact eindigt, dus kies per plek de waarschijnlijkste naam.';
+}
+function tekenWaarschuwing(){
+  const t=totalen(), w=$('waarschuwing');
+  const regels=[...t.fouten];
+  regels.push('<b>The Madring is nieuw</b> — geen enkele coureur reed hier eerder een F1-race, dus circuithistorie ontbreekt. Leun deze ronde extra op vorm en op wat je in de trainingen ziet.');
+  w.hidden=false;
+  w.innerHTML=regels.map(r=>'<div>'+(t.fouten.includes(r)?'<b>Niet geldig:</b> ':'')+r+'</div>').join('');
+}
+function tekenTotalen(){
+  const t=totalen();
+  $('bTot').textContent=eur(BUDGET);
+  $('bOver').textContent=eur(BUDGET-t.kosten);
+  $('bOverWrap').className='over'+(BUDGET-t.kosten<0?' krap':'');
+  $('bJok').textContent=JOKERS_OVER+(S.joker!=null?' (1 inzetten)':'');
+  $('bPts').textContent=Math.round(t.punten)+' punten';
+  let hu=0; for(const c of HUIDIG.coureurs)hu+=expDrv(c); for(const x of HUIDIG.onderdelen)hu+=expCmp(x);
+  const d=Math.round(t.punten-hu);
+  $('scGetal').textContent=Math.round(t.punten);
+  $('scDelta').textContent=(d>=0?'+':'')+d+' t.o.v. je huidige team';
+  $('scDelta').className='delta'+(d<0?' min':'');
+}
+function tekenWaarom(){
+  const t=totalen(), best=solve()[0];
+  const rendD=Object.keys(DRIVERS).filter(c=>!S.excl.has(c)).map(c=>({c,r:expDrv(c)/(DRIVERS[c][2]/1e6)})).sort((a,b)=>b.r-a.r);
+  const rendT=Object.keys(TEAMS).filter(x=>!S.excl.has(x)).map(x=>({x,r:expCmp(x)/(TEAMS[x][3]/1e6)})).sort((a,b)=>b.r-a.r);
+  let h='<p>Deze opstelling levert <b>'+Math.round(t.punten)+' punten</b> op tegen '+eurK(t.kosten)+'. '
+    +'Het rekenkundige optimum binnen je budget staat op <b>'+Math.round(best.punten)+'</b>. '
+    +'Alle geldige combinaties zijn doorgerekend, dus dezelfde invoer geeft altijd hetzelfde antwoord.</p>';
+  h+='<p>Beste rendement per miljoen: coureurs <b>'+rendD.slice(0,3).map(o=>DRIVERS[o.c][0].split(' ').pop()+' '+o.r.toFixed(1)).join('</b>, <b>')+'</b>; '
+    +'onderdelen <b>'+rendT.slice(0,3).map(o=>TEAMS[o.x][0]+' '+o.r.toFixed(1)).join('</b>, <b>')+'</b>.</p>';
+  h+='<p>Je staat <b>942 punten</b> achter met tien rondes te gaan, dus je moet 94 per ronde inlopen. '
+    +'Dat gat ontstond in één ronde: op Zandvoort had de koploper zijn joker op Norris en scoorde 704, terwijl jij dezelfde coureur had en 352 kreeg. '
+    +'Ronde 13 bevestigde dat: zijn coureurs scoorden 442 punten voor 38,3 miljoen, die van jou 452 voor 57,3 miljoen. Vrijwel dezelfde opbrengst, negentien miljoen duurder &mdash; en dat verschil stak hij in onderdelen, waar hij met 434 tegen 412 won.</p>';
+  /* Concentratie: elementen van dezelfde renstal scoren via dezelfde twee coureurs
+     en zijn dus volledig gecorreleerd. Ronde 13 liet zien wat dat kost. */
+  const perRenstal={};
+  for(const p of plekken()){ const r=teamVan(p); perRenstal[r]=(perRenstal[r]??0)+puntenVan(p); }
+  const zwaarste=Object.keys(perRenstal).sort((a,b)=>perRenstal[b]-perRenstal[a])[0];
+  const aandeel=Math.round(perRenstal[zwaarste]/t.punten*100);
+  h+='<p><b>Concentratie:</b> '+TEAMS[zwaarste][0]+' draagt <b>'+aandeel+' procent</b> van je verwachte score. '
+    +(aandeel>=35
+      ? 'Dat is veel voor één renstal. Onderdelen van dezelfde renstal scoren via dezelfde twee coureurs, dus je verliest bij tegenvallers overal tegelijk &mdash; precies wat in Monza gebeurde toen Leclerc uitviel en Ferrari van 172 naar 87 zakte. Sta je achter, dan kan die spreiding bewust zijn; sta je voor, dan niet.'
+      : 'Dat is een gezonde spreiding over meerdere renstallen.')+'</p>';
+  if(Object.keys(S.pens).length) h+='<p>Gridstraf verwerkt voor <b>'+Object.keys(S.pens).map(c=>DRIVERS[c][0].split(' ').pop()).join(', ')+'</b>. Alleen het raceresultaat is aangepast; de kwalificatiepunten blijven staan, want die tellen hier op uitslag en niet op startopstelling.</p>';
+  $('waarom').innerHTML=h;
+}
+function tekenAlt(){
+  const lijst=solve().slice(0,6);
+  $('altlijst').innerHTML=lijst.map((o,i)=>{
+    const g={};for(const t of o.onderdelen)g[t]=(g[t]??0)+1;
+    return '<button class="alt" data-alt="'+i+'"><span class="rk">'+(i+1)+'</span>'
+      +'<span class="om"><b>'+o.coureurs.map(c=>DRIVERS[c][0].split(' ').pop()).join(' + ')+'</b><br>'
+      +Object.keys(g).map(t=>(g[t]===2?'2× ':'')+TEAMS[t][0]).join(', ')+'</span>'
+      +'<span class="sc">'+Math.round(o.punten)+'p<small>'+eurK(o.kosten)+'</small></span></button>';
+  }).join('');
+  window.__ALT=lijst;
+}
+function tekenJokerplan(){
+  $('jokerplan').innerHTML='<p style="margin:0 0 4px;font-size:13.5px;color:var(--mute)">Een joker verdubbelt punten én salaris van één element. Wat telt is niet de sprint — die verhoogt het plafond maar 14 procent — maar een coureur die dat weekend pole en zege pakt én uitrijdt.</p>'
+   +JOKERPLAN.map(([n,naam,adv,om])=>'<div class="jr"><span class="rn">R'+n+'</span>'
+    +'<span><b style="color:var(--ink)">'+naam+'</b><br><span class="om">'+om+'</span></span>'
+    +'<span class="adv '+(adv==='ja'?'ja':'nee')+'">'+(adv==='ja'?'Joker':'—')+'</span></div>').join('');
+}
+function tekenStand(){
+  $('standbody').innerHTML=STAND.map((r,i)=>'<tr class="'+(r[0]==='SleuF1'?'ik':'')+'">'
+    +'<td class="pos">'+(i+1)+'</td><td>'+r[0]+'</td><td class="r">'+r[1].toLocaleString('nl-NL')+'</td>'
+    +'<td class="r">'+r[4]+'</td><td class="r">'+r[2]+'</td><td class="r">'+r[3]+'</td></tr>').join('');
+}
+function tekenNieuws(){
+  const items=[
+    ['grid','Gridstraffen gecontroleerd','Een gridstraf kost hier géén kwalificatiepunten — alleen de race verandert.'],
+    ['wissel','Coureurswissels gecontroleerd','Het spel meldt vervangingen bovenaan de site. Een vervangen coureur scoort niet voor jou.'],
+    ['weer','Weersverwachting bekeken','Regen vergroot de spreiding en verlaagt de waarde van een joker.'],
+    ['fp','FP2 en FP3 gezien','Lange runs in FP2 voorspellen de race, korte runs in FP3 de kwalificatie.'],
+    ['upgrade','Upgrades of motorwissels nagelopen','Een nieuwe vloer of achtervleugel verschuift de vorm sneller dan het gemiddelde meebeweegt.']
+  ];
+  $('nieuwscheck').innerHTML=items.map(([k,t,o])=>'<label><input type="checkbox" data-check="'+k+'"'+(S.checks[k]?' checked':'')+'>'
+    +'<span><b style="color:var(--ink)">'+t+'</b><span class="om">'+o+'</span></span></label>').join('');
+  $('penLijst').innerHTML=Object.keys(S.pens).map(c=>'<div class="pen"><span>'+DRIVERS[c][0]+' → P'+S.pens[c]+' in de race</span><button data-unpen="'+c+'" aria-label="verwijder">×</button></div>').join('');
+  $('uitLijst').innerHTML=[...S.excl].map(c=>'<div class="pen"><span>'+(DRIVERS[c]?DRIVERS[c][0]:TEAMS[c][0])+' uitgesloten</span><button data-unexcl="'+c+'" aria-label="verwijder">×</button></div>').join('');
+}
+function tekenGoedgekeurd(){
+  const b=$('goedgekeurd');
+  if(!S.goedgekeurd){b.hidden=true;return;}
+  const g=S.goedgekeurd;
+  const rij=a=>'Coureur <b>'+DRIVERS[a.c][0]+'</b>, chassis <b>'+TEAMS[a.ch][1]+'</b> ('+TEAMS[a.ch][0]+'), motor <b>'+TEAMS[a.mo][2]+'</b> ('+TEAMS[a.mo][0]+')';
+  b.hidden=false;
+  b.innerHTML='<h3>Goedgekeurd — zo voer je het in</h3><ol>'
+    +'<li>Auto 1: '+rij(g.sel.a1)+'</li><li>Auto 2: '+rij(g.sel.a2)+'</li>'
+    +'<li>Bonusvragen: <b>'+g.bonus.map(c=>c?DRIVERS[c][0]:'—').join('</b>, <b>')+'</b></li>'
+    +'<li>'+(g.joker!=null?'Joker op <b>'+g.jokerNaam+'</b>':'<b>Geen joker</b> deze ronde')+'</li>'
+    +'<li>Opslaan vóór zaterdag 12 september 15:55</li></ol>'
+    +'<p class="st">'+Math.round(g.punten)+' punten verwacht · '+eurK(g.kosten)+' · vastgelegd '+g.tijd+'</p>';
+}
+function teken(){
+  tekenAuto(1);tekenAuto(2);tekenBonus();tekenTotalen();tekenWaarschuwing();
+  tekenWaarom();tekenAlt();tekenJokerplan();tekenStand();tekenNieuws();tekenGoedgekeurd();
+}
+
+/* ---- events ---- */
+document.addEventListener('change',e=>{
+  const t=e.target;
+  if(t.dataset.auto){ S.sel['a'+t.dataset.auto][t.dataset.veld]=t.value; teken(); }
+  else if(t.dataset.bonus){ S.bonus[+t.dataset.bonus-1]=t.value||null; teken(); }
+  else if(t.dataset.check){ S.checks[t.dataset.check]=t.checked; }
+  else if(t.id==='notitie'){ S.notitie=t.value; }
+});
+document.addEventListener('click',e=>{
+  const j=e.target.closest('[data-joker]');
+  if(j){ const i=+j.dataset.joker; S.joker=(S.joker===i?null:i); teken(); return; }
+  const a=e.target.closest('[data-alt]');
+  if(a){ const k=window.__ALT[+a.dataset.alt]; S.sel=naarAutos(k); S.joker=null; teken();
+    document.querySelector('.blok').scrollIntoView({behavior:'smooth',block:'start'}); return; }
+  const up=e.target.closest('[data-unpen]');
+  if(up){ delete S.pens[up.dataset.unpen]; teken(); return; }
+  const ux=e.target.closest('[data-unexcl]');
+  if(ux){ S.excl.delete(ux.dataset.unexcl); teken(); return; }
+});
+$('btnAdvies').addEventListener('click',()=>{
+  const best=solve()[0]; if(!best)return;
+  S.sel=naarAutos(best);
+  S.bonus=[besteBonus(1),besteBonus(2),besteBonus(3)];
+  S.joker=null; teken();
+});
+$('btnWis').addEventListener('click',()=>{ S.pens={};S.excl=new Set();S.joker=null;S.notitie='';$('notitie').value='';teken(); });
+$('penAdd').addEventListener('click',()=>{ const c=$('penDrv').value,p=+$('penPos').value;
+  if(c&&p){S.pens[c]=p;teken();} });
+$('uitAdd').addEventListener('click',()=>{ const c=$('uitDrv').value; if(c){S.excl.add(c);teken();} });
+$('btnGoed').addEventListener('click',async()=>{
+  const t=totalen(); const pl=plekken();
+  const jn=S.joker!=null?(pl[S.joker].soort==='d'?DRIVERS[pl[S.joker].code][0]:TEAMS[pl[S.joker].code][0]+' ('+pl[S.joker].rol.toLowerCase()+')'):null;
+  S.goedgekeurd={ronde:14,sel:JSON.parse(JSON.stringify(S.sel)),bonus:S.bonus.slice(),joker:S.joker,jokerNaam:jn,
+    punten:t.punten,kosten:t.kosten,gridstraffen:{...S.pens},uitgesloten:[...S.excl],checks:{...S.checks},notitie:S.notitie,
+    tijd:new Date().toLocaleString('nl-NL',{dateStyle:'medium',timeStyle:'short'})};
+  tekenGoedgekeurd();
+  $('goedgekeurd').scrollIntoView({behavior:'smooth',block:'nearest'});
+  if(DB){ try{ await DB.doc('beslissingen/ronde-14').set(S.goedgekeurd); }catch(err){} }
+});
+
+$('penDrv').innerHTML='<option value="">coureur met gridstraf</option>'+Object.keys(DRIVERS).sort((a,b)=>DRIVERS[a][0].localeCompare(DRIVERS[b][0])).map(c=>'<option value="'+c+'">'+DRIVERS[c][0]+'</option>').join('');
+$('penPos').innerHTML=Array.from({length:22},(_,i)=>'<option value="'+(i+1)+'">verwacht P'+(i+1)+'</option>').join('');
+$('penPos').value='8';
+$('uitDrv').innerHTML='<option value="">coureur of renstal uitsluiten</option>'
+  +Object.keys(DRIVERS).sort((a,b)=>DRIVERS[a][0].localeCompare(DRIVERS[b][0])).map(c=>'<option value="'+c+'">'+DRIVERS[c][0]+'</option>').join('')
+  +Object.keys(TEAMS).map(t=>'<option value="'+t+'">'+TEAMS[t][0]+'</option>').join('');
+
+let DB=null;
+teken();
+(async()=>{ try{ DB=await window.claude.use('db'); if(!DB)return;
+  const s=await DB.doc('beslissingen/ronde-14').get();
+  if(s.exists){ const d=s.data(); if(d&&d.sel){ S.goedgekeurd=d; tekenGoedgekeurd(); } }
+}catch(e){} })();
+</script>

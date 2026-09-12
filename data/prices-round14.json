@@ -1,0 +1,42 @@
+{
+  "_bron": "formule1meester.nl /ajax/team_changelineup — opgehaald 7 september 2026, ronde 14 (Spanje, The Madring)",
+  "_let_op": "Chassis en motor van dezelfde renstal hebben dezelfde prijs en scoren identiek.",
+  "budget": { "totaal": 96935000, "jokers_over": 4 },
+  "coureurs": {
+    "BOT": { "naam": "Valtteri Bottas",   "team": "CAD", "prijs": 1535000 },
+    "PER": { "naam": "Sergio Perez",      "team": "CAD", "prijs": 1559000 },
+    "ALB": { "naam": "Alexander Albon",   "team": "WIL", "prijs": 1941000 },
+    "STR": { "naam": "Lance Stroll",      "team": "AST", "prijs": 3673000 },
+    "SAI": { "naam": "Carlos Sainz",      "team": "WIL", "prijs": 3915000 },
+    "HUL": { "naam": "Nico Hulkenberg",   "team": "AUD", "prijs": 3962000 },
+    "OCO": { "naam": "Esteban Ocon",      "team": "HAS", "prijs": 4165000 },
+    "BOR": { "naam": "Gabriel Bortoleto", "team": "AUD", "prijs": 4423000 },
+    "ALO": { "naam": "Fernando Alonso",   "team": "AST", "prijs": 4449000 },
+    "BEA": { "naam": "Oliver Bearman",    "team": "HAS", "prijs": 4783000 },
+    "LIN": { "naam": "Arvid Lindblad",    "team": "RAC", "prijs": 5011000 },
+    "COL": { "naam": "Franco Colapinto",  "team": "ALP", "prijs": 5255000 },
+    "TSU": { "naam": "Yuki Tsunoda",      "team": "RAC", "prijs": 6892000 },
+    "GAS": { "naam": "Pierre Gasly",      "team": "ALP", "prijs": 7667000 },
+    "LAW": { "naam": "Liam Lawson",       "team": "RBR", "prijs": 8325000 },
+    "PIA": { "naam": "Oscar Piastri",     "team": "MCL", "prijs": 24131000 },
+    "VER": { "naam": "Max Verstappen",    "team": "RBR", "prijs": 25932000 },
+    "NOR": { "naam": "Lando Norris",      "team": "MCL", "prijs": 27230000 },
+    "LEC": { "naam": "Charles Leclerc",   "team": "FER", "prijs": 27579000 },
+    "HAM": { "naam": "Lewis Hamilton",    "team": "FER", "prijs": 32862000 },
+    "RUS": { "naam": "George Russell",    "team": "MER", "prijs": 33622000 },
+    "ANT": { "naam": "Kimi Antonelli",    "team": "MER", "prijs": 35937000 }
+  },
+  "onderdelen": {
+    "CAD": { "chassis": "Unknown",   "motor": "Ferrari",       "prijs": 769000 },
+    "WIL": { "chassis": "FW48",      "motor": "Mercedes",      "prijs": 1458000 },
+    "AST": { "chassis": "AMR26",     "motor": "Honda",         "prijs": 2024000 },
+    "AUD": { "chassis": "R26",       "motor": "Audi",          "prijs": 2091000 },
+    "HAS": { "chassis": "VF26",      "motor": "Ferrari",       "prijs": 2380000 },
+    "RAC": { "chassis": "VCARB 03",  "motor": "Red Bull Ford", "prijs": 2689000 },
+    "ALP": { "chassis": "A526",      "motor": "Mercedes",      "prijs": 3228000 },
+    "RBR": { "chassis": "RB22",      "motor": "Red Bull Ford", "prijs": 8478000 },
+    "MCL": { "chassis": "MCL40",     "motor": "Mercedes",      "prijs": 12836000 },
+    "FER": { "chassis": "SF26",      "motor": "Ferrari",       "prijs": 15106000 },
+    "MER": { "chassis": "W17",       "motor": "Mercedes",      "prijs": 17386000 }
+  }
+}

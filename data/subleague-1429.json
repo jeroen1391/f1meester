@@ -1,0 +1,67 @@
+{
+  "_bron": "formule1meester.nl/ajax/team_subleagues/subleague-1429/standing-overall/ronde-N — opgehaald 5 september 2026, ronde 1 t/m 13.",
+  "_let_op": "Opstellingen van andere spelers worden pas zichtbaar zodra een ronde gesloten is. Vooraf differentiëren kan dus alleen op basis van gedrag uit gesloten rondes, niet op hun actuele keuze.",
+  "naam": "Keihard in je achterbak",
+  "spelers": 8,
+
+  "stand_na_ronde_13": [
+    { "pos": 1, "speler": "GrijzeLeverWorst",            "score": 11051, "ronde13": 901, "jokers_over": 5, "bonus_goed": 11 },
+    { "pos": 2, "speler": "Pedaf1",                       "score": 10140, "ronde13": 880, "jokers_over": 6, "bonus_goed": 6 },
+    { "pos": 3, "speler": "SleuF1",                       "score": 10097, "ronde13": 889, "jokers_over": 4, "bonus_goed": 6 },
+    { "pos": 4, "speler": "RolloThomassi",                "score": 9632,  "ronde13": 674, "jokers_over": 4, "bonus_goed": 8 },
+    { "pos": 5, "speler": "Adtssss...",                   "score": 9096,  "ronde13": 830, "jokers_over": 3, "bonus_goed": 6 },
+    { "pos": 6, "speler": "Kamertjes verhoerder uit BaZ", "score": 8845,  "ronde13": 888, "jokers_over": 6, "bonus_goed": 3 },
+    { "pos": 7, "speler": "ApexTwins",                    "score": 7573,  "ronde13": 462, "jokers_over": 6, "bonus_goed": 6 },
+    { "pos": 8, "speler": "Markiezzz",                    "score": 7491,  "ronde13": 669, "jokers_over": 6, "bonus_goed": 4 }
+  ],
+  "_ronde13_notitie": "Niemand zette een joker in. Gat tot de koploper groeide van 942 naar 954. SleuF1 had de op één na beste rondescore. De koploper won met 12 punten: zijn coureurs scoorden 442 voor 38,3 miljoen tegen 452 voor 57,3 miljoen bij SleuF1, maar zijn onderdelen scoorden 434 tegen 412.",
+
+  "stand_na_ronde_12": [
+    { "pos": 1, "speler": "GrijzeLeverWorst",             "score": 10150, "jokers_over": 5, "bonus_goed": 10, "negatief": 0 },
+    { "pos": 2, "speler": "Pedaf1",                        "score": 9260,  "jokers_over": 6, "bonus_goed": 5,  "negatief": 0 },
+    { "pos": 3, "speler": "SleuF1",                        "score": 9208,  "jokers_over": 4, "bonus_goed": 5,  "negatief": -5 },
+    { "pos": 4, "speler": "RolloThomassi",                 "score": 8958,  "jokers_over": 4, "bonus_goed": 7,  "negatief": -5 },
+    { "pos": 5, "speler": "Adtssss...",                    "score": 8266,  "jokers_over": 3, "bonus_goed": 6,  "negatief": -5 },
+    { "pos": 6, "speler": "Kamertjes verhoerder uit BaZ",  "score": 7957,  "jokers_over": 6, "bonus_goed": 2,  "negatief": -5 },
+    { "pos": 7, "speler": "ApexTwins",                     "score": 7111,  "jokers_over": 6, "bonus_goed": 6,  "negatief": -5 },
+    { "pos": 8, "speler": "Markiezzz",                     "score": 6822,  "jokers_over": 6, "bonus_goed": 4,  "negatief": -20 }
+  ],
+
+  "jokers_ingezet": {
+    "_uitleg": "punten = de verdubbelde score die het spel toekende. De winst ten opzichte van geen joker is de helft daarvan.",
+    "_gemiddelde_sprint": 503,
+    "_gemiddelde_geen_sprint": 206,
+    "_allemaal_op_coureurs": "Alle acht jokers gingen op een coureur, nooit op een chassis of motor. Logisch: onderdelen scoren ongeveer een derde van een coureur.",
+    "log": [
+      { "ronde": 12, "sprint": true,  "speler": "GrijzeLeverWorst", "op": "Norris",     "punten": 704 },
+      { "ronde": 5,  "sprint": true,  "speler": "SleuF1",           "op": "Antonelli",  "punten": 686 },
+      { "ronde": 9,  "sprint": true,  "speler": "Adtssss...",       "op": "Lawson",     "punten": 484 },
+      { "ronde": 5,  "sprint": true,  "speler": "Adtssss...",       "op": "Lawson",     "punten": 428 },
+      { "ronde": 8,  "sprint": false, "speler": "Adtssss...",       "op": "Lawson",     "punten": 382 },
+      { "ronde": 9,  "sprint": true,  "speler": "RolloThomassi",    "op": "Verstappen", "punten": 212 },
+      { "ronde": 6,  "sprint": false, "speler": "SleuF1",           "op": "Leclerc",    "punten": 118 },
+      { "ronde": 6,  "sprint": false, "speler": "RolloThomassi",    "op": "Leclerc",    "punten": 118 }
+    ]
+  },
+
+  "eigendom_laatste_5_rondes": {
+    "_basis": "40 speler-rondes over ronde 9 t/m 13, dus 80 coureursplekken en 160 onderdeelplekken.",
+    "coureurs": { "LAW": 21, "TSU": 12, "LIN": 10, "PIA": 8, "SAI": 5, "LEC": 5, "NOR": 5, "ANT": 3, "VER": 3, "HAM": 3, "GAS": 2, "RUS": 2, "BOR": 1 },
+    "onderdelen": { "FER": 34, "ALP": 30, "RAC": 23, "RBR": 19, "MER": 17, "MCL": 12, "HAS": 10, "WIL": 5, "AST": 5, "CAD": 3, "AUD": 2 }
+  },
+
+  "koploper_profiel": {
+    "speler": "GrijzeLeverWorst",
+    "patroon": "Trouw aan Lawson als goedkope basis, met wisselende tweede coureur. Hield al zijn jokers elf rondes vast en zette de eerste in op ronde 12, een sprintweekend, op Norris die won.",
+    "rondescores_9_tot_12": [1170, 790, 968, 1535],
+    "ronde13": "Russell + Lindblad, MCL40, SF26, Red Bull Ford, Ferrari"
+  },
+
+  "waar_de_achterstand_ontstond": {
+    "na_ronde_11": { "koploper": 8590, "SleuF1": 8146, "gat": 444 },
+    "na_ronde_12": { "koploper": 10150, "SleuF1": 9208, "gat": 942 },
+    "verklaring": "In ronde 12 scoorde de koploper 1535 en SleuF1 1062. Beiden hadden Norris in het team; de koploper had er zijn joker op staan en kreeg 704, SleuF1 kreeg 352."
+  },
+
+  "structurele_afwijking": "SleuF1 is de enige speler die twee dure coureurs opstelt. In ronde 13 gaat 57,3 van de 89,3 miljoen naar Hamilton en Verstappen. De koploper besteedt 38,3 miljoen aan Russell en Lindblad en houdt daarmee ruim 51 miljoen over voor onderdelen."
+}

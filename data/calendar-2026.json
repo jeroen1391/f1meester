@@ -1,0 +1,26 @@
+{
+  "_bron": "formule1meester.nl/formule1-kalender/ per ronde, opgehaald 5 september 2026. Kalender gekruist met formula1.com/en/racing/2026 — rondes en landen komen exact overeen.",
+  "_sprintdetectie": "De rondepagina van het spel toont een sectie 'Resultaten sprintrace' alleen als die ronde een sprint heeft. Ronde 14 bevat het woord 'sprint' nergens, ronde 17 wel — inclusief starttijd. Omdat ronde 17 al gevuld is terwijl de veel eerdere ronde 14 dat niet is, is dit een structurele vlag en geen kwestie van 'nog niet ingevuld'.",
+  "_let_op": "Ronde 16 heet Bahrain maar wordt op Sepang in Maleisië verreden. Dat is geen fout: formula1.com noemt het 'Bahrain Grand Prix in Malaysia 2026'.",
+  "_deadline": "Wisselen kan tot 5 minuten voor de kwalificatie, of bij een sprintweekend tot 5 minuten voor de sprintrace.",
+
+  "gereden": {
+    "sprintrondes": [2, 4, 5, 9, 12],
+    "toelichting": "Vijf van de twaalf gereden rondes hadden een sprintrace."
+  },
+
+  "resterend": [
+    { "ronde": 14, "land": "Spanje",          "circuit": "The Madring",                 "sprint": false, "kwalificatie": "2026-09-12T16:00", "race": "2026-09-13T15:00", "deadline": "2026-09-12T15:55" },
+    { "ronde": 15, "land": "Azerbeidzjan",    "circuit": "Baku City Circuit",           "sprint": false, "kwalificatie": "2026-09-25T14:00", "race": "2026-09-26T13:00", "deadline": "2026-09-25T13:55" },
+    { "ronde": 16, "land": "Bahrain",         "circuit": "Sepang International Circuit","sprint": false, "kwalificatie": "2026-10-03T10:00", "race": "2026-10-04T09:00", "deadline": "2026-10-03T09:55" },
+    { "ronde": 17, "land": "Singapore",       "circuit": "Marina Bay Street Circuit",   "sprint": true,  "sprintrace": "2026-10-10T11:00", "kwalificatie": "2026-10-10T15:00", "race": "2026-10-11T14:00", "deadline": "2026-10-10T10:55" },
+    { "ronde": 18, "land": "Verenigde Staten","circuit": "Circuit of the Americas",     "sprint": false, "kwalificatie": "2026-10-24T23:00", "race": "2026-10-25T21:00", "deadline": "2026-10-24T22:55" },
+    { "ronde": 19, "land": "Mexico",          "circuit": "Autodromo Hermanos Rodriguez","sprint": false, "kwalificatie": "2026-10-31T22:00", "race": "2026-11-01T21:00", "deadline": "2026-10-31T21:55" },
+    { "ronde": 20, "land": "Brazilie",        "circuit": "Autodromo Jose Carlos Pace",  "sprint": false, "kwalificatie": "2026-11-07T19:00", "race": "2026-11-08T18:00", "deadline": "2026-11-07T18:55" },
+    { "ronde": 21, "land": "Verenigde Staten","circuit": "Las Vegas Strip Circuit",     "sprint": false, "kwalificatie": "2026-11-21T05:00", "race": "2026-11-22T05:00", "deadline": "2026-11-21T04:55" },
+    { "ronde": 22, "land": "Qatar",           "circuit": "Lusail International Circuit","sprint": false, "kwalificatie": "2026-11-28T19:00", "race": "2026-11-29T17:00", "deadline": "2026-11-28T18:55" },
+    { "ronde": 23, "land": "Abu Dhabi",       "circuit": "Yas Marina Circuit",          "sprint": false, "kwalificatie": "2026-12-05T15:00", "race": "2026-12-06T14:00", "deadline": "2026-12-05T14:55" }
+  ],
+
+  "_gevolg_voor_jokers": "Van de tien resterende rondes is er nog maar één sprintweekend: ronde 17 in Singapore. Sprintjokers leverden in deze subleague gemiddeld 503 punten op tegen 206 voor niet-sprintjokers. Met vier jokers over kun je er dus maar één op een sprint zetten; de andere drie moeten naar gewone rondes."
+}

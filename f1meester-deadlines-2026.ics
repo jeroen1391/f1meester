@@ -1,0 +1,198 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Strakka Pit Wall//F1 Meester deadlines 2026//NL
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Formule 1 Meester - invullen
+X-WR-CALDESC:Elk blok loopt van anderhalf uur voor sluiting tot het sluitingsmoment.
+BEGIN:VEVENT
+UID:f1meester-2026-ronde-14@sleutelberg.com
+DTSTAMP:20260907T120000Z
+DTSTART:20260912T122500Z
+DTEND:20260912T135500Z
+SUMMARY:F1 Meester - ronde 14 INVULLEN (sluit 15:55) - Spanje - The Madring
+LOCATION:https://www.formule1meester.nl/#opstelling-wijzigen
+DESCRIPTION:Dit blok loopt tot het sluitingsmoment om 15:55. Na afloop kun je niets meer wijzigen.\nGloednieuw circuit\, geen historie. FP3 is die ochtend gereden en weegt hier zwaarder dan normaal.\nTwee auto's: per auto coureur\, chassis en motor\, maximaal 2 onderdelen per renstal.\nVergeet de 3 bonusvragen niet - 25 punten per juiste plek.\nDoorgerekend advies (met wachtwoord): https://lee-ai.nl/Pitwall
+BEGIN:VALARM
+TRIGGER:PT0M
+ACTION:DISPLAY
+DESCRIPTION:Ronde 14 invullen - sluit om 15:55
+END:VALARM
+BEGIN:VALARM
+TRIGGER;VALUE=DATE-TIME:20260911T170000Z
+ACTION:DISPLAY
+DESCRIPTION:Morgen sluit ronde 14 om 15:55 - alvast naar de trainingen kijken
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:f1meester-2026-ronde-15@sleutelberg.com
+DTSTAMP:20260907T120000Z
+DTSTART:20260925T102500Z
+DTEND:20260925T115500Z
+SUMMARY:F1 Meester - ronde 15 INVULLEN (sluit 13:55) - Azerbeidzjan - Baku
+LOCATION:https://www.formule1meester.nl/#opstelling-wijzigen
+DESCRIPTION:Dit blok loopt tot het sluitingsmoment om 13:55. Na afloop kun je niets meer wijzigen.\nStraatcircuit met veel uitval. Geen joker.\nTwee auto's: per auto coureur\, chassis en motor\, maximaal 2 onderdelen per renstal.\nVergeet de 3 bonusvragen niet - 25 punten per juiste plek.\nDoorgerekend advies (met wachtwoord): https://lee-ai.nl/Pitwall
+BEGIN:VALARM
+TRIGGER:PT0M
+ACTION:DISPLAY
+DESCRIPTION:Ronde 15 invullen - sluit om 13:55
+END:VALARM
+BEGIN:VALARM
+TRIGGER;VALUE=DATE-TIME:20260924T170000Z
+ACTION:DISPLAY
+DESCRIPTION:Morgen sluit ronde 15 om 13:55 - alvast naar de trainingen kijken
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:f1meester-2026-ronde-16@sleutelberg.com
+DTSTAMP:20260907T120000Z
+DTSTART:20261003T062500Z
+DTEND:20261003T075500Z
+SUMMARY:F1 Meester - ronde 16 INVULLEN (sluit 09:55) - Bahrain - Sepang
+LOCATION:https://www.formule1meester.nl/#opstelling-wijzigen
+DESCRIPTION:Dit blok loopt tot het sluitingsmoment om 09:55. Na afloop kun je niets meer wijzigen.\nEerste F1-race daar sinds 2017 plus kans op hoosbuien. Geen joker.\nTwee auto's: per auto coureur\, chassis en motor\, maximaal 2 onderdelen per renstal.\nVergeet de 3 bonusvragen niet - 25 punten per juiste plek.\nDoorgerekend advies (met wachtwoord): https://lee-ai.nl/Pitwall
+BEGIN:VALARM
+TRIGGER:PT0M
+ACTION:DISPLAY
+DESCRIPTION:Ronde 16 invullen - sluit om 09:55
+END:VALARM
+BEGIN:VALARM
+TRIGGER;VALUE=DATE-TIME:20261002T170000Z
+ACTION:DISPLAY
+DESCRIPTION:Morgen sluit ronde 16 om 09:55 - alvast naar de trainingen kijken
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:f1meester-2026-ronde-17@sleutelberg.com
+DTSTAMP:20260907T120000Z
+DTSTART:20261010T072500Z
+DTEND:20261010T085500Z
+SUMMARY:F1 Meester - ronde 17 INVULLEN (sluit 10:55) - Singapore - SPRINT
+LOCATION:https://www.formule1meester.nl/#opstelling-wijzigen
+DESCRIPTION:Dit blok loopt tot het sluitingsmoment om 10:55. Na afloop kun je niets meer wijzigen.\nLET OP: sluit voor de SPRINTRACE van 11:00\, niet voor de kwalificatie. Enige sprint die rest.\nTwee auto's: per auto coureur\, chassis en motor\, maximaal 2 onderdelen per renstal.\nVergeet de 3 bonusvragen niet - 25 punten per juiste plek.\nDoorgerekend advies (met wachtwoord): https://lee-ai.nl/Pitwall
+BEGIN:VALARM
+TRIGGER:PT0M
+ACTION:DISPLAY
+DESCRIPTION:Ronde 17 invullen - sluit om 10:55
+END:VALARM
+BEGIN:VALARM
+TRIGGER;VALUE=DATE-TIME:20261009T170000Z
+ACTION:DISPLAY
+DESCRIPTION:Morgen sluit ronde 17 om 10:55 - alvast naar de trainingen kijken
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:f1meester-2026-ronde-18@sleutelberg.com
+DTSTAMP:20260907T120000Z
+DTSTART:20261024T192500Z
+DTEND:20261024T205500Z
+SUMMARY:F1 Meester - ronde 18 INVULLEN (sluit 22:55) - Verenigde Staten - Austin
+LOCATION:https://www.formule1meester.nl/#opstelling-wijzigen
+DESCRIPTION:Dit blok loopt tot het sluitingsmoment om 22:55. Na afloop kun je niets meer wijzigen.\nBekend circuit met betrouwbare vorm. Goede jokerkans.\nTwee auto's: per auto coureur\, chassis en motor\, maximaal 2 onderdelen per renstal.\nVergeet de 3 bonusvragen niet - 25 punten per juiste plek.\nDoorgerekend advies (met wachtwoord): https://lee-ai.nl/Pitwall
+BEGIN:VALARM
+TRIGGER:PT0M
+ACTION:DISPLAY
+DESCRIPTION:Ronde 18 invullen - sluit om 22:55
+END:VALARM
+BEGIN:VALARM
+TRIGGER;VALUE=DATE-TIME:20261023T170000Z
+ACTION:DISPLAY
+DESCRIPTION:Morgen sluit ronde 18 om 22:55 - alvast naar de trainingen kijken
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:f1meester-2026-ronde-19@sleutelberg.com
+DTSTAMP:20260907T120000Z
+DTSTART:20261031T192500Z
+DTEND:20261031T205500Z
+SUMMARY:F1 Meester - ronde 19 INVULLEN (sluit 21:55) - Mexico
+LOCATION:https://www.formule1meester.nl/#opstelling-wijzigen
+DESCRIPTION:Dit blok loopt tot het sluitingsmoment om 21:55. Na afloop kun je niets meer wijzigen.\nReserveronde voor de joker.\nTwee auto's: per auto coureur\, chassis en motor\, maximaal 2 onderdelen per renstal.\nVergeet de 3 bonusvragen niet - 25 punten per juiste plek.\nDoorgerekend advies (met wachtwoord): https://lee-ai.nl/Pitwall
+BEGIN:VALARM
+TRIGGER:PT0M
+ACTION:DISPLAY
+DESCRIPTION:Ronde 19 invullen - sluit om 21:55
+END:VALARM
+BEGIN:VALARM
+TRIGGER;VALUE=DATE-TIME:20261030T180000Z
+ACTION:DISPLAY
+DESCRIPTION:Morgen sluit ronde 19 om 21:55 - alvast naar de trainingen kijken
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:f1meester-2026-ronde-20@sleutelberg.com
+DTSTAMP:20260907T120000Z
+DTSTART:20261107T162500Z
+DTEND:20261107T175500Z
+SUMMARY:F1 Meester - ronde 20 INVULLEN (sluit 18:55) - Brazilie - Interlagos
+LOCATION:https://www.formule1meester.nl/#opstelling-wijzigen
+DESCRIPTION:Dit blok loopt tot het sluitingsmoment om 18:55. Na afloop kun je niets meer wijzigen.\nBekend circuit\, hoge scores mogelijk. Goede jokerkans.\nTwee auto's: per auto coureur\, chassis en motor\, maximaal 2 onderdelen per renstal.\nVergeet de 3 bonusvragen niet - 25 punten per juiste plek.\nDoorgerekend advies (met wachtwoord): https://lee-ai.nl/Pitwall
+BEGIN:VALARM
+TRIGGER:PT0M
+ACTION:DISPLAY
+DESCRIPTION:Ronde 20 invullen - sluit om 18:55
+END:VALARM
+BEGIN:VALARM
+TRIGGER;VALUE=DATE-TIME:20261106T180000Z
+ACTION:DISPLAY
+DESCRIPTION:Morgen sluit ronde 20 om 18:55 - alvast naar de trainingen kijken
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:f1meester-2026-ronde-21@sleutelberg.com
+DTSTAMP:20260907T120000Z
+DTSTART:20261121T022500Z
+DTEND:20261121T035500Z
+SUMMARY:F1 Meester - ronde 21 INVULLEN (sluit 04:55) - Las Vegas
+LOCATION:https://www.formule1meester.nl/#opstelling-wijzigen
+DESCRIPTION:Dit blok loopt tot het sluitingsmoment om 04:55. Na afloop kun je niets meer wijzigen.\nLET OP: sluit midden in de nacht. Vrijdagavond al invullen - daar staat de avondmelding voor.\nTwee auto's: per auto coureur\, chassis en motor\, maximaal 2 onderdelen per renstal.\nVergeet de 3 bonusvragen niet - 25 punten per juiste plek.\nDoorgerekend advies (met wachtwoord): https://lee-ai.nl/Pitwall
+BEGIN:VALARM
+TRIGGER:PT0M
+ACTION:DISPLAY
+DESCRIPTION:Ronde 21 invullen - sluit om 04:55
+END:VALARM
+BEGIN:VALARM
+TRIGGER;VALUE=DATE-TIME:20261120T180000Z
+ACTION:DISPLAY
+DESCRIPTION:Morgen sluit ronde 21 om 04:55 - alvast naar de trainingen kijken
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:f1meester-2026-ronde-22@sleutelberg.com
+DTSTAMP:20260907T120000Z
+DTSTART:20261128T162500Z
+DTEND:20261128T175500Z
+SUMMARY:F1 Meester - ronde 22 INVULLEN (sluit 18:55) - Qatar - Lusail
+LOCATION:https://www.formule1meester.nl/#opstelling-wijzigen
+DESCRIPTION:Dit blok loopt tot het sluitingsmoment om 18:55. Na afloop kun je niets meer wijzigen.\nBekend circuit. Laatste ronde met marge voor een joker.\nTwee auto's: per auto coureur\, chassis en motor\, maximaal 2 onderdelen per renstal.\nVergeet de 3 bonusvragen niet - 25 punten per juiste plek.\nDoorgerekend advies (met wachtwoord): https://lee-ai.nl/Pitwall
+BEGIN:VALARM
+TRIGGER:PT0M
+ACTION:DISPLAY
+DESCRIPTION:Ronde 22 invullen - sluit om 18:55
+END:VALARM
+BEGIN:VALARM
+TRIGGER;VALUE=DATE-TIME:20261127T180000Z
+ACTION:DISPLAY
+DESCRIPTION:Morgen sluit ronde 22 om 18:55 - alvast naar de trainingen kijken
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:f1meester-2026-ronde-23@sleutelberg.com
+DTSTAMP:20260907T120000Z
+DTSTART:20261205T122500Z
+DTEND:20261205T135500Z
+SUMMARY:F1 Meester - ronde 23 INVULLEN (sluit 14:55) - Abu Dhabi - Yas Marina
+LOCATION:https://www.formule1meester.nl/#opstelling-wijzigen
+DESCRIPTION:Dit blok loopt tot het sluitingsmoment om 14:55. Na afloop kun je niets meer wijzigen.\nLaatste ronde. Alle resterende jokers moeten nu op.\nTwee auto's: per auto coureur\, chassis en motor\, maximaal 2 onderdelen per renstal.\nVergeet de 3 bonusvragen niet - 25 punten per juiste plek.\nDoorgerekend advies (met wachtwoord): https://lee-ai.nl/Pitwall
+BEGIN:VALARM
+TRIGGER:PT0M
+ACTION:DISPLAY
+DESCRIPTION:Ronde 23 invullen - sluit om 14:55
+END:VALARM
+BEGIN:VALARM
+TRIGGER;VALUE=DATE-TIME:20261204T180000Z
+ACTION:DISPLAY
+DESCRIPTION:Morgen sluit ronde 23 om 14:55 - alvast naar de trainingen kijken
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,489 @@
+{
+  "_bron": "Gegenereerd door f1meester/src/expectations.js — niet met de hand aanpassen.",
+  "_uitleg": "De Pit Wall-pagina leest dit in plaats van zelf te rekenen, zodat het model op één plek staat.",
+  "gegenereerd": "2026-09-12",
+  "venster": 5,
+  "rondesInVenster": [
+    9,
+    10,
+    11,
+    12,
+    13
+  ],
+  "bijstellingActief": true,
+  "tabel": {
+    "coureur": [
+      [
+        45,
+        90,
+        225
+      ],
+      [
+        40,
+        81,
+        204
+      ],
+      [
+        37,
+        75,
+        188
+      ],
+      [
+        34,
+        69,
+        173
+      ],
+      [
+        31,
+        63,
+        158
+      ],
+      [
+        28,
+        57,
+        144
+      ],
+      [
+        26,
+        52,
+        131
+      ],
+      [
+        23,
+        47,
+        119
+      ],
+      [
+        21,
+        42,
+        107
+      ],
+      [
+        19,
+        38,
+        96
+      ],
+      [
+        17,
+        34,
+        86
+      ],
+      [
+        15,
+        30,
+        77
+      ],
+      [
+        13,
+        27,
+        68
+      ],
+      [
+        12,
+        24,
+        60
+      ],
+      [
+        10,
+        21,
+        53
+      ],
+      [
+        9,
+        18,
+        47
+      ],
+      [
+        8,
+        16,
+        41
+      ],
+      [
+        7,
+        14,
+        35
+      ],
+      [
+        6,
+        12,
+        30
+      ],
+      [
+        5,
+        10,
+        26
+      ],
+      [
+        4,
+        8,
+        21
+      ],
+      [
+        3,
+        7,
+        18
+      ]
+    ],
+    "onderdeel": [
+      [
+        15,
+        30,
+        75
+      ],
+      [
+        13,
+        27,
+        68
+      ],
+      [
+        12,
+        25,
+        63
+      ],
+      [
+        11,
+        23,
+        58
+      ],
+      [
+        10,
+        21,
+        53
+      ],
+      [
+        9,
+        19,
+        48
+      ],
+      [
+        8,
+        17,
+        44
+      ],
+      [
+        8,
+        16,
+        40
+      ],
+      [
+        7,
+        14,
+        36
+      ],
+      [
+        6,
+        12,
+        32
+      ],
+      [
+        5,
+        11,
+        29
+      ],
+      [
+        5,
+        10,
+        26
+      ],
+      [
+        4,
+        9,
+        23
+      ],
+      [
+        4,
+        8,
+        20
+      ],
+      [
+        3,
+        7,
+        18
+      ],
+      [
+        3,
+        6,
+        16
+      ],
+      [
+        2,
+        5,
+        14
+      ],
+      [
+        2,
+        4,
+        12
+      ],
+      [
+        2,
+        4,
+        10
+      ],
+      [
+        1,
+        3,
+        9
+      ],
+      [
+        1,
+        2,
+        7
+      ],
+      [
+        1,
+        2,
+        6
+      ]
+    ],
+    "strafCoureur": {
+      "DNF": -10,
+      "DNQ": -10,
+      "DNS": -20,
+      "DIS": -20,
+      "DSQ": -20
+    },
+    "strafOnderdeel": {
+      "DNF": -5,
+      "DNQ": -5,
+      "DNS": -10,
+      "DIS": -10,
+      "DSQ": -10
+    }
+  },
+  "coureurs": {
+    "BOT": {
+      "verwacht": 31.6,
+      "ongecorrigeerd": 31.6,
+      "raceGemiddeld": 18.4,
+      "uitgesloten": false
+    },
+    "PER": {
+      "verwacht": 35.8,
+      "ongecorrigeerd": 35.8,
+      "raceGemiddeld": 25.6,
+      "uitgesloten": false
+    },
+    "ALB": {
+      "verwacht": 52,
+      "ongecorrigeerd": 52,
+      "raceGemiddeld": 33.2,
+      "uitgesloten": false
+    },
+    "STR": {
+      "verwacht": 24.8,
+      "ongecorrigeerd": 24.8,
+      "raceGemiddeld": 13.6,
+      "uitgesloten": false
+    },
+    "SAI": {
+      "verwacht": 68.8,
+      "ongecorrigeerd": 68.8,
+      "raceGemiddeld": 47.6,
+      "uitgesloten": false
+    },
+    "HUL": {
+      "verwacht": 101.4,
+      "ongecorrigeerd": 101.4,
+      "raceGemiddeld": 72.2,
+      "uitgesloten": false
+    },
+    "OCO": {
+      "verwacht": 60.8,
+      "ongecorrigeerd": 60.8,
+      "raceGemiddeld": 38.6,
+      "uitgesloten": false
+    },
+    "BOR": {
+      "verwacht": 137.4,
+      "ongecorrigeerd": 137.4,
+      "raceGemiddeld": 95.6,
+      "uitgesloten": false
+    },
+    "ALO": {
+      "verwacht": 57.8,
+      "ongecorrigeerd": 57.8,
+      "raceGemiddeld": 44.4,
+      "uitgesloten": false
+    },
+    "BEA": {
+      "verwacht": 45.9,
+      "ongecorrigeerd": 65.6,
+      "raceGemiddeld": 42,
+      "uitgesloten": false
+    },
+    "LIN": {
+      "verwacht": 155,
+      "ongecorrigeerd": 155,
+      "raceGemiddeld": 106,
+      "uitgesloten": false
+    },
+    "COL": {
+      "verwacht": 118,
+      "ongecorrigeerd": 118,
+      "raceGemiddeld": 84.6,
+      "uitgesloten": false
+    },
+    "TSU": {
+      "verwacht": 142,
+      "ongecorrigeerd": 142,
+      "raceGemiddeld": 104.4,
+      "uitgesloten": false
+    },
+    "GAS": {
+      "verwacht": 148,
+      "ongecorrigeerd": 148,
+      "raceGemiddeld": 97.2,
+      "uitgesloten": false
+    },
+    "LAW": {
+      "verwacht": 178.8,
+      "ongecorrigeerd": 178.8,
+      "raceGemiddeld": 127.4,
+      "uitgesloten": false
+    },
+    "PIA": {
+      "verwacht": 179.8,
+      "ongecorrigeerd": 179.8,
+      "raceGemiddeld": 107.2,
+      "uitgesloten": false
+    },
+    "VER": {
+      "verwacht": 190.2,
+      "ongecorrigeerd": 190.2,
+      "raceGemiddeld": 119.2,
+      "uitgesloten": false
+    },
+    "NOR": {
+      "verwacht": 271,
+      "ongecorrigeerd": 271,
+      "raceGemiddeld": 185.4,
+      "uitgesloten": false
+    },
+    "LEC": {
+      "verwacht": 244.9,
+      "ongecorrigeerd": 233.2,
+      "raceGemiddeld": 150,
+      "uitgesloten": false
+    },
+    "HAM": {
+      "verwacht": 211,
+      "ongecorrigeerd": 248.2,
+      "raceGemiddeld": 167.2,
+      "uitgesloten": false
+    },
+    "RUS": {
+      "verwacht": 229.6,
+      "ongecorrigeerd": 229.6,
+      "raceGemiddeld": 143.4,
+      "uitgesloten": false
+    },
+    "ANT": {
+      "verwacht": 283.5,
+      "ongecorrigeerd": 270,
+      "raceGemiddeld": 179,
+      "uitgesloten": false
+    }
+  },
+  "onderdelen": {
+    "CAD": {
+      "verwacht": 20.6,
+      "ongecorrigeerd": 20.6,
+      "raceGemiddeldPerCoureur": {
+        "BOT": 5.6,
+        "PER": 8
+      },
+      "uitgesloten": false
+    },
+    "WIL": {
+      "verwacht": 39.8,
+      "ongecorrigeerd": 39.8,
+      "raceGemiddeldPerCoureur": {
+        "ALB": 11,
+        "SAI": 16.2
+      },
+      "uitgesloten": false
+    },
+    "AST": {
+      "verwacht": 25.2,
+      "ongecorrigeerd": 25.2,
+      "raceGemiddeldPerCoureur": {
+        "STR": 3.6,
+        "ALO": 14.6
+      },
+      "uitgesloten": false
+    },
+    "AUD": {
+      "verwacht": 79.2,
+      "ongecorrigeerd": 79.2,
+      "raceGemiddeldPerCoureur": {
+        "HUL": 24,
+        "BOR": 32.2
+      },
+      "uitgesloten": false
+    },
+    "HAS": {
+      "verwacht": 35,
+      "ongecorrigeerd": 41.4,
+      "raceGemiddeldPerCoureur": {
+        "OCO": 12.8,
+        "BEA": 13.8
+      },
+      "uitgesloten": false
+    },
+    "RAC": {
+      "verwacht": 98.8,
+      "ongecorrigeerd": 98.8,
+      "raceGemiddeldPerCoureur": {
+        "LIN": 35.6,
+        "TSU": 35
+      },
+      "uitgesloten": false
+    },
+    "ALP": {
+      "verwacht": 89,
+      "ongecorrigeerd": 89,
+      "raceGemiddeldPerCoureur": {
+        "COL": 28.4,
+        "GAS": 32.6
+      },
+      "uitgesloten": false
+    },
+    "RBR": {
+      "verwacht": 122.6,
+      "ongecorrigeerd": 122.6,
+      "raceGemiddeldPerCoureur": {
+        "LAW": 42.6,
+        "VER": 39.6
+      },
+      "uitgesloten": false
+    },
+    "MCL": {
+      "verwacht": 150,
+      "ongecorrigeerd": 150,
+      "raceGemiddeldPerCoureur": {
+        "PIA": 35.6,
+        "NOR": 62
+      },
+      "uitgesloten": false
+    },
+    "FER": {
+      "verwacht": 151.7,
+      "ongecorrigeerd": 160.2,
+      "raceGemiddeldPerCoureur": {
+        "LEC": 49.8,
+        "HAM": 56
+      },
+      "uitgesloten": false
+    },
+    "MER": {
+      "verwacht": 170.7,
+      "ongecorrigeerd": 166.2,
+      "raceGemiddeldPerCoureur": {
+        "RUS": 47.6,
+        "ANT": 59.8
+      },
+      "uitgesloten": false
+    }
+  }
+}
