@@ -8,7 +8,7 @@
  * hem pas uit na een geldige login.
  *
  * Verschil met de versie op claude.ai:
- *  - altijd donkere weergave, ongeacht de systeeminstelling van de bezoeker
+ *  - altijd lichte weergave, ongeacht de systeeminstelling van de bezoeker
  *  - opslag van een goedgekeurde opstelling via localStorage in plaats van de
  *    db-capability van claude.ai
  *
@@ -42,13 +42,13 @@ const verwacht = fs.readFileSync(verwachtPad, 'utf8');
 const verwachtBlok = '<script>\nwindow.VERWACHT = ' + verwacht.trim() + ';\n</script>\n';
 
 const kop = `<!doctype html>
-<html lang="nl" data-theme="dark">
+<html lang="nl" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow, noarchive">
 <style>
-  html{color-scheme:dark}
+  html{color-scheme:light}
   body{margin:0}
   img{max-width:100%}
   [hidden]{display:none!important}
@@ -108,7 +108,7 @@ fs.mkdirSync(path.dirname(preview), { recursive: true });
 fs.writeFileSync(preview, pagina);
 
 // Versie voor het artifact op claude.ai: zonder eigen <html>/<head> (die zet het
-// artifact er zelf omheen), zonder gedwongen donkere weergave en zonder de
+// artifact er zelf omheen), licht via de bron zelf en zonder de
 // localStorage-vervanger, want daar bestaat window.claude echt. Wel met dezelfde
 // ingespoten verwachtingen, anders loopt het artifact achter op het model.
 const artifact = path.join(__dirname, '..', 'dist', 'pitwall-artifact.html');

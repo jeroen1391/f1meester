@@ -11,17 +11,11 @@
   --ground:#F7F4F1; --card:#FFF; --sunk:#EFEBE7; --band:#1B2430;
   --ink:#15151E; --body:#3A3A44; --mute:#6B6B75; --faint:#9A9AA2;
   --line:#D9D5D1; --line-soft:#E9E5E1; --redsoft:#FDE7E3;
+  color-scheme:light;
 }
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --ground:#15151E; --card:#1D1D28; --sunk:#242430; --band:#0E1620;
-  --ink:#F7F4F1; --body:#C9C9D1; --mute:#9C9CA6; --faint:#70707B;
-  --line:#31313D; --line-soft:#26262F; --redsoft:#3A1712;
-}}
-:root[data-theme="dark"]{
-  --ground:#15151E; --card:#1D1D28; --sunk:#242430; --band:#0E1620;
-  --ink:#F7F4F1; --body:#C9C9D1; --mute:#9C9CA6; --faint:#70707B;
-  --line:#31313D; --line-soft:#26262F; --redsoft:#3A1712;
-}
+/* Bewust altijd licht: leest prettiger bij de lange teksten en tabellen. Er is
+   daarom geen donkere variant, ook niet als het systeem of claude.ai om donker
+   vraagt. De zwarte kopbalk en het goedkeuringsblok blijven zwart als accent. */
 *{box-sizing:border-box}
 body{background:var(--ground);color:var(--body);font-family:"Titillium Web",system-ui,-apple-system,Segoe UI,sans-serif;
   font-size:15px;line-height:1.55;margin:0;padding:0 0 60px;-webkit-font-smoothing:antialiased;font-variant-numeric:tabular-nums}
