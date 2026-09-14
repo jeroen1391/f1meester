@@ -10,7 +10,7 @@
  */
 const fs = require('fs');
 const path = require('path');
-const { coureurPunten, onderdeelPunten, heeftSprint, regelovertredingen } = require('./scoring');
+const { coureurPunten, onderdeelPunten, onderdeelPuntenPerCoureur, heeftSprint, regelovertredingen } = require('./scoring');
 
 const dataDir = path.join(__dirname, '..', 'data');
 const lees = f => JSON.parse(fs.readFileSync(path.join(dataDir, f), 'utf8'));
@@ -115,6 +115,90 @@ for (let i = 0; i < codes.length; i++) for (let j = i + 1; j < codes.length; j++
     const punten = eP[c1] + eP[c2] + combo.reduce((a, t) => a + tP[t], 0);
     if (!beste || punten > beste.punten) beste = { coureurs: [c1, c2], onderdelen: combo, kosten, punten };
   }
+}
+
+/* ---------- terugblik: welk vormvenster had deze ronde het best voorspeld? ---------- */
+const gem = xs => xs.length ? xs.reduce((a, b) => a + b, 0) / xs.length : 0;
+const rondesVoor = n => Object.keys(results).filter(k => /^r\d+$/.test(k) && +k.slice(1) < n)
+  .sort((a, b) => +a.slice(1) - +b.slice(1));
+const voorspel = (rs, code, fn) => gem(rs.map(r => fn(results[r], code)));
+const VENSTERS = [3, 5, 8];
+
+function vensterFout(n, venster) {
+  const vorige = rondesVoor(n).slice(-venster), doel = results['r' + n];
+  return {
+    c: gem(cs.map(o => Math.abs(voorspel(vorige, o.code, coureurPunten) - coureurPunten(doel, o.code)))),
+    t: gem(ts.map(o => Math.abs(voorspel(vorige, o.code, onderdeelPunten) - onderdeelPunten(doel, o.code))))
+  };
+}
+// Alleen rondes met minstens 8 eerdere rondes, zodat elk venster volledig gevuld is.
+const toetsRondes = Object.keys(results).filter(k => /^r\d+$/.test(k)).map(k => +k.slice(1))
+  .filter(n => n >= 9 && n <= +ronde).sort((a, b) => a - b);
+
+console.log('\nVORMVENSTER ACHTERAF — gemiddelde fout per element, zonder bijstellingen');
+console.log(pad('venster', 9) + lpad('coureur', 9) + lpad('onderdeel', 11) + lpad('jouw team', 11) +
+  `   gemiddeld r${toetsRondes[0]}-r${ronde}: coureur / onderdeel`);
+for (const v of VENSTERS) {
+  const f = vensterFout(+ronde, v);
+  const vorige = rondesVoor(+ronde).slice(-v);
+  const jouwVerwacht = eigen
+    ? eigen.coureurs.reduce((a, [c, , j]) => a + voorspel(vorige, c, coureurPunten) * (j ? 2 : 1), 0) +
+      eigen.onderdelen.reduce((a, [t]) => a + voorspel(vorige, t, onderdeelPunten), 0)
+    : null;
+  const reeks = toetsRondes.map(n => vensterFout(n, v));
+  console.log(pad(v, 9) + lpad(f.c.toFixed(1), 9) + lpad(f.t.toFixed(1), 11) +
+    lpad(jouwVerwacht == null ? '-' : Math.round(jouwVerwacht), 11) +
+    `   ${gem(reeks.map(x => x.c)).toFixed(1)} / ${gem(reeks.map(x => x.t)).toFixed(1)}`);
+}
+if (eigen) {
+  const werkelijk = eigen.coureurs.reduce((a, x) => a + x[1], 0) + eigen.onderdelen.reduce((a, x) => a + x[1], 0);
+  console.log(`  jouw team werkelijk ${werkelijk} (zonder bonusvragen)`);
+}
+
+/* ---------- terugblik: hielpen de bijstellingen uit data/adjustments.json? ---------- */
+let bijstel = null;
+try { bijstel = lees('adjustments.json'); } catch (e) {}
+// Na afloop van een ronde worden de bijstellingen gearchiveerd onder bijstellingen_ronde<n>,
+// zodat ze niet in de volgende ronde doorwerken. Staan ze daar, dan gaan die voor.
+if (bijstel && bijstel['bijstellingen_ronde' + ronde]) bijstel = { ...bijstel, ...bijstel['bijstellingen_ronde' + ronde] };
+if (bijstel && bijstel['notitie_ronde' + ronde] && bijstel.coureurs && Object.keys(bijstel.coureurs).length) {
+  const vorige5 = rondesVoor(+ronde).slice(-5);
+  const metBijstelling = (basis, b) => {
+    if (b == null) return basis;
+    if (typeof b === 'number') return basis * b;
+    let w = basis;
+    if (b.factor != null) w *= b.factor;
+    if (b.delta != null) w += b.delta;
+    if (b.punten != null) w = b.punten;
+    return w;
+  };
+  const verhouding = c => {
+    const basis = voorspel(vorige5, c, coureurPunten);
+    return basis ? metBijstelling(basis, bijstel.coureurs[c]) / basis : 1;
+  };
+  const oordeel = (basis, bij, echt) => {
+    const d = Math.abs(basis - echt) - Math.abs(bij - echt);
+    return Math.abs(d) < 0.5 ? 'niets' : (d > 0 ? `hielp ${d.toFixed(0)}p` : `schaadde ${(-d).toFixed(0)}p`);
+  };
+  let somZonder = 0, somMet = 0;
+  const regel = (code, basis, bij, echt) => {
+    somZonder += Math.abs(basis - echt); somMet += Math.abs(bij - echt);
+    console.log(pad(code, 8) + lpad(basis.toFixed(0), 7) + lpad(bij.toFixed(0), 12) + lpad(echt, 11) + '   ' + oordeel(basis, bij, echt));
+  };
+  console.log(`\nBIJSTELLINGEN RONDE ${ronde} ACHTERAF — venster 5`);
+  console.log(pad('element', 8) + lpad('vorm', 7) + lpad('bijgesteld', 12) + lpad('werkelijk', 11));
+  for (const c of Object.keys(bijstel.coureurs)) {
+    const basis = voorspel(vorige5, c, coureurPunten);
+    regel(c, basis, metBijstelling(basis, bijstel.coureurs[c]), coureurPunten(rd, c));
+  }
+  const geraakt = [...new Set(Object.keys(bijstel.coureurs).map(c => prijzen.coureurs[c] && prijzen.coureurs[c].team).filter(Boolean))];
+  for (const t of geraakt) {
+    const basis = voorspel(vorige5, t, onderdeelPunten);
+    const bij = gem(vorige5.map(r => Object.entries(onderdeelPuntenPerCoureur(results[r], t))
+      .reduce((som, [c, p]) => som + p * verhouding(c), 0)));
+    regel(t, basis, bij, onderdeelPunten(rd, t));
+  }
+  console.log(`  totale fout zonder bijstelling ${somZonder.toFixed(0)}, met ${somMet.toFixed(0)}`);
 }
 
 if (beste) {

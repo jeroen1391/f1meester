@@ -161,10 +161,10 @@ kandidaten.slice(0, TOP).forEach((k, n) => {
 });
 
 // Ter vergelijking: de opstelling die nu daadwerkelijk staat.
-const huidig = { coureurs: ['HAM', 'VER'], onderdelen: ['FER', 'RBR', 'ALP', 'RAC'] };
+const huidig = { coureurs: ['NOR', 'LAW'], onderdelen: ['MER', 'MER', 'RBR', 'FER'] };
 const huidigPunten = huidig.coureurs.reduce((a, c) => a + eC[c], 0) + huidig.onderdelen.reduce((a, t) => a + eT[t], 0);
 const huidigKosten = huidig.coureurs.reduce((a, c) => a + pC(c), 0) + huidig.onderdelen.reduce((a, t) => a + pT(t), 0);
-console.log('Ter vergelijking, de opstelling van ronde 13:');
+console.log('Ter vergelijking, de opstelling van ronde 14:');
 console.log(`   ${Math.round(huidigPunten)} punten verwacht — ${mln(huidigKosten)}`);
 console.log(`   verschil met de beste optie: ${Math.round(kandidaten[0].punten - huidigPunten)} punten per ronde`);
 console.log('');

@@ -43,6 +43,8 @@ Alle 72 komen exact uit.
 ## Gebruik
 
 ```
+node src/update-round.js 14       verwerk een gereden ronde: punten, controle, optimum achteraf,
+                                  fout van vormvenster 3/5/8 en of de bijstellingen hielpen
 node src/validate.js              controleer het scoremodel tegen de werkelijkheid
 node src/form.js                  vorm en rendement per coureur en per renstal
 node src/form.js 3                korter vormvenster

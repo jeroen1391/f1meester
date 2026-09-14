@@ -107,8 +107,16 @@ const preview = path.join(__dirname, '..', 'dist', 'pitwall-preview.html');
 fs.mkdirSync(path.dirname(preview), { recursive: true });
 fs.writeFileSync(preview, pagina);
 
+// Versie voor het artifact op claude.ai: zonder eigen <html>/<head> (die zet het
+// artifact er zelf omheen), zonder gedwongen donkere weergave en zonder de
+// localStorage-vervanger, want daar bestaat window.claude echt. Wel met dezelfde
+// ingespoten verwachtingen, anders loopt het artifact achter op het model.
+const artifact = path.join(__dirname, '..', 'dist', 'pitwall-artifact.html');
+fs.writeFileSync(artifact, head + verwachtBlok + body);
+
 console.log('bron    : ' + bron);
 console.log('preview : ' + preview);
+console.log('artifact: ' + artifact);
 console.log('pagina  : ' + (pagina.length / 1024).toFixed(1) + ' KB');
 console.log('module  : ' + (moduleTekst.length / 1024).toFixed(1) + ' KB');
 console.log('geschreven naar: ' + DOEL);

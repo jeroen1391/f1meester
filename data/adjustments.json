@@ -45,12 +45,13 @@
     "procent van een weekend zonder sprint."
   ],
 
-  "coureurs": {
-    "HAM": 0.85,
-    "BEA": 0.7,
-    "ANT": 1.05,
-    "LEC": 1.05
+  "bijstellingen_ronde14": {
+    "_let_op": "Archief. Op 14 september uit 'coureurs' gehaald zodat ze niet in ronde 15 doorwerken. update-round.js leest ze hier voor de terugblik.",
+    "coureurs": { "HAM": 0.85, "BEA": 0.7, "ANT": 1.05, "LEC": 1.05 },
+    "uitkomst": "HAM 211 verwacht, 59 (uitgevallen). BEA 46, 37. ANT 284, 306. LEC 245, 236. Totale fout zakte van 335 naar 264: de bijstellingen hielpen."
   },
+
+  "coureurs": {},
   "onderdelen": {},
   "uitgesloten": []
 }
