@@ -122,6 +122,16 @@ h1{font-size:26px;margin:0;color:var(--white);text-transform:uppercase;letter-sp
 .tekst{padding:13px 14px;font-size:14.5px}
 .tekst p{margin:0 0 9px}.tekst p:last-child{margin-bottom:0}
 .tekst b{color:var(--ink);font-weight:700}
+.tekst .tussenkop{text-transform:uppercase;letter-spacing:.13em;font-size:10px;font-weight:700;color:var(--red);margin:16px 0 6px;padding-top:12px;border-top:1px solid var(--line-soft)}
+.tekst .tussenkop:first-child{margin-top:0;padding-top:0;border-top:none}
+
+/* kerncijfers van de afgelopen ronde, zelfde opbouw als de budgetbalk */
+.kerncijfers{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--line-soft);border-bottom:1px solid var(--line-soft)}
+@media(max-width:560px){.kerncijfers{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.kerncijfers div{background:var(--card);padding:10px 14px;display:flex;flex-direction:column;gap:1px;min-width:0}
+.kerncijfers span{text-transform:uppercase;letter-spacing:.13em;font-size:9px;font-weight:700;color:var(--faint)}
+.kerncijfers b{font-size:24px;font-weight:900;color:var(--ink);line-height:1.1}
+.kerncijfers em{font-style:normal;font-size:12px;color:var(--mute)}
 
 .check{padding:12px 14px;display:grid;gap:8px}
 .check label{display:flex;gap:9px;align-items:flex-start;font-size:14px;cursor:pointer}
@@ -235,7 +245,8 @@ footer b{color:var(--mute);font-weight:600}
   <div class="fold"><p class="foldlabel">Onderbouwing en controle</p></div>
 
   <section class="blok">
-    <div class="blokkop">Waarom deze keuze</div>
+    <div class="blokkop">Terugblik en vooruitblik <span id="tvKop"></span></div>
+    <div class="kerncijfers" id="kerncijfers"></div>
     <div class="tekst" id="waarom"></div>
   </section>
 
@@ -434,6 +445,30 @@ function totalen(){
 /* Nieuws wordt hier ingebakken: een gepubliceerde pagina mag zelf het web niet op.
    Ik ververs dit bij elke ronde-update. 'betreft' bevat renstal- of coureurcodes;
    een bericht wordt gemarkeerd zodra jouw opstelling er iets van bevat. */
+/* Terugblik op de laatst gereden ronde en vooruitblik op de volgende. Bij elke
+   evaluatie vervangen. Dit zijn uitkomsten en omstandigheden, geen verwachte
+   punten: die rekent de pagina zelf door onder het kopje Vooruitblik. */
+const TERUGBLIK={
+  ronde:14, naam:'Madrid',
+  cijfers:[['Opstelling','1.071','verwacht 1.065'],['Bonusvragen','25','1 van 3 goed'],
+           ['Optimum achteraf','1.140','69 laten liggen'],['Subleague','2e','was 3e · 1.008 achter']],
+  punten:[
+    '<b>Van derde naar tweede.</b> Pedaf1 scoorde 1.020 en staat nu 33 punten achter je. GrijzeLeverWorst liep 54 punten verder uit, naar 1.008.',
+    '<b>Het verschil met de koploper zat in de bonusvragen.</b> Zijn opstelling scoorde 1.075 tegen jouw 1.071: Antonelli (306) in plaats van Norris (278), maar de Mercedes-motor van McLaren (150) in plaats van die van Mercedes (174). Hij voorspelde Antonelli, Verstappen en Norris exact en haalde 75 bonuspunten, jij 25.',
+    '<b>Waar het model ernaast zat.</b> Ferrari scoorde 97 in plaats van 152, doordat Hamilton uitviel; dat is de tweede Ferrari-uitvaller op rij. Red Bull scoorde 157 in plaats van 123 met Verstappen als tweede. Norris (278 tegen 271) en Mercedes (174 tegen 171) klopten.',
+    '<b>Wat goed ging.</b> Twee Mercedes-onderdelen in plaats van een tweede Ferrari scheelde 77 punten. De FP3-waarnemingen wezen alle vier de goede kant op en maakten de voorspelling 71 punten nauwkeuriger.',
+    '<b>Waar de 69 punten bleven.</b> Het optimum was Norris + Antonelli met Alpine, 2× Red Bull en McLaren. Antonelli in plaats van Lawson leverde 115 op; de goedkopere onderdelen die dat betaalden kostten 46.',
+    '<b>Jokers.</b> Kamertjes zette als eerste een joker op een onderdeel, het SF26-chassis: 97 extra. Op Leclerc was het 236 geweest. Verder zette niemand een joker in.'
+  ]
+};
+const VOORUITBLIK={
+  ronde:15, naam:'Baku',
+  punten:[
+    '<b>Baku is een stratencircuit.</b> Uitval komt vaker voor, en een uitvaller levert zijn coureur −10 en zijn onderdeel −5 op in plaats van punten. Twee elementen van één renstal verliezen dan samen.',
+    '<b>1.008 achter met negen rondes te gaan: 112 per ronde.</b> Met dezelfde keuzes als de koploper loop je niets in. Winst zit in de bonusvragen (hij had er dit seizoen 14 goed, jij 7), een joker op het goede moment en een coureur die hij niet heeft.'
+  ]
+};
+
 const BIJGEWERKT='14 september 2026';
 const NIEUWS=[
  {kop:'Ferrari tweede ronde op rij onderuit — Hamilton valt uit in Madrid',
@@ -562,14 +597,17 @@ function tekenWaarom(){
   const t=totalen(), best=solve()[0];
   const rendD=Object.keys(DRIVERS).filter(c=>!S.excl.has(c)).map(c=>({c,r:expDrv(c)/(DRIVERS[c][2]/1e6)})).sort((a,b)=>b.r-a.r);
   const rendT=Object.keys(TEAMS).filter(x=>!S.excl.has(x)).map(x=>({x,r:expCmp(x)/(TEAMS[x][3]/1e6)})).sort((a,b)=>b.r-a.r);
-  let h='<p>Deze opstelling levert <b>'+Math.round(t.punten)+' punten</b> op tegen '+eurK(t.kosten)+'. '
+  $('tvKop').textContent='ronde '+TERUGBLIK.ronde+' · ronde '+VOORUITBLIK.ronde;
+  $('kerncijfers').innerHTML=TERUGBLIK.cijfers.map(([l,w,o])=>'<div><span>'+l+'</span><b>'+w+'</b><em>'+o+'</em></div>').join('');
+  let h='<p class="tussenkop">Terugblik ronde '+TERUGBLIK.ronde+' &mdash; '+TERUGBLIK.naam+'</p>'
+    +TERUGBLIK.punten.map(p=>'<p>'+p+'</p>').join('')
+    +'<p class="tussenkop">Vooruitblik ronde '+VOORUITBLIK.ronde+' &mdash; '+VOORUITBLIK.naam+'</p>';
+  h+='<p>Deze opstelling levert <b>'+Math.round(t.punten)+' punten</b> op tegen '+eurK(t.kosten)+'. '
     +'Het rekenkundige optimum binnen je budget staat op <b>'+Math.round(best.punten)+'</b>. '
     +'Alle geldige combinaties zijn doorgerekend, dus dezelfde invoer geeft altijd hetzelfde antwoord.</p>';
   h+='<p>Beste rendement per miljoen: coureurs <b>'+rendD.slice(0,3).map(o=>DRIVERS[o.c][0].split(' ').pop()+' '+o.r.toFixed(1)).join('</b>, <b>')+'</b>; '
     +'onderdelen <b>'+rendT.slice(0,3).map(o=>TEAMS[o.x][0]+' '+o.r.toFixed(1)).join('</b>, <b>')+'</b>.</p>';
-  h+='<p>Na ronde 14 sta je <b>tweede</b>, <b>1.008 punten</b> achter de koploper en 33 voor Pedaf1. Met negen rondes te gaan is dat 112 per ronde. '
-    +'Dat gat ontstond in één ronde: op Zandvoort had de koploper zijn joker op Norris en scoorde 704, terwijl jij dezelfde coureur had en 352 kreeg. '
-    +'Ronde 13 bevestigde dat: zijn coureurs scoorden 442 punten voor 38,3 miljoen, die van jou 452 voor 57,3 miljoen. Vrijwel dezelfde opbrengst, negentien miljoen duurder &mdash; en dat verschil stak hij in onderdelen, waar hij met 434 tegen 412 won.</p>';
+  h+=VOORUITBLIK.punten.map(p=>'<p>'+p+'</p>').join('');
   /* Concentratie: elementen van dezelfde renstal scoren via dezelfde twee coureurs
      en zijn dus volledig gecorreleerd. Ronde 13 liet zien wat dat kost. */
   const perRenstal={};
@@ -578,7 +616,7 @@ function tekenWaarom(){
   const aandeel=Math.round(perRenstal[zwaarste]/t.punten*100);
   h+='<p><b>Concentratie:</b> '+TEAMS[zwaarste][0]+' draagt <b>'+aandeel+' procent</b> van je verwachte score. '
     +(aandeel>=35
-      ? 'Dat is veel voor één renstal. Onderdelen van dezelfde renstal scoren via dezelfde twee coureurs, dus je verliest bij tegenvallers overal tegelijk &mdash; precies wat in Monza gebeurde toen Leclerc uitviel en Ferrari van 172 naar 87 zakte. Sta je achter, dan kan die spreiding bewust zijn; sta je voor, dan niet.'
+      ? 'Dat is veel voor één renstal: onderdelen van dezelfde renstal scoren via dezelfde twee coureurs, dus één uitvaller raakt je op meerdere plekken tegelijk.'
       : 'Dat is een gezonde spreiding over meerdere renstallen.')+'</p>';
   if(Object.keys(S.pens).length) h+='<p>Gridstraf verwerkt voor <b>'+Object.keys(S.pens).map(c=>DRIVERS[c][0].split(' ').pop()).join(', ')+'</b>. Alleen het raceresultaat is aangepast; de kwalificatiepunten blijven staan, want die tellen hier op uitslag en niet op startopstelling.</p>';
   $('waarom').innerHTML=h;
