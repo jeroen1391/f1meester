@@ -1,0 +1,69 @@
+{
+  "_bron": "formule1meester.nl /ajax/team_changelineup — opgehaald 14 september 2026, ronde 15 (Azerbeidzjan, Baku City Circuit)",
+  "_let_op": "Chassis en motor van dezelfde renstal hebben dezelfde prijs en scoren identiek.",
+  "budget": { "totaal": 105499000, "jokers_over": 4 },
+  "coureurs": {
+    "BOT": { "naam": "Valtteri Bottas",   "team": "CAD", "prijs": 1573000 },
+    "PER": { "naam": "Sergio Perez",      "team": "CAD", "prijs": 1599000 },
+    "ALB": { "naam": "Alexander Albon",   "team": "WIL", "prijs": 2009000 },
+    "STR": { "naam": "Lance Stroll",      "team": "AST", "prijs": 3711000 },
+    "SAI": { "naam": "Carlos Sainz",      "team": "WIL", "prijs": 4011000 },
+    "HUL": { "naam": "Nico Hulkenberg",   "team": "AUD", "prijs": 4148000 },
+    "OCO": { "naam": "Esteban Ocon",      "team": "HAS", "prijs": 4276000 },
+    "ALO": { "naam": "Fernando Alonso",   "team": "AST", "prijs": 4359000 },
+    "BOR": { "naam": "Gabriel Bortoleto", "team": "AUD", "prijs": 4600000 },
+    "BEA": { "naam": "Oliver Bearman",    "team": "HAS", "prijs": 4744000 },
+    "LIN": { "naam": "Arvid Lindblad",    "team": "RAC", "prijs": 5181000 },
+    "COL": { "naam": "Franco Colapinto",  "team": "ALP", "prijs": 5290000 },
+    "TSU": { "naam": "Yuki Tsunoda",      "team": "RAC", "prijs": 7029000 },
+    "GAS": { "naam": "Pierre Gasly",      "team": "ALP", "prijs": 7820000 },
+    "LAW": { "naam": "Liam Lawson",       "team": "RBR", "prijs": 8491000 },
+    "PIA": { "naam": "Oscar Piastri",     "team": "MCL", "prijs": 24613000 },
+    "VER": { "naam": "Max Verstappen",    "team": "RBR", "prijs": 26450000 },
+    "LEC": { "naam": "Charles Leclerc",   "team": "FER", "prijs": 27797000 },
+    "NOR": { "naam": "Lando Norris",      "team": "MCL", "prijs": 28107000 },
+    "HAM": { "naam": "Lewis Hamilton",    "team": "FER", "prijs": 33519000 },
+    "RUS": { "naam": "George Russell",    "team": "MER", "prijs": 34294000 },
+    "ANT": { "naam": "Kimi Antonelli",    "team": "MER", "prijs": 36655000 }
+  },
+  "onderdelen": {
+    "CAD": { "chassis": "Unknown",   "motor": "Ferrari",       "prijs": 788000 },
+    "WIL": { "chassis": "FW48",      "motor": "Mercedes",      "prijs": 1499000 },
+    "AST": { "chassis": "AMR26",     "motor": "Honda",         "prijs": 2011000 },
+    "AUD": { "chassis": "R26",       "motor": "Audi",          "prijs": 2181000 },
+    "HAS": { "chassis": "VF26",      "motor": "Ferrari",       "prijs": 2398000 },
+    "RAC": { "chassis": "VCARB 03",  "motor": "Red Bull Ford", "prijs": 2842000 },
+    "ALP": { "chassis": "A526",      "motor": "Mercedes",      "prijs": 3275000 },
+    "RBR": { "chassis": "RB22",      "motor": "Red Bull Ford", "prijs": 8607000 },
+    "MCL": { "chassis": "MCL40",     "motor": "Mercedes",      "prijs": 13175000 },
+    "FER": { "chassis": "SF26",      "motor": "Ferrari",       "prijs": 15324000 },
+    "MER": { "chassis": "W17",       "motor": "Mercedes",      "prijs": 17733000 }
+  },
+
+  "_prijs_naast_punten_ronde14": {
+    "_formaat": "code: [prijswijziging in euro na ronde 14, procent, punten in ronde 14]",
+    "_waarneming": [
+      "De prijs volgt de punten van één ronde niet. Hamilton +2,0% na 59 punten en een uitvaller,",
+      "Colapinto +0,7% na 173 punten, Stroll +1,0% na -20. Opvallend veel waarden liggen precies",
+      "op +2,0% (HAM, RUS, ANT, VER, PIA, LAW, GAS, TSU, MER) en Alonso op -2,0%. Een grens rond",
+      "2% ligt voor de hand, maar NOR +3,2%, HUL +4,7% en RAC +5,7% gaan erboven. Vermoeden: vraag",
+      "bij alle spelers stuurt de prijs, niet de score. Nog niet bewezen; volgende ronde naast leggen."
+    ],
+    "coureurs": {
+      "BOT": [38000, 2.5, 45],   "PER": [40000, 2.6, 2],    "ALB": [68000, 3.5, 71],
+      "STR": [38000, 1.0, -20],  "SAI": [96000, 2.5, 6],    "HUL": [186000, 4.7, 130],
+      "OCO": [111000, 2.7, 113], "ALO": [-90000, -2.0, 55], "BOR": [177000, 4.0, 98],
+      "BEA": [-39000, -0.8, 37], "LIN": [170000, 3.4, 145], "COL": [35000, 0.7, 173],
+      "TSU": [137000, 2.0, 81],  "GAS": [153000, 2.0, 101], "LAW": [166000, 2.0, 191],
+      "PIA": [482000, 2.0, 171], "VER": [518000, 2.0, 279], "LEC": [218000, 0.8, 236],
+      "NOR": [877000, 3.2, 278], "HAM": [657000, 2.0, 59],  "RUS": [672000, 2.0, 215],
+      "ANT": [718000, 2.0, 306]
+    },
+    "onderdelen": {
+      "CAD": [19000, 2.5, 14],   "WIL": [41000, 2.8, 24],   "AST": [-13000, -0.6, 8],
+      "AUD": [90000, 4.3, 76],   "HAS": [18000, 0.8, 49],   "RAC": [153000, 5.7, 75],
+      "ALP": [47000, 1.5, 92],   "RBR": [129000, 1.5, 157], "MCL": [339000, 2.6, 150],
+      "FER": [218000, 1.4, 97],  "MER": [347000, 2.0, 174]
+    }
+  }
+}

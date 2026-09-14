@@ -33,7 +33,12 @@ const prijsBestanden = fs.readdirSync(dataDir)
   .filter(f => /^prices-round\d+\.json$/.test(f))
   .sort((a, b) => Number(a.match(/\d+/)[0]) - Number(b.match(/\d+/)[0]));
 if (!prijsBestanden.length) { console.error('Geen prices-round*.json in data/.'); process.exit(1); }
-const prijsBestand = prijsBestanden[prijsBestanden.length - 1];
+// Een gereden ronde rekenen we met de prijzen van die ronde, niet met de nieuwste:
+// na het ophalen van de volgende ronde zijn budget en prijzen al gestegen en klopt het
+// optimum achteraf anders niet meer.
+const prijsBestand = prijsBestanden.includes(`prices-round${ronde}.json`)
+  ? `prices-round${ronde}.json`
+  : prijsBestanden[prijsBestanden.length - 1];
 const prijzen = lees(prijsBestand);
 
 const mln = n => '€' + (n / 1e6).toFixed(3);

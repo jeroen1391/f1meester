@@ -294,16 +294,16 @@
       "raceGemiddeld": 42.2,
       "uitgesloten": false
     },
-    "BOR": {
-      "verwacht": 124,
-      "ongecorrigeerd": 124,
-      "raceGemiddeld": 85.4,
-      "uitgesloten": false
-    },
     "ALO": {
       "verwacht": 59.4,
       "ongecorrigeerd": 59.4,
       "raceGemiddeld": 45.6,
+      "uitgesloten": false
+    },
+    "BOR": {
+      "verwacht": 124,
+      "ongecorrigeerd": 124,
+      "raceGemiddeld": 85.4,
       "uitgesloten": false
     },
     "BEA": {
@@ -354,16 +354,16 @@
       "raceGemiddeld": 154.8,
       "uitgesloten": false
     },
-    "NOR": {
-      "verwacht": 273.2,
-      "ongecorrigeerd": 273.2,
-      "raceGemiddeld": 188.4,
-      "uitgesloten": false
-    },
     "LEC": {
       "verwacht": 213,
       "ongecorrigeerd": 213,
       "raceGemiddeld": 139.6,
+      "uitgesloten": false
+    },
+    "NOR": {
+      "verwacht": 273.2,
+      "ongecorrigeerd": 273.2,
+      "raceGemiddeld": 188.4,
       "uitgesloten": false
     },
     "HAM": {

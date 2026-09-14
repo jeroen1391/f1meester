@@ -4,6 +4,29 @@
   "naam": "Keihard in je achterbak",
   "spelers": 8,
 
+  "stand_na_ronde_14": [
+    { "pos": 1, "speler": "GrijzeLeverWorst",             "score": 12201, "ronde14": 1150, "jokers_over": 5, "bonus_goed": 14, "negatief": -5,  "opstelling": "Antonelli 306, Lawson 191, W17 174, RB22 157, Mercedes-motor McLaren 150, Ferrari-motor 97" },
+    { "pos": 2, "speler": "SleuF1",                        "score": 11193, "ronde14": 1096, "jokers_over": 4, "bonus_goed": 7,  "negatief": -5,  "opstelling": "Norris 278, Lawson 191, W17 174, RB22 157, Mercedes-motor Mercedes 174, Ferrari-motor 97" },
+    { "pos": 3, "speler": "Pedaf1",                        "score": 11160, "ronde14": 1020, "jokers_over": 6, "bonus_goed": 7,  "negatief": -5,  "opstelling": "Verstappen 279, Norris 278, W17 174, SF26 97, Red Bull Ford Racing Bulls 75, Mercedes-motor Alpine 92" },
+    { "pos": 4, "speler": "RolloThomassi",                 "score": 10538, "ronde14": 906,  "jokers_over": 4, "bonus_goed": 9,  "negatief": 0,   "opstelling": "Leclerc 236, Piastri 171, 2x VCARB 03 75, Mercedes-motor Mercedes 174, Mercedes-motor McLaren 150" },
+    { "pos": 5, "speler": "Adtssss...",                    "score": 9886,  "ronde14": 790,  "jokers_over": 3, "bonus_goed": 6,  "negatief": -10, "opstelling": "Lawson 191, Tsunoda 81, SF26 97, MCL40 150, Mercedes-motor Mercedes 174, Ferrari-motor 97" },
+    { "pos": 6, "speler": "Kamertjes verhoerder uit BaZ",  "score": 9737,  "ronde14": 892,  "jokers_over": 5, "bonus_goed": 3,  "negatief": -10, "opstelling": "Lindblad 145, Leclerc 236, SF26 met joker 194, A526 92, Mercedes-motor McLaren 150, Red Bull Ford Racing Bulls 75" },
+    { "pos": 7, "speler": "Markiezzz",                     "score": 8160,  "ronde14": 669,  "jokers_over": 6, "bonus_goed": 5,  "negatief": -10, "opstelling": "Piastri 171, Lawson 191, A526 92, VF26 49, Ferrari-motor Haas 49, Mercedes-motor Alpine 92" },
+    { "pos": 8, "speler": "ApexTwins",                     "score": 7975,  "ronde14": 402,  "jokers_over": 6, "bonus_goed": 7,  "negatief": -35, "opstelling": "Lindblad 145, Sainz 6, SF26 97, FW48 24, Ferrari-motor 97, Honda 8" }
+  ],
+  "_ronde14_notitie": [
+    "Opgehaald 14 september. Alle rondescores kloppen met het verschil in totaalscore sinds ronde 13.",
+    "SleuF1 van derde naar tweede, 33 punten voor Pedaf1. Gat tot de koploper groeide van 954 naar 1008.",
+    "De koploper verschilde op twee plekken: Antonelli (306) in plaats van Norris (278), +28, en de",
+    "Mercedes-motor van McLaren (150) in plaats van die van Mercedes (174), -24. Opstelling 1075 tegen 1071.",
+    "Het verschil van 54 kwam uit de bonusvragen: 75 tegen 25. Hij had Antonelli, Verstappen en Norris exact.",
+    "Eerste joker op een onderdeel in deze subleague: Kamertjes zette hem op het SF26-chassis. Leverde 97",
+    "extra op, in de ronde dat Hamilton uitviel. Een joker op Leclerc (236) had hem 139 meer opgeleverd.",
+    "Eigendom ronde 14 (16 coureursplekken, 32 onderdeelplekken): Lawson 4, Norris 2, Leclerc 2, Lindblad 2,",
+    "Piastri 2, Antonelli 1, Verstappen 1, Tsunoda 1, Sainz 1. Ferrari 8, Mercedes 6, McLaren 4,",
+    "Racing Bulls 4, Alpine 4, Red Bull 2, Haas 2, Williams 1, Aston Martin 1."
+  ],
+
   "stand_na_ronde_13": [
     { "pos": 1, "speler": "GrijzeLeverWorst",            "score": 11051, "ronde13": 901, "jokers_over": 5, "bonus_goed": 11 },
     { "pos": 2, "speler": "Pedaf1",                       "score": 10140, "ronde13": 880, "jokers_over": 6, "bonus_goed": 6 },
@@ -31,8 +54,9 @@
     "_uitleg": "punten = de verdubbelde score die het spel toekende. De winst ten opzichte van geen joker is de helft daarvan.",
     "_gemiddelde_sprint": 503,
     "_gemiddelde_geen_sprint": 206,
-    "_allemaal_op_coureurs": "Alle acht jokers gingen op een coureur, nooit op een chassis of motor. Logisch: onderdelen scoren ongeveer een derde van een coureur.",
+    "_allemaal_op_coureurs": "Tot en met ronde 13 gingen alle acht jokers op een coureur. In ronde 14 zette Kamertjes de eerste op een onderdeel (SF26-chassis): 97 extra, waar Leclerc 236 extra had opgeleverd. Onderdelen scoren ongeveer een derde tot de helft van een topcoureur.",
     "log": [
+      { "ronde": 14, "sprint": false, "speler": "Kamertjes verhoerder uit BaZ", "op": "SF26-chassis", "punten": 194 },
       { "ronde": 12, "sprint": true,  "speler": "GrijzeLeverWorst", "op": "Norris",     "punten": 704 },
       { "ronde": 5,  "sprint": true,  "speler": "SleuF1",           "op": "Antonelli",  "punten": 686 },
       { "ronde": 9,  "sprint": true,  "speler": "Adtssss...",       "op": "Lawson",     "punten": 484 },

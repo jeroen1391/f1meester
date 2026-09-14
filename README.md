@@ -37,8 +37,8 @@ Alles hieronder is geverifieerd, niet aangenomen.
   mee te zakken — het zakte van 160 naar 152. Een bijstelling die je rechtstreeks op een
   onderdeel zet gaat nog steeds voor op die van de coureurs.
 
-`node src/validate.js` controleert 72 werkelijk toegekende waarden over twaalf rondes.
-Alle 72 komen exact uit.
+`node src/validate.js` controleert 84 werkelijk toegekende waarden over veertien rondes.
+Alle 84 komen exact uit.
 
 ## Gebruik
 
