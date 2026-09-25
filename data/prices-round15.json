@@ -2,6 +2,7 @@
   "_bron": "formule1meester.nl /ajax/team_changelineup — opgehaald 14 september 2026, ronde 15 (Azerbeidzjan, Baku City Circuit)",
   "_let_op": "Chassis en motor van dezelfde renstal hebben dezelfde prijs en scoren identiek.",
   "_coureurswissel_25sep": "Hadjar is terug na zijn polsblessure en rijdt Red Bull; Lawson terug naar Racing Bulls; Tsunoda (invaller) weg. Op 25 september van de publieke pagina /coureurs/ gehaald (niet ingelogd): Hadjar kreeg de prijs van de Red Bull-stoel (8.491.000) en de seizoenspunten die wij als LAW:RBR hebben (2293), Lawson die van de Racing Bulls-stoel (7.029.000, 1943 = onze TSU:RAC). Alle andere coureurprijzen ongewijzigd. Onderdeelprijzen staan niet publiek; aangenomen ongewijzigd (er is sinds 14 sep niet geracet). Budget en jokers niet opnieuw gecontroleerd.",
+  "_controle_25sep_ingelogd": "Later op 25 september ingelogd nagelopen via /ajax/team_changelineup: budget 105.499.000, 4 jokers, alle coureur- en onderdeelprijzen exact gelijk aan dit bestand. De site heeft Lawson in de opstelling van SleuF1 zelf vervangen door Hadjar (stoelwissel): huidige opstelling Norris, Hadjar, W17, RB22, Mercedes-motor (MER), Ferrari-motor (FER); bonus nog Antonelli/Leclerc/Verstappen. Ook de rondehistorie in de subleague staat nu per stoel (HAD 191 in ronde 14). Subleaguestand ongewijzigd t.o.v. 14 sep.",
   "budget": { "totaal": 105499000, "jokers_over": 4 },
   "coureurs": {
     "BOT": { "naam": "Valtteri Bottas",   "team": "CAD", "prijs": 1573000 },
