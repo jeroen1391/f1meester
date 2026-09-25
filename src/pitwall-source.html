@@ -317,7 +317,7 @@ AUD:["Audi","R26","Audi",2181000],AST:["Aston Martin","AMR26","Honda",2011000],H
 RAC:["Racing Bulls","VCARB 03","Red Bull Ford",2842000],ALP:["Alpine","A526","Mercedes",3275000],
 RBR:["Red Bull","RB22","Red Bull Ford",8607000],MCL:["McLaren","MCL40","Mercedes",13175000],
 FER:["Ferrari","SF26","Ferrari",15324000],MER:["Mercedes","W17","Mercedes",17733000]};
-const HUIDIG={coureurs:["NOR","LAW"],onderdelen:["MER","MER","RBR","FER"]};
+const HUIDIG={coureurs:["NOR","HAD"],onderdelen:["MER","MER","RBR","FER"]};
 const STAND=[["GrijzeLeverWorst",12201,5,14,1150],["SleuF1",11193,4,7,1096],["Pedaf1",11160,6,7,1020],["RolloThomassi",10538,4,9,906],
 ["Adtssss...",9886,3,6,790],["Kamertjes verhoerder uit BaZ",9737,5,3,892],["Markiezzz",8160,6,5,669],["ApexTwins",7975,6,7,402]];
 const JOKERPLAN=[
@@ -460,16 +460,19 @@ const VOORUITBLIK={
   punten:[
     '<b>Baku is een stratencircuit.</b> Uitval komt vaker voor, en een uitvaller levert zijn coureur −10 en zijn onderdeel −5 op in plaats van punten. Twee elementen van één renstal verliezen dan samen.',
     '<b>1.008 achter met negen rondes te gaan: 112 per ronde.</b> Met dezelfde keuzes als de koploper loop je niets in. Winst zit in de bonusvragen (hij had er dit seizoen 14 goed, jij 7), een joker op het goede moment en een coureur die hij niet heeft.',
-    '<b>Waarom Verstappen + Norris en niet de top van de optimizer.</b> Norris + Antonelli met 2× Red Bull komt 9 punten hoger uit, maar hangt voor 44 procent aan Mercedes: op een stratencircuit is één uitvaller dan twee plekken kwijt. Deze opstelling spreidt: Red Bull en Mercedes elk 34 procent. Verstappen won hier vorig jaar vanaf pole en reed in beide trainingen top drie; de koploper had vorige week Antonelli.',
-    '<b>Stoelwissel.</b> Hadjar is terug bij Red Bull (8,5 miljoen), Lawson terug bij Racing Bulls (7,0 miljoen), Tsunoda is weg. Lawson stond in jouw team van ronde 14 — hij scoort nu voor Racing Bulls, niet meer voor het Red Bull-onderdeel.',
+    '<b>Waarom Verstappen + Norris en niet de top van de optimizer.</b> Opstellingen met Antonelli komen 22 punten hoger uit, maar hangen voor 44 procent aan Mercedes. Antonelli viel donderdag al stil met hydrauliekpech, en op een stratencircuit kost één uitvaller dan twee plekken. Belangrijker: de koploper had vorige week Antonelli. Met hem kopiëren loop je niets in; met Verstappen en Norris verschillen jullie op beide coureurs, en valt Antonelli uit dan pak je in één ronde een flink deel van de achterstand terug.',
+    '<b>Stoelwissel.</b> Hadjar is terug bij Red Bull (8,5 miljoen), Lawson terug bij Racing Bulls (7,0 miljoen), Tsunoda is weg. De site heeft Lawson in jouw opstelling zelf vervangen door Hadjar.',
     '<b>Leclerc start achteraan.</b> Dat kost alleen racepunten, zijn kwalificatie telt gewoon. Het model zet hem op 175 in plaats van 213 en Ferrari zakt mee naar 121.'
   ]
 };
 
-const BIJGEWERKT='25 september 2026, 09:30';
+const BIJGEWERKT='25 september 2026, 10:15';
 const NIEUWS=[
+ {kop:'Windsor: Red Bull sterk in Baku, McLaren worstelt',
+  tekst:'Red Bull bracht veel upgrades en oogt "really racable": Verstappen reed de constantste lange run (1:47,8 tot 1:48,1), Hadjar was goed op soft en op de lange runs. Antonelli even snel als Russell op de lange run, ondanks weinig rijtijd. Bij McLaren liet de nieuwe vloer los en raakte Norris de muur; Piastri was de betere van de twee.',
+  bron:'Peter Windsor · 24 sep', betreft:['RBR','VER','HAD','MER','ANT','MCL','NOR','PIA']},
  {kop:'Hadjar terug bij Red Bull, Lawson terug naar Racing Bulls',
-  tekst:'Hadjar is hersteld van zijn polsblessure. Lawson verhuist terug naar Racing Bulls en Tsunoda valt af. Hadjar kost 8,5 miljoen, Lawson nu 7,0 miljoen. Stond Lawson in je team, dan scoort hij nu voor Racing Bulls en niet meer voor het Red Bull-onderdeel.',
+  tekst:'Hadjar is hersteld van zijn polsblessure. Lawson verhuist terug naar Racing Bulls en Tsunoda valt af. Hadjar kost 8,5 miljoen, Lawson nu 7,0 miljoen. De site heeft Lawson in jouw opstelling zelf vervangen door Hadjar.',
   bron:'formule1meester.nl · 25 sep', betreft:['RBR','HAD','RAC','LAW']},
  {kop:'Leclerc start achteraan — Alonso en Stroll ook',
   tekst:'Ferrari neemt een extra motor voor Leclerc; Aston Martin wisselde bij beide coureurs Honda-onderdelen. Alle drie naar achteren op de grid. Dat kost géén kwalificatiepunten, alleen de race. Het model zet Leclerc op 175 in plaats van 213.',
@@ -514,7 +517,7 @@ function fp3Paneel(){
     +'<div class="fp3">'+fp3+'</div>'
     +'<div class="vormkop" style="margin-top:4px">Teamvorm<em>punten per onderdeel, laatste 5 rondes</em></div>'
     +'<div class="tv">'+tv+'</div>'
-    +'<div class="vormvoet"><b>VT3 is nog niet gereden</b> (vrijdag ca. 10:30). Dit is VT2, op de lange runs het beste beeld van het racetempo. Mercedes 1-2, Verstappen derde; McLaren pas zesde en achtste, daarom Norris en Piastri 8 procent lager.</div></div>';
+    +'<div class="vormvoet"><b>VT3 is nog niet gereden</b> (vrijdag ca. 10:30). Dit is VT2, op de lange runs het beste beeld van het racetempo. Mercedes 1-2, Verstappen derde. Samen met de analyse van Windsor: Red Bull 8 procent omhoog, Verstappen 10, Norris 12 procent omlaag, Piastri 5.</div></div>';
 }
 function drvOpties(sel){
   return Object.keys(DRIVERS).sort((a,b)=>DRIVERS[b][2]-DRIVERS[a][2])

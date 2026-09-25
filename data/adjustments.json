@@ -66,18 +66,26 @@
     "Bearman: motor kapot in VT2, straf mogelijk.",
     "VT1: 1 RUS 2 VER 3 LEC 4 HAM 5 ANT 6 PIA 7 LAW 8 LIN 9 OCO 10 BOR.",
     "VT2: 1 RUS 2 ANT (+0,55) 3 VER 4 LEC 5 HAM 6 NOR 7 GAS 8 PIA 9 HAD 10 OCO.",
-    "Weer vrijdag: droog, 20-24 graden, harde windstoten tot 65 km/u."
+    "Weer vrijdag: droog, 20-24 graden, harde windstoten tot 65 km/u.",
+    "Peter Windsor over donderdag (transcript van Jeroen): Red Bull bracht veel upgrades en ziet er",
+    "'really racable' uit; Verstappen in harmonie met de auto, de meest constante lange run (1:47,8-1:48,1).",
+    "Hadjar goed op soft en op de lange runs. Antonelli even snel als Russell op de lange run (1:47,7)",
+    "ondanks weinig rijtijd. Ferrari goed maar minder scherp dan Red Bull. McLaren: nieuwe vloer liet los,",
+    "Norris raakte de muur, lange run bleef rond 1:48,2; Piastri beter (tot 1:48,0) en sterkste vorm in tijden.",
+    "Bijgesteld: VER 1.05->1.10, RBR 1.00->1.08, HAD 150->155, RUS 1.15->1.10, ANT 1.00->1.05,",
+    "NOR 0.92->0.88, PIA 0.92->0.95."
   ],
 
   "coureurs": {
-    "HAD": { "punten": 150 },
+    "HAD": { "punten": 155 },
     "LAW": { "punten": 125 },
     "LEC": { "punten": 175 },
-    "RUS": 1.15,
-    "VER": 1.05,
+    "RUS": 1.1,
+    "ANT": 1.05,
+    "VER": 1.1,
     "HAM": 0.95,
-    "NOR": 0.92,
-    "PIA": 0.92,
+    "NOR": 0.88,
+    "PIA": 0.95,
     "GAS": 1.05,
     "OCO": 1.1,
     "BEA": 0.8,
@@ -85,7 +93,7 @@
     "STR": 0.7
   },
   "onderdelen": {
-    "RBR": 1.0,
+    "RBR": 1.08,
     "RAC": 1.0
   },
   "uitgesloten": []
