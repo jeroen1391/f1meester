@@ -1,5 +1,5 @@
 {
-  "notitie": "Ronde 15 Baku: stoelwissel Hadjar/Lawson, Leclerc achteraan (alleen race), VT1+VT2 Russell snelst. VT3 nog niet verwerkt.",
+  "notitie": "Ronde 15 Baku: stoelwissel Hadjar/Lawson, Leclerc achteraan (alleen race), VT1+VT2 Russell snelst, Windsor-analyse, VT3 Verstappen snelst en Alpine 6/10.",
 
   "_hoe": [
     "Hier zet je alles wat de vorm van de laatste rondes niet weet: vrije trainingen,",
@@ -73,7 +73,30 @@
     "ondanks weinig rijtijd. Ferrari goed maar minder scherp dan Red Bull. McLaren: nieuwe vloer liet los,",
     "Norris raakte de muur, lange run bleef rond 1:48,2; Piastri beter (tot 1:48,0) en sterkste vorm in tijden.",
     "Bijgesteld: VER 1.05->1.10, RBR 1.00->1.08, HAD 150->155, RUS 1.15->1.10, ANT 1.00->1.05,",
-    "NOR 0.92->0.88, PIA 0.92->0.95."
+    "NOR 0.92->0.88, PIA 0.92->0.95.",
+    "Baku-historie 2021-2025 (Wikipedia, kwalificatie/race):",
+    "  Alpine: 2021 Alonso 9/6, Ocon 12/DNF. 2022 Alonso 10/7, Ocon 13/10. 2023 Gasly 17/14, Ocon",
+    "  pitstraat/15. 2024 Gasly DSQ-kwali/12, Ocon pitstraat/15. 2025 Gasly 18/18, Colapinto 16/19,",
+    "  beiden in de muur in de kwalificatie. Drie jaar op rij geen punten.",
+    "  Gasly bij AlphaTauri: 2021 4/3 (podium), 2022 6/5. Colapinto bij Williams: 2024 8/8.",
+    "  Racing Bulls 2025: Lawson 3/5, Hadjar 8/10. Verstappen 2025 pole en winst; Norris 7/7.",
+    "  Oordeel: zwak bewijs (ander reglement, Alpine rijdt nu met Mercedes-motor en scoort 89",
+    "  per ronde), dus nog geen factor. Alpine-motor (91) en Racing Bulls-motor (87) liggen 4 punten",
+    "  uit elkaar: VT3 beslist. Staat Alpine daar duidelijk achter Racing Bulls, dan wisselen.",
+    "Vrijdagochtend: Hamilton alleen een berisping voor het ophouden van Lawson, geen gridstraf",
+    "(HAM 0.95->1.0). Antonelli's motor na het blusincident schoongemaakt, geen schade.",
+    "VT3: winderiger en koeler dan donderdag (lucht 25, baan 42 graden).",
+    "VT3-uitslag (crash.net en autosport, beide live): 1 VER (1:43,922, zonder slipstream), 2 RUS, 3 HAM,",
+    "4 ANT, 5 LEC, 7 PIA, 8 NOR, 9 BEA. Plek 6 en 10 verschillen per bron: Hadjar of Gasly op 6, Gasly of",
+    "Colapinto op 10. Alpine in elk geval in de top tien, Racing Bulls niet (Lindblad aangegeven voor",
+    "afsnijden). Stroll in de muur bij bocht 1. Hadjar klaagt over remmen die naar één kant trekken.",
+    "Geen rode vlag. Bijgesteld, klein omdat VT3 alleen de kwalificatie voorspelt: VER 1.10->1.15,",
+    "HAM 1.00->1.05, BEA 0.8->0.9, RAC 1.00->0.95. Alpine-motor blijft (beslisregel hierboven).",
+    "Definitieve VT3-tabel van racingnews365.nl (in de browser geladen): 1 VER 1:43,922, 2 RUS +0,099,",
+    "3 HAM +0,111, 4 ANT +0,351, 5 LEC +0,622, 6 GAS +0,715, 7 PIA, 8 NOR, 9 HAD, 10 COL, 11 SAI,",
+    "12 BEA, 13 BOR, 14 OCO, 15 HUL, 16 PER, 17 ALB, 18 LAW, 19 LIN, 20 ALO, 21 BOT, 22 STR.",
+    "De eerdere 'Bearman P9' van crash.net was fout. Daarom nog: GAS 1.05->1.10, COL 1.00->1.05,",
+    "BEA 0.9->0.85, RAC 0.95->0.90. racingnews365.nl is volgens Jeroen een prima bron."
   ],
 
   "coureurs": {
@@ -82,19 +105,20 @@
     "LEC": { "punten": 175 },
     "RUS": 1.1,
     "ANT": 1.05,
-    "VER": 1.1,
-    "HAM": 0.95,
+    "VER": 1.15,
+    "HAM": 1.05,
     "NOR": 0.88,
     "PIA": 0.95,
-    "GAS": 1.05,
+    "GAS": 1.1,
     "OCO": 1.1,
-    "BEA": 0.8,
+    "BEA": 0.85,
+    "COL": 1.05,
     "ALO": 0.7,
     "STR": 0.7
   },
   "onderdelen": {
     "RBR": 1.08,
-    "RAC": 1.0
+    "RAC": 0.9
   },
   "uitgesloten": []
 }
