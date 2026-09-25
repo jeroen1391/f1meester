@@ -1,5 +1,5 @@
 {
-  "notitie": "",
+  "notitie": "Ronde 15 Baku: stoelwissel Hadjar/Lawson, Leclerc achteraan (alleen race), VT1+VT2 Russell snelst. VT3 nog niet verwerkt.",
 
   "_hoe": [
     "Hier zet je alles wat de vorm van de laatste rondes niet weet: vrije trainingen,",
@@ -51,7 +51,42 @@
     "uitkomst": "HAM 211 verwacht, 59 (uitgevallen). BEA 46, 37. ANT 284, 306. LEC 245, 236. Totale fout zakte van 335 naar 264: de bijstellingen hielpen."
   },
 
-  "coureurs": {},
-  "onderdelen": {},
+  "notitie_ronde15": [
+    "Stoelwissel (25 sep): Hadjar terug bij Red Bull na drie races blessure, Lawson terug naar Racing Bulls,",
+    "Tsunoda weg. Onze uitslagen hebben HAD niet; de Red Bull-stoel staat als LAW:RBR, de Racing Bulls-stoel",
+    "als TSU:RAC. De site deed hetzelfde: Hadjar kreeg 2293 seizoenspunten = onze LAW, Lawson 1943 = onze TSU.",
+    "Daarom harde punten per coureur, en RBR/RAC met een eigen factor zodat de LAW-override de",
+    "Red Bull-onderdelen niet omlaag trekt (onderdeelPuntenPerCoureur telt de oude LAW-regels bij RBR).",
+    "  HAD 150: stoelvorm 168,6, iets eraf voor de terugkeer na blessure (VT2 P9).",
+    "  LAW 125: Racing Bulls-stoelvorm 117 (Tsunoda), Lawson sterker (VT1 P7).",
+    "Leclerc start achteraan (extra motor). Kwalificatie blijft staan (~P3-5, ~70), race van P22 naar",
+    "ongeveer P8 met meer uitvalrisico: ~105 in plaats van ~145. Totaal 175 in plaats van 213.",
+    "Alonso en Stroll ook achteraan (Honda-wissel). Antonelli kreeg een gebruikte motor: geen straf.",
+    "Hamilton onderzocht voor ophouden van Lawson in VT2 (mogelijk paar plekken, alleen race).",
+    "Bearman: motor kapot in VT2, straf mogelijk.",
+    "VT1: 1 RUS 2 VER 3 LEC 4 HAM 5 ANT 6 PIA 7 LAW 8 LIN 9 OCO 10 BOR.",
+    "VT2: 1 RUS 2 ANT (+0,55) 3 VER 4 LEC 5 HAM 6 NOR 7 GAS 8 PIA 9 HAD 10 OCO.",
+    "Weer vrijdag: droog, 20-24 graden, harde windstoten tot 65 km/u."
+  ],
+
+  "coureurs": {
+    "HAD": { "punten": 150 },
+    "LAW": { "punten": 125 },
+    "LEC": { "punten": 175 },
+    "RUS": 1.15,
+    "VER": 1.05,
+    "HAM": 0.95,
+    "NOR": 0.92,
+    "PIA": 0.92,
+    "GAS": 1.05,
+    "OCO": 1.1,
+    "BEA": 0.8,
+    "ALO": 0.7,
+    "STR": 0.7
+  },
+  "onderdelen": {
+    "RBR": 1.0,
+    "RAC": 1.0
+  },
   "uitgesloten": []
 }

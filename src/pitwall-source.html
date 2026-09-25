@@ -284,7 +284,7 @@ footer b{color:var(--mute);font-weight:600}
 <footer class="wrap">
   Vormgeving volgens de merkgids van Formula 1: <b>F1 Warm Red #FF1E00</b> als highlight, <b>Carbon Black #15151E</b> en <b>Off-White #F7F4F1</b> in de grote vlakken, gezet uit Titillium.
   Scoremodel geverifieerd tegen 84 werkelijk toegekende waarden over ronde 1 t/m 14 &mdash; alle 84 exact.
-  Uitslagen, prijzen, budget en subleaguestand van formule1meester.nl, opgehaald 14 september 2026.
+  Uitslagen, budget en subleaguestand van formule1meester.nl, opgehaald 14 september 2026. Coureurprijzen na de stoelwissel op 25 september van de publieke coureurspagina (niet ingelogd).
 </footer>
 
 <script>
@@ -308,7 +308,7 @@ const DRIVERS={BOT:["Valtteri Bottas","CAD",1573000],PER:["Sergio Perez","CAD",1
 STR:["Lance Stroll","AST",3711000],SAI:["Carlos Sainz","WIL",4011000],HUL:["Nico Hulkenberg","AUD",4148000],
 OCO:["Esteban Ocon","HAS",4276000],BOR:["Gabriel Bortoleto","AUD",4600000],ALO:["Fernando Alonso","AST",4359000],
 BEA:["Oliver Bearman","HAS",4744000],LIN:["Arvid Lindblad","RAC",5181000],COL:["Franco Colapinto","ALP",5290000],
-TSU:["Yuki Tsunoda","RAC",7029000],GAS:["Pierre Gasly","ALP",7820000],LAW:["Liam Lawson","RBR",8491000],
+LAW:["Liam Lawson","RAC",7029000],GAS:["Pierre Gasly","ALP",7820000],HAD:["Isack Hadjar","RBR",8491000],
 PIA:["Oscar Piastri","MCL",24613000],VER:["Max Verstappen","RBR",26450000],NOR:["Lando Norris","MCL",28107000],
 LEC:["Charles Leclerc","FER",27797000],HAM:["Lewis Hamilton","FER",33519000],RUS:["George Russell","MER",34294000],
 ANT:["Kimi Antonelli","MER",36655000]};
@@ -345,8 +345,8 @@ const VENSTER=5, WIN=ROUNDS.slice(-VENSTER);
 
 function pts(tab,pen,pos,ses){ if(typeof pos==='number'){const r=tab[pos-1];return r?r[SI[ses]]:0;} return pen[pos]??0; }
 
-const S={sel:{a1:{c:'NOR',ch:'MER',mo:'MER'},a2:{c:'LAW',ch:'RBR',mo:'FER'}},
-  joker:null, bonus:['ANT','LEC','VER'], pens:{}, excl:new Set(), notitie:'', checks:{}, goedgekeurd:null};
+const S={sel:{a1:{c:'VER',ch:'RBR',mo:'MER'},a2:{c:'NOR',ch:'MER',mo:'ALP'}},
+  joker:null, bonus:['RUS','ANT','VER'], pens:{}, excl:new Set(), notitie:'', checks:{}, goedgekeurd:null};
 const $=id=>document.getElementById(id);
 const eur=n=>'€ '+n.toLocaleString('nl-NL');
 const eurK=n=>'€'+(n/1e6).toFixed(3).replace('.',',')+'m';
@@ -459,29 +459,35 @@ const VOORUITBLIK={
   ronde:15, naam:'Baku',
   punten:[
     '<b>Baku is een stratencircuit.</b> Uitval komt vaker voor, en een uitvaller levert zijn coureur −10 en zijn onderdeel −5 op in plaats van punten. Twee elementen van één renstal verliezen dan samen.',
-    '<b>1.008 achter met negen rondes te gaan: 112 per ronde.</b> Met dezelfde keuzes als de koploper loop je niets in. Winst zit in de bonusvragen (hij had er dit seizoen 14 goed, jij 7), een joker op het goede moment en een coureur die hij niet heeft.'
+    '<b>1.008 achter met negen rondes te gaan: 112 per ronde.</b> Met dezelfde keuzes als de koploper loop je niets in. Winst zit in de bonusvragen (hij had er dit seizoen 14 goed, jij 7), een joker op het goede moment en een coureur die hij niet heeft.',
+    '<b>Waarom Verstappen + Norris en niet de top van de optimizer.</b> Norris + Antonelli met 2× Red Bull komt 9 punten hoger uit, maar hangt voor 44 procent aan Mercedes: op een stratencircuit is één uitvaller dan twee plekken kwijt. Deze opstelling spreidt: Red Bull en Mercedes elk 34 procent. Verstappen won hier vorig jaar vanaf pole en reed in beide trainingen top drie; de koploper had vorige week Antonelli.',
+    '<b>Stoelwissel.</b> Hadjar is terug bij Red Bull (8,5 miljoen), Lawson terug bij Racing Bulls (7,0 miljoen), Tsunoda is weg. Lawson stond in jouw team van ronde 14 — hij scoort nu voor Racing Bulls, niet meer voor het Red Bull-onderdeel.',
+    '<b>Leclerc start achteraan.</b> Dat kost alleen racepunten, zijn kwalificatie telt gewoon. Het model zet hem op 175 in plaats van 213 en Ferrari zakt mee naar 121.'
   ]
 };
 
-const BIJGEWERKT='14 september 2026';
+const BIJGEWERKT='25 september 2026, 09:30';
 const NIEUWS=[
- {kop:'Ferrari tweede ronde op rij onderuit — Hamilton valt uit in Madrid',
-  tekst:'Na Leclerc in Monza viel nu Hamilton uit. Het Ferrari-onderdeel kwam op 97 punten, na 87 in Monza. Wie Hamilton of Leclerc én een Ferrari-onderdeel opstelt, verliest bij zo\'n uitvalbeurt op twee plekken tegelijk.',
-  bron:'formule1meester.nl · 13 sep', betreft:['FER','HAM','LEC']},
- {kop:'Baku is een stratencircuit — uitval weegt hier zwaar',
-  tekst:'Muren tot op de baan en een lang recht stuk. Een uitvaller kost een coureur −10 in plaats van racepunten, en zijn onderdeel −5. Twee onderdelen van dezelfde renstal verliezen dan samen. Spreiding over renstallen is hier meer waard dan elders.',
-  bron:'formule1meester.nl · 14 sep', betreft:[]},
- {kop:'Colapinto 173 punten voor 5,3 miljoen',
-  tekst:'Kwalificatie P9, race P7: het hoogste rendement per miljoen van alle coureurs met meer dan 100 punten. Ook Hulkenberg (130 voor 4,0 miljoen) scoorde sterk. Toch steeg Colapinto maar 0,7 procent en Hulkenberg 4,7: de prijs volgt de punten van één ronde niet, dus hij blijft goedkoop.',
-  bron:'formule1meester.nl · 13 sep', betreft:['ALP','COL','AUD','HUL']},
- {kop:'Drie coureurs over hun motorlimiet — straffen kunnen elk moment vallen',
-  tekst:'Antonelli, Albon en Lawson zijn alle drie over de toegestane vier motoren heen en kregen in Monza al een gridstraf. Elke volgende wissel geeft opnieuw een straf. Onthoud: dat kost hier géén kwalificatiepunten, alleen het raceresultaat zakt.',
-  bron:'formula1.com · 5 sep', betreft:['MER','ANT','WIL','ALB','RBR','LAW']}
+ {kop:'Hadjar terug bij Red Bull, Lawson terug naar Racing Bulls',
+  tekst:'Hadjar is hersteld van zijn polsblessure. Lawson verhuist terug naar Racing Bulls en Tsunoda valt af. Hadjar kost 8,5 miljoen, Lawson nu 7,0 miljoen. Stond Lawson in je team, dan scoort hij nu voor Racing Bulls en niet meer voor het Red Bull-onderdeel.',
+  bron:'formule1meester.nl · 25 sep', betreft:['RBR','HAD','RAC','LAW']},
+ {kop:'Leclerc start achteraan — Alonso en Stroll ook',
+  tekst:'Ferrari neemt een extra motor voor Leclerc; Aston Martin wisselde bij beide coureurs Honda-onderdelen. Alle drie naar achteren op de grid. Dat kost géén kwalificatiepunten, alleen de race. Het model zet Leclerc op 175 in plaats van 213.',
+  bron:'crash.net · formula1.com · 24 sep', betreft:['FER','LEC','AST','ALO','STR']},
+ {kop:'Russell snelste in beide trainingen, Antonelli zonder straf',
+  tekst:'Russell een halve seconde voor Antonelli in VT2. Antonelli viel in VT1 stil met hydrauliekpech en kreeg een gebruikte motor terug: geen gridstraf. Bearman had in VT2 een motorschade, Alonso een olielek.',
+  bron:'formula1.com · planetf1 · 24 sep', betreft:['MER','RUS','ANT','HAS','BEA']},
+ {kop:'Hamilton onderzocht na ophouden van Lawson',
+  tekst:'Lawson moest in VT2 uitwijken voor een langzame Hamilton. Een gridstraf van een paar plekken is mogelijk en raakt dan alleen de race.',
+  bron:'planetf1 · 24 sep', betreft:['FER','HAM']},
+ {kop:'Droog en warm, maar harde wind',
+  tekst:'Vrijdag 20 tot 24 graden en onbewolkt. Windstoten tot 65 km/u kunnen het lange rechte stuk grillig maken. Baku blijft een stratencircuit: uitval kost coureur én onderdeel tegelijk.',
+  bron:'formula1.com · 24 sep', betreft:[]}
 ];
-/* Baku heeft nog geen sessies gereden; dit is de laatste uitslag, Madrid.
-   Vóór de deadline van 25 september vervang ik dit door FP3 van Baku. */
-const FP3=[['ANT','MER'],['VER','RBR'],['NOR','MCL'],['LEC','FER'],['RUS','MER'],
-           ['LAW','RBR'],['COL','ALP'],['PIA','MCL'],['LIN','RAC'],['HUL','AUD']];
+/* VT3 is vrijdagochtend (ca. 10:30 NL). Tot die binnen is staat hier VT2 van Baku. */
+const FP3_SESSIE='VT2 Baku';
+const FP3=[['RUS','MER'],['ANT','MER'],['VER','RBR'],['LEC','FER'],['HAM','FER'],
+           ['NOR','MCL'],['GAS','ALP'],['PIA','MCL'],['HAD','RBR'],['OCO','HAS']];
 
 function nieuwsPaneel(){
   const gekozen=new Set();
@@ -504,11 +510,11 @@ function fp3Paneel(){
     +'<span class="nm">'+TEAMS[r.t][0]+'</span>'
     +'<span class="tvbar" style="width:'+Math.max(3,Math.round(r.v/max*100))+'%" title="'+TEAMS[r.t][0]+': '+Math.round(r.v)+' punten per ronde"></span>'
     +'<span class="v">'+Math.round(r.v)+'</span></div>').join('');
-  return '<div class="vormpaneel"><div class="vormkop">Laatste uitslag &mdash; Madrid<em>ronde 14</em></div>'
+  return '<div class="vormpaneel"><div class="vormkop">Training &mdash; '+FP3_SESSIE+'<em>ronde 15</em></div>'
     +'<div class="fp3">'+fp3+'</div>'
     +'<div class="vormkop" style="margin-top:4px">Teamvorm<em>punten per onderdeel, laatste 5 rondes</em></div>'
     +'<div class="tv">'+tv+'</div>'
-    +'<div class="vormvoet">Baku heeft nog geen sessies gereden. <b>Vóór de deadline van vrijdag 25 september komt hier FP3 te staan.</b> In Madrid wezen alle vier de FP3-waarnemingen de goede kant op; de bijstellingen waren eerder te voorzichtig dan te zwaar.</div></div>';
+    +'<div class="vormvoet"><b>VT3 is nog niet gereden</b> (vrijdag ca. 10:30). Dit is VT2, op de lange runs het beste beeld van het racetempo. Mercedes 1-2, Verstappen derde; McLaren pas zesde en achtste, daarom Norris en Piastri 8 procent lager.</div></div>';
 }
 function drvOpties(sel){
   return Object.keys(DRIVERS).sort((a,b)=>DRIVERS[b][2]-DRIVERS[a][2])

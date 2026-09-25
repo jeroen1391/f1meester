@@ -1,7 +1,7 @@
 {
   "_bron": "Gegenereerd door f1meester/src/expectations.js — niet met de hand aanpassen.",
   "_uitleg": "De Pit Wall-pagina leest dit in plaats van zelf te rekenen, zodat het model op één plek staat.",
-  "gegenereerd": "2026-09-14",
+  "gegenereerd": "2026-09-25",
   "venster": 5,
   "rondesInVenster": [
     10,
@@ -10,7 +10,7 @@
     13,
     14
   ],
-  "bijstellingActief": false,
+  "bijstellingActief": true,
   "tabel": {
     "coureur": [
       [
@@ -271,7 +271,7 @@
       "uitgesloten": false
     },
     "STR": {
-      "verwacht": 12.4,
+      "verwacht": 8.7,
       "ongecorrigeerd": 12.4,
       "raceGemiddeld": 5.6,
       "uitgesloten": false
@@ -289,13 +289,13 @@
       "uitgesloten": false
     },
     "OCO": {
-      "verwacht": 64.8,
+      "verwacht": 71.3,
       "ongecorrigeerd": 64.8,
       "raceGemiddeld": 42.2,
       "uitgesloten": false
     },
     "ALO": {
-      "verwacht": 59.4,
+      "verwacht": 41.6,
       "ongecorrigeerd": 59.4,
       "raceGemiddeld": 45.6,
       "uitgesloten": false
@@ -307,7 +307,7 @@
       "uitgesloten": false
     },
     "BEA": {
-      "verwacht": 50.8,
+      "verwacht": 40.6,
       "ongecorrigeerd": 50.8,
       "raceGemiddeld": 36,
       "uitgesloten": false
@@ -324,56 +324,56 @@
       "raceGemiddeld": 89.4,
       "uitgesloten": false
     },
-    "TSU": {
-      "verwacht": 117.2,
-      "ongecorrigeerd": 117.2,
-      "raceGemiddeld": 87.6,
-      "uitgesloten": false
-    },
-    "GAS": {
-      "verwacht": 139.6,
-      "ongecorrigeerd": 139.6,
-      "raceGemiddeld": 93.4,
-      "uitgesloten": false
-    },
     "LAW": {
-      "verwacht": 168.6,
+      "verwacht": 125,
       "ongecorrigeerd": 168.6,
       "raceGemiddeld": 124.6,
       "uitgesloten": false
     },
+    "GAS": {
+      "verwacht": 146.6,
+      "ongecorrigeerd": 139.6,
+      "raceGemiddeld": 93.4,
+      "uitgesloten": false
+    },
+    "HAD": {
+      "verwacht": 150,
+      "ongecorrigeerd": 0,
+      "raceGemiddeld": 0,
+      "uitgesloten": false
+    },
     "PIA": {
-      "verwacht": 182.2,
+      "verwacht": 167.6,
       "ongecorrigeerd": 182.2,
       "raceGemiddeld": 113.8,
       "uitgesloten": false
     },
     "VER": {
-      "verwacht": 224.8,
+      "verwacht": 236,
       "ongecorrigeerd": 224.8,
       "raceGemiddeld": 154.8,
       "uitgesloten": false
     },
     "LEC": {
-      "verwacht": 213,
+      "verwacht": 175,
       "ongecorrigeerd": 213,
       "raceGemiddeld": 139.6,
       "uitgesloten": false
     },
     "NOR": {
-      "verwacht": 273.2,
+      "verwacht": 251.3,
       "ongecorrigeerd": 273.2,
       "raceGemiddeld": 188.4,
       "uitgesloten": false
     },
     "HAM": {
-      "verwacht": 199.4,
+      "verwacht": 189.4,
       "ongecorrigeerd": 199.4,
       "raceGemiddeld": 127.6,
       "uitgesloten": false
     },
     "RUS": {
-      "verwacht": 211.2,
+      "verwacht": 242.9,
       "ongecorrigeerd": 211.2,
       "raceGemiddeld": 134.2,
       "uitgesloten": false
@@ -405,7 +405,7 @@
       "uitgesloten": false
     },
     "AST": {
-      "verwacht": 21.2,
+      "verwacht": 14.8,
       "ongecorrigeerd": 21.2,
       "raceGemiddeldPerCoureur": {
         "STR": 0.6,
@@ -423,7 +423,7 @@
       "uitgesloten": false
     },
     "HAS": {
-      "verwacht": 37.6,
+      "verwacht": 36.5,
       "ongecorrigeerd": 37.6,
       "raceGemiddeldPerCoureur": {
         "OCO": 14,
@@ -436,12 +436,12 @@
       "ongecorrigeerd": 87.4,
       "raceGemiddeldPerCoureur": {
         "LIN": 34,
-        "TSU": 29.4
+        "LAW": 41.6
       },
       "uitgesloten": false
     },
     "ALP": {
-      "verwacht": 89,
+      "verwacht": 91.3,
       "ongecorrigeerd": 89,
       "raceGemiddeldPerCoureur": {
         "COL": 30,
@@ -453,13 +453,13 @@
       "verwacht": 130.8,
       "ongecorrigeerd": 130.8,
       "raceGemiddeldPerCoureur": {
-        "LAW": 41.6,
+        "HAD": 0,
         "VER": 51.4
       },
       "uitgesloten": false
     },
     "MCL": {
-      "verwacht": 151.6,
+      "verwacht": 139.5,
       "ongecorrigeerd": 151.6,
       "raceGemiddeldPerCoureur": {
         "PIA": 37.8,
@@ -468,7 +468,7 @@
       "uitgesloten": false
     },
     "FER": {
-      "verwacht": 137,
+      "verwacht": 121.1,
       "ongecorrigeerd": 137,
       "raceGemiddeldPerCoureur": {
         "LEC": 46.4,
@@ -477,7 +477,7 @@
       "uitgesloten": false
     },
     "MER": {
-      "verwacht": 168,
+      "verwacht": 178.5,
       "ongecorrigeerd": 168,
       "raceGemiddeldPerCoureur": {
         "RUS": 44.6,
