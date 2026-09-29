@@ -662,7 +662,7 @@ function tekenGoedgekeurd(){
     +'<li>Auto 1: '+rij(g.sel.a1)+'</li><li>Auto 2: '+rij(g.sel.a2)+'</li>'
     +'<li>Bonusvragen: <b>'+g.bonus.map(c=>c?DRIVERS[c][0]:'—').join('</b>, <b>')+'</b></li>'
     +'<li>'+(g.joker!=null?'Joker op <b>'+g.jokerNaam+'</b>':'<b>Geen joker</b> deze ronde')+'</li>'
-    +'<li>Opslaan vóór vrijdag 25 september 13:55</li></ol>'
+    +'<li>Opslaan vóór zaterdag 3 oktober 09:55</li></ol>'
     +'<p class="st">'+Math.round(g.punten)+' punten verwacht · '+eurK(g.kosten)+' · vastgelegd '+g.tijd+'</p>';
 }
 function teken(){
@@ -702,12 +702,12 @@ $('uitAdd').addEventListener('click',()=>{ const c=$('uitDrv').value; if(c){S.ex
 $('btnGoed').addEventListener('click',async()=>{
   const t=totalen(); const pl=plekken();
   const jn=S.joker!=null?(pl[S.joker].soort==='d'?DRIVERS[pl[S.joker].code][0]:TEAMS[pl[S.joker].code][0]+' ('+pl[S.joker].rol.toLowerCase()+')'):null;
-  S.goedgekeurd={ronde:15,sel:JSON.parse(JSON.stringify(S.sel)),bonus:S.bonus.slice(),joker:S.joker,jokerNaam:jn,
+  S.goedgekeurd={ronde:16,sel:JSON.parse(JSON.stringify(S.sel)),bonus:S.bonus.slice(),joker:S.joker,jokerNaam:jn,
     punten:t.punten,kosten:t.kosten,gridstraffen:{...S.pens},uitgesloten:[...S.excl],checks:{...S.checks},notitie:S.notitie,
     tijd:new Date().toLocaleString('nl-NL',{dateStyle:'medium',timeStyle:'short'})};
   tekenGoedgekeurd();
   $('goedgekeurd').scrollIntoView({behavior:'smooth',block:'nearest'});
-  if(DB){ try{ await DB.doc('beslissingen/ronde-15').set(S.goedgekeurd); }catch(err){} }
+  if(DB){ try{ await DB.doc('beslissingen/ronde-16').set(S.goedgekeurd); }catch(err){} }
 });
 
 $('penDrv').innerHTML='<option value="">coureur met gridstraf</option>'+Object.keys(DRIVERS).sort((a,b)=>DRIVERS[a][0].localeCompare(DRIVERS[b][0])).map(c=>'<option value="'+c+'">'+DRIVERS[c][0]+'</option>').join('');
@@ -720,7 +720,7 @@ $('uitDrv').innerHTML='<option value="">coureur of renstal uitsluiten</option>'
 let DB=null;
 teken();
 (async()=>{ try{ DB=await window.claude.use('db'); if(!DB)return;
-  const s=await DB.doc('beslissingen/ronde-15').get();
+  const s=await DB.doc('beslissingen/ronde-16').get();
   if(s.exists){ const d=s.data(); if(d&&d.sel){ S.goedgekeurd=d; tekenGoedgekeurd(); } }
 }catch(e){} })();
 </script>
