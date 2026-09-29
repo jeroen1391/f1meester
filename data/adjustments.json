@@ -1,5 +1,5 @@
 {
-  "notitie": "Ronde 15 Baku: stoelwissel Hadjar/Lawson, Leclerc achteraan (alleen race), VT1+VT2 Russell snelst, Windsor-analyse, VT3 Verstappen snelst en Alpine 6/10.",
+  "notitie": "Ronde 16 Sepang: nog geen bijstellingen (evaluatie 29 sep, vóór de vrije trainingen).",
 
   "_hoe": [
     "Hier zet je alles wat de vorm van de laatste rondes niet weet: vrije trainingen,",
@@ -99,26 +99,18 @@
     "BEA 0.9->0.85, RAC 0.95->0.90. racingnews365.nl is volgens Jeroen een prima bron."
   ],
 
-  "coureurs": {
-    "HAD": { "punten": 155 },
-    "LAW": { "punten": 125 },
-    "LEC": { "punten": 175 },
-    "RUS": 1.1,
-    "ANT": 1.05,
-    "VER": 1.15,
-    "HAM": 1.05,
-    "NOR": 0.88,
-    "PIA": 0.95,
-    "GAS": 1.1,
-    "OCO": 1.1,
-    "BEA": 0.85,
-    "COL": 1.05,
-    "ALO": 0.7,
-    "STR": 0.7
+  "bijstellingen_ronde15": {
+    "_let_op": "Archief. Op 29 september uit 'coureurs' en 'onderdelen' gehaald zodat ze niet in ronde 16 doorwerken. Gemaakt toen HAD nog geen historie had en LAW de Red Bull-stoel was; de harde punten voor HAD en LAW zijn daarom nog steeds juist te lezen, de factoren ook.",
+    "coureurs": { "HAD": { "punten": 155 }, "LAW": { "punten": 125 }, "LEC": { "punten": 175 }, "RUS": 1.1, "ANT": 1.05, "VER": 1.15, "HAM": 1.05, "NOR": 0.88, "PIA": 0.95, "GAS": 1.1, "OCO": 1.1, "BEA": 0.85, "COL": 1.05, "ALO": 0.7, "STR": 0.7 },
+    "onderdelen": { "RBR": 1.08, "RAC": 0.9 },
+    "uitkomst": "Verwacht (expectations.json 25 sep) tegen werkelijk: VER 259/251, NOR 240/53 (uitgevallen), HAD 155/257, LAW 125/107, LEC 175/254 (van P2 in de kwalificatie naar P4 vanaf de laatste startplek), RUS 232/315, ANT 308/176 (kwalificatie P16), RBR 141/170, MER 180/164, ALP 96/19 (beide Alpines uit), RAC 79/87. Totale fout zonder bijstelling 1603, met 1393: de bijstellingen hielpen per saldo. De Alpine-beslisregel uit VT3 kostte 68 (ALP 19 tegen RAC 87)."
   },
-  "onderdelen": {
-    "RBR": 1.08,
-    "RAC": 0.9
-  },
+
+  "notitie_ronde16": [
+    "Ronde 16 Bahrain, gereden op Sepang (Maleisië). Nog geen vrije trainingen; bijstellingen volgen in de voorbereiding."
+  ],
+
+  "coureurs": {},
+  "onderdelen": {},
   "uitgesloten": []
 }

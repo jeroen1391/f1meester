@@ -1,0 +1,70 @@
+{
+  "_bron": "formule1meester.nl /ajax/team_changelineup — opgehaald 29 september 2026 (ingelogd), ronde 16 (Bahrain, gereden op Sepang)",
+  "_let_op": "Chassis en motor van dezelfde renstal hebben dezelfde prijs en scoren identiek. Codes per stoel: HAD = Red Bull, LAW = Racing Bulls (zie results-2026.json, _stoelen).",
+  "budget": { "totaal": 112264000, "jokers_over": 4 },
+  "coureurs": {
+    "BOT": { "naam": "Valtteri Bottas",   "team": "CAD", "prijs": 1611000 },
+    "PER": { "naam": "Sergio Perez",      "team": "CAD", "prijs": 1654000 },
+    "ALB": { "naam": "Alexander Albon",   "team": "WIL", "prijs": 2078000 },
+    "STR": { "naam": "Lance Stroll",      "team": "AST", "prijs": 3750000 },
+    "SAI": { "naam": "Carlos Sainz",      "team": "WIL", "prijs": 4109000 },
+    "HUL": { "naam": "Nico Hulkenberg",   "team": "AUD", "prijs": 4288000 },
+    "ALO": { "naam": "Fernando Alonso",   "team": "AST", "prijs": 4303000 },
+    "OCO": { "naam": "Esteban Ocon",      "team": "HAS", "prijs": 4433000 },
+    "BEA": { "naam": "Oliver Bearman",    "team": "HAS", "prijs": 4704000 },
+    "BOR": { "naam": "Gabriel Bortoleto", "team": "AUD", "prijs": 4736000 },
+    "COL": { "naam": "Franco Colapinto",  "team": "ALP", "prijs": 5325000 },
+    "LIN": { "naam": "Arvid Lindblad",    "team": "RAC", "prijs": 5354000 },
+    "LAW": { "naam": "Liam Lawson",       "team": "RAC", "prijs": 7278000 },
+    "GAS": { "naam": "Pierre Gasly",      "team": "ALP", "prijs": 7867000 },
+    "HAD": { "naam": "Isack Hadjar",      "team": "RBR", "prijs": 8660000 },
+    "PIA": { "naam": "Oscar Piastri",     "team": "MCL", "prijs": 25105000 },
+    "VER": { "naam": "Max Verstappen",    "team": "RBR", "prijs": 26979000 },
+    "NOR": { "naam": "Lando Norris",      "team": "MCL", "prijs": 28336000 },
+    "LEC": { "naam": "Charles Leclerc",   "team": "FER", "prijs": 28686000 },
+    "HAM": { "naam": "Lewis Hamilton",    "team": "FER", "prijs": 34189000 },
+    "RUS": { "naam": "George Russell",    "team": "MER", "prijs": 34979000 },
+    "ANT": { "naam": "Kimi Antonelli",    "team": "MER", "prijs": 37388000 }
+  },
+  "onderdelen": {
+    "CAD": { "chassis": "Unknown",   "motor": "Ferrari",       "prijs": 811000 },
+    "WIL": { "chassis": "FW48",      "motor": "Mercedes",      "prijs": 1540000 },
+    "AST": { "chassis": "AMR26",     "motor": "Honda",         "prijs": 2006000 },
+    "AUD": { "chassis": "R26",       "motor": "Audi",          "prijs": 2250000 },
+    "HAS": { "chassis": "VF26",      "motor": "Ferrari",       "prijs": 2427000 },
+    "RAC": { "chassis": "VCARB 03",  "motor": "Red Bull Ford", "prijs": 2928000 },
+    "ALP": { "chassis": "A526",      "motor": "Mercedes",      "prijs": 3295000 },
+    "RBR": { "chassis": "RB22",      "motor": "Red Bull Ford", "prijs": 8781000 },
+    "MCL": { "chassis": "MCL40",     "motor": "Mercedes",      "prijs": 13355000 },
+    "FER": { "chassis": "SF26",      "motor": "Ferrari",       "prijs": 15713000 },
+    "MER": { "chassis": "W17",       "motor": "Mercedes",      "prijs": 18087000 }
+  },
+
+  "_prijs_naast_punten_ronde15": {
+    "_formaat": "code: [prijswijziging in euro na ronde 15, procent, punten in ronde 15]",
+    "_waarneming": [
+      "Tweede ronde op rij dat de prijs de score van de ronde niet volgt. Norris +0,8% na 53 punten",
+      "en een uitvaller, Bearman -0,8% na 141, Gasly +0,6% na 42, Hadjar +2,0% na 257.",
+      "Weer precies +2,0% voor HAD, PIA, VER, HAM, RUS, ANT, RBR en MER; LEC +3,2% en LAW +3,5% erboven.",
+      "Bearman en Alonso dalen twee rondes op rij, ongeacht hun score. Dat past bij het vermoeden",
+      "dat vraag (hoeveel spelers iets opstellen) de prijs stuurt en niet de punten. Voor de optimizer",
+      "betekent het: prijswinst is niet te voorspellen uit vorm; blijf op punten kiezen."
+    ],
+    "coureurs": {
+      "BOT": [38000, 2.4, 54],   "PER": [55000, 3.4, 70],   "ALB": [69000, 3.4, 17],
+      "STR": [39000, 1.1, -2],   "SAI": [98000, 2.4, 138],  "HUL": [140000, 3.4, 100],
+      "ALO": [-56000, -1.3, 2],  "OCO": [157000, 3.7, 143], "BEA": [-40000, -0.8, 141],
+      "BOR": [136000, 3.0, 69],  "COL": [35000, 0.7, 28],   "LIN": [173000, 3.3, 152],
+      "LAW": [249000, 3.5, 107], "GAS": [47000, 0.6, 42],   "HAD": [169000, 2.0, 257],
+      "PIA": [492000, 2.0, 143], "VER": [529000, 2.0, 251], "NOR": [229000, 0.8, 53],
+      "LEC": [889000, 3.2, 254], "HAM": [670000, 2.0, 201], "RUS": [685000, 2.0, 315],
+      "ANT": [733000, 2.0, 176]
+    },
+    "onderdelen": {
+      "CAD": [23000, 2.9, 41],   "WIL": [41000, 2.7, 50],   "AST": [-5000, -0.2, -4],
+      "AUD": [69000, 3.2, 56],   "HAS": [29000, 1.2, 95],   "RAC": [86000, 3.0, 87],
+      "ALP": [20000, 0.6, 19],   "RBR": [174000, 2.0, 170], "MCL": [180000, 1.4, 64],
+      "FER": [389000, 2.5, 152], "MER": [354000, 2.0, 164]
+    }
+  }
+}

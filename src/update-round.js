@@ -196,11 +196,18 @@ if (bijstel && bijstel['notitie_ronde' + ronde] && bijstel.coureurs && Object.ke
     const basis = voorspel(vorige5, c, coureurPunten);
     regel(c, basis, metBijstelling(basis, bijstel.coureurs[c]), coureurPunten(rd, c));
   }
-  const geraakt = [...new Set(Object.keys(bijstel.coureurs).map(c => prijzen.coureurs[c] && prijzen.coureurs[c].team).filter(Boolean))];
+  const eigenOnderdeel = bijstel.onderdelen || {};
+  const geraakt = [...new Set([
+    ...Object.keys(bijstel.coureurs).map(c => prijzen.coureurs[c] && prijzen.coureurs[c].team).filter(Boolean),
+    ...Object.keys(eigenOnderdeel)
+  ])];
   for (const t of geraakt) {
     const basis = voorspel(vorige5, t, onderdeelPunten);
-    const bij = gem(vorige5.map(r => Object.entries(onderdeelPuntenPerCoureur(results[r], t))
-      .reduce((som, [c, p]) => som + p * verhouding(c), 0)));
+    // Een bijstelling op het onderdeel zelf gaat voor, net als in optimize.js.
+    const bij = eigenOnderdeel[t] != null
+      ? metBijstelling(basis, eigenOnderdeel[t])
+      : gem(vorige5.map(r => Object.entries(onderdeelPuntenPerCoureur(results[r], t))
+        .reduce((som, [c, p]) => som + p * verhouding(c), 0)));
     regel(t, basis, bij, onderdeelPunten(rd, t));
   }
   console.log(`  totale fout zonder bijstelling ${somZonder.toFixed(0)}, met ${somMet.toFixed(0)}`);

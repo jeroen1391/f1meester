@@ -41,6 +41,13 @@ if (!fs.existsSync(verwachtPad)) {
 const verwacht = fs.readFileSync(verwachtPad, 'utf8');
 const verwachtBlok = '<script>\nwindow.VERWACHT = ' + verwacht.trim() + ';\n</script>\n';
 
+// Ook de uitslagen komen uit de data, niet uit een kopie in de bron: die kopie
+// liep na de stoelwissel van 25 september achter (oude codes LAW:RBR en TSU:RAC).
+// Alles tussen "const RESULTS=" en "const DRIVERS=" wordt bij het bouwen vervangen.
+const uitslagen = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'data', 'results-2026.json'), 'utf8'));
+for (const k of Object.keys(uitslagen)) if (!/^r\d+$/.test(k)) delete uitslagen[k];
+const resultsRegel = 'const RESULTS=' + JSON.stringify(uitslagen) + ';\n';
+
 const kop = `<!doctype html>
 <html lang="nl" data-theme="light">
 <head>
@@ -85,7 +92,13 @@ if (splitsing < 0) {
   process.exit(1);
 }
 const head = inhoud.slice(0, splitsing);
-const body = inhoud.slice(splitsing);
+const bodyBron = inhoud.slice(splitsing);
+const resultsBlok = /const RESULTS=[\s\S]*?\n(?=const DRIVERS=)/;
+if (!resultsBlok.test(bodyBron)) {
+  console.error('Kon het blok "const RESULTS=" tot "const DRIVERS=" niet vinden in de bron.');
+  process.exit(1);
+}
+const body = bodyBron.replace(resultsBlok, () => resultsRegel);
 
 const pagina = kop + head + verwachtBlok + '</head>\n<body>\n' + body + '\n</body>\n</html>\n';
 

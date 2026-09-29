@@ -4,6 +4,27 @@
   "naam": "Keihard in je achterbak",
   "spelers": 8,
 
+  "stand_na_ronde_15": [
+    { "pos": 1, "speler": "GrijzeLeverWorst",             "score": 13246, "ronde15": 1045, "jokers_over": 4, "bonus_goed": 15, "negatief": -15, "opstelling": "Antonelli met joker 352, Verstappen 251, W17 164, RB22 170, Mercedes-motor McLaren 64, Mercedes-motor Alpine 19" },
+    { "pos": 2, "speler": "SleuF1",                        "score": 12014, "ronde15": 821,  "jokers_over": 4, "bonus_goed": 7,  "negatief": -20, "opstelling": "Verstappen 251, Norris 53, RB22 170, W17 164, Mercedes-motor Mercedes 164, Mercedes-motor Alpine 19" },
+    { "pos": 3, "speler": "Pedaf1",                        "score": 11984, "ronde15": 824,  "jokers_over": 6, "bonus_goed": 8,  "negatief": -20, "opstelling": "Antonelli 176, Verstappen 251, W17 164, RB22 170, 2x Mercedes-motor Alpine 19" },
+    { "pos": 4, "speler": "RolloThomassi",                 "score": 11287, "ronde15": 749,  "jokers_over": 4, "bonus_goed": 9,  "negatief": -15, "opstelling": "Leclerc 254, Norris 53, R26 56, RB22 170, Ferrari-motor 152, Mercedes-motor McLaren 64" },
+    { "pos": 5, "speler": "Adtssss...",                    "score": 11220, "ronde15": 1334, "jokers_over": 2, "bonus_goed": 7,  "negatief": -10, "opstelling": "Hadjar 257, Russell met joker 630, SF26 152, VCARB 03 87, Mercedes-motor Mercedes 164, Mercedes-motor Alpine 19" },
+    { "pos": 6, "speler": "Kamertjes verhoerder uit BaZ",  "score": 10465, "ronde15": 728,  "jokers_over": 5, "bonus_goed": 3,  "negatief": -15, "opstelling": "Lindblad 152, Leclerc 254, SF26 152, A526 19, Mercedes-motor McLaren 64, Red Bull Ford Racing Bulls 87" },
+    { "pos": 7, "speler": "Markiezzz",                     "score": 8813,  "ronde15": 653,  "jokers_over": 6, "bonus_goed": 6,  "negatief": -20, "opstelling": "Piastri 143, Hadjar 257, A526 19, VF26 95, Ferrari-motor Haas 95, Mercedes-motor Alpine 19" },
+    { "pos": 8, "speler": "ApexTwins",                     "score": 8640,  "ronde15": 665,  "jokers_over": 6, "bonus_goed": 8,  "negatief": -15, "opstelling": "Lindblad 152, Sainz 138, SF26 152, FW48 50, Ferrari-motor 152, Honda -4" }
+  ],
+  "_ronde15_notitie": [
+    "Opgehaald 29 september (ingelogd). Rondescores = verschil in totaalscore sinds ronde 14.",
+    "SleuF1 blijft tweede; gat tot de koploper groeide van 1008 naar 1232, voorsprong op Pedaf1 slonk van 33 naar 30.",
+    "De koploper verschilde op twee plekken: Antonelli met joker (352) in plaats van Norris (53), +299, en de",
+    "Mercedes-motor van McLaren (64) in plaats van die van Mercedes (164), -100. Plus 25 bonus tegen 0.",
+    "Adtssss... won de ronde met een joker op Russell (630).",
+    "Eigendom ronde 15 (16 coureursplekken, 32 onderdeelplekken): Verstappen 3, Antonelli 2, Norris 2, Leclerc 2,",
+    "Lindblad 2, Hadjar 2, Russell 1, Piastri 1, Sainz 1. Alpine 8, Mercedes 5, Ferrari 5, Red Bull 4, McLaren 3,",
+    "Racing Bulls 2, Haas 2, Audi 1, Williams 1, Aston Martin 1."
+  ],
+
   "stand_na_ronde_14": [
     { "pos": 1, "speler": "GrijzeLeverWorst",             "score": 12201, "ronde14": 1150, "jokers_over": 5, "bonus_goed": 14, "negatief": -5,  "opstelling": "Antonelli 306, Lawson 191, W17 174, RB22 157, Mercedes-motor McLaren 150, Ferrari-motor 97" },
     { "pos": 2, "speler": "SleuF1",                        "score": 11193, "ronde14": 1096, "jokers_over": 4, "bonus_goed": 7,  "negatief": -5,  "opstelling": "Norris 278, Lawson 191, W17 174, RB22 157, Mercedes-motor Mercedes 174, Ferrari-motor 97" },
@@ -56,6 +77,8 @@
     "_gemiddelde_geen_sprint": 206,
     "_allemaal_op_coureurs": "Tot en met ronde 13 gingen alle acht jokers op een coureur. In ronde 14 zette Kamertjes de eerste op een onderdeel (SF26-chassis): 97 extra, waar Leclerc 236 extra had opgeleverd. Onderdelen scoren ongeveer een derde tot de helft van een topcoureur.",
     "log": [
+      { "ronde": 15, "sprint": false, "speler": "Adtssss...",       "op": "Russell",   "punten": 630 },
+      { "ronde": 15, "sprint": false, "speler": "GrijzeLeverWorst", "op": "Antonelli", "punten": 352 },
       { "ronde": 14, "sprint": false, "speler": "Kamertjes verhoerder uit BaZ", "op": "SF26-chassis", "punten": 194 },
       { "ronde": 12, "sprint": true,  "speler": "GrijzeLeverWorst", "op": "Norris",     "punten": 704 },
       { "ronde": 5,  "sprint": true,  "speler": "SleuF1",           "op": "Antonelli",  "punten": 686 },

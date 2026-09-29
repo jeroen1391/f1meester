@@ -179,18 +179,18 @@ footer b{color:var(--mute);font-weight:600}
   <div class="top-in">
     <div>
       <p class="eyebrow">Formule 1 Meester &middot; Strakka Haas F1</p>
-      <h1>Ronde 15 &mdash; Azerbeidzjan</h1>
-      <p class="sub">Baku City Circuit &middot; deadline vrijdag 25 september 13:55, vijf minuten voor de kwalificatie</p>
+      <h1>Ronde 16 &mdash; Bahrain</h1>
+      <p class="sub">Gereden op Sepang, Maleisië &middot; deadline zaterdag 3 oktober 09:55, vijf minuten voor de kwalificatie</p>
     </div>
     <div class="doel">
       <b>Doel: 1e in de subleague</b>
-      Tweede, 1.008 achter GrijzeLeverWorst &middot; 9 rondes &middot; 112 per ronde in te lopen
+      Tweede, 1.232 achter GrijzeLeverWorst &middot; 8 rondes &middot; 154 per ronde in te lopen
     </div>
   </div>
 </header>
 
 <div class="budget"><div class="budget-in">
-  <div><span>Totaal budget:</span><b id="bTot">&euro; 105.499.000</b></div>
+  <div><span>Totaal budget:</span><b id="bTot">&euro; 112.264.000</b></div>
   <div class="over" id="bOverWrap"><span>Resterend budget:</span><b id="bOver">&euro; 0</b></div>
   <div><span>Jokers:</span><b id="bJok">4</b></div>
   <div><span>Verwacht:</span><b id="bPts">&mdash;</b></div>
@@ -269,13 +269,13 @@ footer b{color:var(--mute);font-weight:600}
   </section>
 
   <section class="blok">
-    <div class="blokkop">Jokerplan <span>4 over, 9 rondes</span></div>
+    <div class="blokkop">Jokerplan <span>4 over, 8 rondes</span></div>
     <div class="jokerplan" id="jokerplan"></div>
   </section>
 
   <section class="blok">
     <div class="blokkop">Subleague &mdash; Keihard in je achterbak</div>
-    <table class="stand"><thead><tr><th></th><th>Speler</th><th class="r">Score</th><th class="r">Ronde 14</th><th class="r">Jokers</th><th class="r">Bonus</th></tr></thead>
+    <table class="stand"><thead><tr><th></th><th>Speler</th><th class="r">Score</th><th class="r">Ronde 15</th><th class="r">Jokers</th><th class="r">Bonus</th></tr></thead>
     <tbody id="standbody"></tbody></table>
   </section>
 
@@ -283,12 +283,14 @@ footer b{color:var(--mute);font-weight:600}
 
 <footer class="wrap">
   Vormgeving volgens de merkgids van Formula 1: <b>F1 Warm Red #FF1E00</b> als highlight, <b>Carbon Black #15151E</b> en <b>Off-White #F7F4F1</b> in de grote vlakken, gezet uit Titillium.
-  Scoremodel geverifieerd tegen 84 werkelijk toegekende waarden over ronde 1 t/m 14 &mdash; alle 84 exact.
-  Uitslagen, budget en subleaguestand van formule1meester.nl, opgehaald 14 september 2026. Coureurprijzen na de stoelwissel op 25 september van de publieke coureurspagina (niet ingelogd).
+  Scoremodel geverifieerd tegen 90 werkelijk toegekende waarden over ronde 1 t/m 15 &mdash; alle 90 exact.
+  Uitslagen, prijzen, budget en subleaguestand van formule1meester.nl, opgehaald 29 september 2026 (ingelogd). Coureurcodes per stoel: HAD is de Red Bull-stoel, LAW de Racing Bulls-stoel, ook in de rondes vóór de wissel.
 </footer>
 
 <script>
 "use strict";
+/* RESULTS hieronder is een verouderde kopie: build-pitwall.js vervangt dit hele blok
+   bij het bouwen door data/results-2026.json. Niet met de hand bijwerken. */
 const RESULTS={
 r1:{q:["1:RUS:MER","2:ANT:MER","3:LAW:RBR","4:LEC:FER","5:PIA:MCL","6:NOR:MCL","7:HAM:FER","8:TSU:RAC","9:LIN:RAC","10:BOR:AUD","11:HUL:AUD","12:BEA:HAS","13:OCO:HAS","14:GAS:ALP","15:ALB:WIL","16:COL:ALP","17:ALO:AST","18:PER:CAD","19:BOT:CAD","DNQ:SAI:WIL","DNQ:VER:RBR","DNQ:STR:AST"],r:["1:RUS:MER","2:ANT:MER","3:LEC:FER","4:HAM:FER","5:NOR:MCL","6:VER:RBR","7:BEA:HAS","8:LIN:RAC","9:BOR:AUD","10:GAS:ALP","11:OCO:HAS","12:ALB:WIL","13:TSU:RAC","14:COL:ALP","15:SAI:WIL","16:PER:CAD","DNF:STR:AST","DNF:ALO:AST","DNF:BOT:CAD","DNF:LAW:RBR","DNS:PIA:MCL","DNS:HUL:AUD"]},
 r2:{q:["1:ANT:MER","2:RUS:MER","3:HAM:FER","4:LEC:FER","5:PIA:MCL","6:NOR:MCL","7:GAS:ALP","8:VER:RBR","9:LAW:RBR","10:BEA:HAS","11:HUL:AUD","12:COL:ALP","13:OCO:HAS","14:TSU:RAC","15:LIN:RAC","16:BOR:AUD","17:SAI:WIL","18:ALB:WIL","19:ALO:AST","20:BOT:CAD","21:STR:AST","22:PER:CAD"],s:["1:RUS:MER","2:LEC:FER","3:HAM:FER","4:NOR:MCL","5:ANT:MER","6:PIA:MCL","7:TSU:RAC","8:BEA:HAS","9:VER:RBR","10:OCO:HAS","11:GAS:ALP","12:SAI:WIL","13:BOR:AUD","14:COL:ALP","15:LAW:RBR","16:ALB:WIL","17:ALO:AST","18:STR:AST","19:PER:CAD","DNF:HUL:AUD","DNF:BOT:CAD","DNF:LIN:RAC"],r:["1:ANT:MER","2:RUS:MER","3:HAM:FER","4:LEC:FER","5:BEA:HAS","6:GAS:ALP","7:TSU:RAC","8:LAW:RBR","9:SAI:WIL","10:COL:ALP","11:HUL:AUD","12:LIN:RAC","13:BOT:CAD","14:OCO:HAS","15:PER:CAD","DNF:VER:RBR","DNF:ALO:AST","DNF:STR:AST","DNS:PIA:MCL","DNS:NOR:MCL","DNS:BOR:AUD","DNS:ALB:WIL"]},
@@ -304,25 +306,24 @@ r11:{q:["1:NOR:MCL","2:HAM:FER","3:LEC:FER","4:ANT:MER","5:PIA:MCL","6:VER:RBR",
 r12:{q:["1:NOR:MCL","2:RUS:MER","3:ANT:MER","4:PIA:MCL","5:HAM:FER","6:LEC:FER","7:VER:RBR","8:LAW:RBR","9:BOR:AUD","10:LIN:RAC","11:GAS:ALP","12:TSU:RAC","13:HUL:AUD","14:COL:ALP","15:OCO:HAS","16:ALB:WIL","17:SAI:WIL","18:ALO:AST","19:STR:AST","20:BEA:HAS","21:BOT:CAD","22:PER:CAD"],s:["1:RUS:MER","2:LEC:FER","3:NOR:MCL","4:ANT:MER","5:PIA:MCL","6:VER:RBR","7:HAM:FER","8:GAS:ALP","9:BOR:AUD","10:LIN:RAC","11:LAW:RBR","12:COL:ALP","13:TSU:RAC","14:OCO:HAS","15:BEA:HAS","16:ALB:WIL","17:STR:AST","18:ALO:AST","19:BOT:CAD","20:SAI:WIL","21:PER:CAD","DNF:HUL:AUD"],r:["1:NOR:MCL","2:ANT:MER","3:RUS:MER","4:HAM:FER","5:LEC:FER","6:PIA:MCL","7:LAW:RBR","8:HUL:AUD","9:ALO:AST","10:GAS:ALP","11:TSU:RAC","12:LIN:RAC","13:BOR:AUD","14:COL:ALP","15:PER:CAD","16:SAI:WIL","17:ALB:WIL","DNF:BOT:CAD","DNF:OCO:HAS","DNF:STR:AST","DNF:BEA:HAS","DNF:VER:RBR"]},
 r13:{q:["1:GAS:ALP","2:RUS:MER","3:PIA:MCL","4:LEC:FER","5:HAM:FER","6:VER:RBR","7:ANT:MER","8:COL:ALP","9:NOR:MCL","10:LIN:RAC","11:BOR:AUD","12:BEA:HAS","13:HUL:AUD","14:LAW:RBR","15:SAI:WIL","16:OCO:HAS","17:TSU:RAC","18:ALB:WIL","19:BOT:CAD","20:PER:CAD","21:ALO:AST","22:STR:AST"],r:["1:ANT:MER","2:RUS:MER","3:VER:RBR","4:NOR:MCL","5:PIA:MCL","6:HAM:FER","7:GAS:ALP","8:LIN:RAC","9:COL:ALP","10:TSU:RAC","11:BOR:AUD","12:HUL:AUD","13:SAI:WIL","14:LAW:RBR","15:BEA:HAS","16:OCO:HAS","17:ALB:WIL","18:PER:CAD","19:BOT:CAD","DNF:ALO:AST","DNF:STR:AST","DNF:LEC:FER"]},
 r14:{q:["1:NOR:MCL","2:ANT:MER","3:VER:RBR","4:HAM:FER","5:LEC:FER","6:RUS:MER","7:PIA:MCL","8:LAW:RBR","9:COL:ALP","10:LIN:RAC","11:HUL:AUD","12:BOR:AUD","13:OCO:HAS","14:GAS:ALP","15:TSU:RAC","16:ALB:WIL","17:SAI:WIL","18:ALO:AST","19:PER:CAD","20:BOT:CAD","DNQ:BEA:HAS","DNQ:STR:AST"],r:["1:ANT:MER","2:VER:RBR","3:NOR:MCL","4:LEC:FER","5:RUS:MER","6:LAW:RBR","7:COL:ALP","8:PIA:MCL","9:LIN:RAC","10:HUL:AUD","11:OCO:HAS","12:GAS:ALP","13:BOR:AUD","14:TSU:RAC","15:ALB:WIL","16:BEA:HAS","17:ALO:AST","18:BOT:CAD","DNF:SAI:WIL","DNF:PER:CAD","DNF:STR:AST","DNF:HAM:FER"]}};
-const DRIVERS={BOT:["Valtteri Bottas","CAD",1573000],PER:["Sergio Perez","CAD",1599000],ALB:["Alexander Albon","WIL",2009000],
-STR:["Lance Stroll","AST",3711000],SAI:["Carlos Sainz","WIL",4011000],HUL:["Nico Hulkenberg","AUD",4148000],
-OCO:["Esteban Ocon","HAS",4276000],BOR:["Gabriel Bortoleto","AUD",4600000],ALO:["Fernando Alonso","AST",4359000],
-BEA:["Oliver Bearman","HAS",4744000],LIN:["Arvid Lindblad","RAC",5181000],COL:["Franco Colapinto","ALP",5290000],
-LAW:["Liam Lawson","RAC",7029000],GAS:["Pierre Gasly","ALP",7820000],HAD:["Isack Hadjar","RBR",8491000],
-PIA:["Oscar Piastri","MCL",24613000],VER:["Max Verstappen","RBR",26450000],NOR:["Lando Norris","MCL",28107000],
-LEC:["Charles Leclerc","FER",27797000],HAM:["Lewis Hamilton","FER",33519000],RUS:["George Russell","MER",34294000],
-ANT:["Kimi Antonelli","MER",36655000]};
-const TEAMS={CAD:["Cadillac","Unknown","Ferrari",788000],WIL:["Williams","FW48","Mercedes",1499000],
-AUD:["Audi","R26","Audi",2181000],AST:["Aston Martin","AMR26","Honda",2011000],HAS:["Haas","VF26","Ferrari",2398000],
-RAC:["Racing Bulls","VCARB 03","Red Bull Ford",2842000],ALP:["Alpine","A526","Mercedes",3275000],
-RBR:["Red Bull","RB22","Red Bull Ford",8607000],MCL:["McLaren","MCL40","Mercedes",13175000],
-FER:["Ferrari","SF26","Ferrari",15324000],MER:["Mercedes","W17","Mercedes",17733000]};
-const HUIDIG={coureurs:["NOR","HAD"],onderdelen:["MER","MER","RBR","FER"]};
-const STAND=[["GrijzeLeverWorst",12201,5,14,1150],["SleuF1",11193,4,7,1096],["Pedaf1",11160,6,7,1020],["RolloThomassi",10538,4,9,906],
-["Adtssss...",9886,3,6,790],["Kamertjes verhoerder uit BaZ",9737,5,3,892],["Markiezzz",8160,6,5,669],["ApexTwins",7975,6,7,402]];
+const DRIVERS={BOT:["Valtteri Bottas","CAD",1611000],PER:["Sergio Perez","CAD",1654000],ALB:["Alexander Albon","WIL",2078000],
+STR:["Lance Stroll","AST",3750000],SAI:["Carlos Sainz","WIL",4109000],HUL:["Nico Hulkenberg","AUD",4288000],
+OCO:["Esteban Ocon","HAS",4433000],BOR:["Gabriel Bortoleto","AUD",4736000],ALO:["Fernando Alonso","AST",4303000],
+BEA:["Oliver Bearman","HAS",4704000],LIN:["Arvid Lindblad","RAC",5354000],COL:["Franco Colapinto","ALP",5325000],
+LAW:["Liam Lawson","RAC",7278000],GAS:["Pierre Gasly","ALP",7867000],HAD:["Isack Hadjar","RBR",8660000],
+PIA:["Oscar Piastri","MCL",25105000],VER:["Max Verstappen","RBR",26979000],NOR:["Lando Norris","MCL",28336000],
+LEC:["Charles Leclerc","FER",28686000],HAM:["Lewis Hamilton","FER",34189000],RUS:["George Russell","MER",34979000],
+ANT:["Kimi Antonelli","MER",37388000]};
+const TEAMS={CAD:["Cadillac","Unknown","Ferrari",811000],WIL:["Williams","FW48","Mercedes",1540000],
+AUD:["Audi","R26","Audi",2250000],AST:["Aston Martin","AMR26","Honda",2006000],HAS:["Haas","VF26","Ferrari",2427000],
+RAC:["Racing Bulls","VCARB 03","Red Bull Ford",2928000],ALP:["Alpine","A526","Mercedes",3295000],
+RBR:["Red Bull","RB22","Red Bull Ford",8781000],MCL:["McLaren","MCL40","Mercedes",13355000],
+FER:["Ferrari","SF26","Ferrari",15713000],MER:["Mercedes","W17","Mercedes",18087000]};
+const HUIDIG={coureurs:["VER","NOR"],onderdelen:["RBR","MER","MER","ALP"]};
+const STAND=[["GrijzeLeverWorst",13246,4,15,1045],["SleuF1",12014,4,7,821],["Pedaf1",11984,6,8,824],["RolloThomassi",11287,4,9,749],
+["Adtssss...",11220,2,7,1334],["Kamertjes verhoerder uit BaZ",10465,5,3,728],["Markiezzz",8813,6,6,653],["ApexTwins",8640,6,8,665]];
 const JOKERPLAN=[
- [15,"Azerbeidzjan — Baku","nee","Straatcircuit met veel uitval"],
- [16,"Bahrain — Sepang","nee","Eerste F1-race daar sinds 2017, plus kans op hoosbuien"],
+ [16,"Bahrain — Sepang","nee","Eerste F1-race daar sinds 2017, niemand heeft vorm op deze baan, plus kans op onweer"],
  [17,"Singapore","ja","Enige sprintweekend dat rest: plafond 360 in plaats van 315"],
  [18,"Verenigde Staten — Austin","ja","Bekend circuit, betrouwbare vorm"],
  [19,"Mexico","nee","Reserve"],
@@ -330,7 +331,7 @@ const JOKERPLAN=[
  [21,"Las Vegas","nee","Straatcircuit, koud, veel uitval"],
  [22,"Qatar","ja","Bekend circuit, laatste kans met marge"],
  [23,"Abu Dhabi","nee","Reserve als er eerder een joker overblijft"]];
-const BUDGET=105499000, JOKERS_OVER=4, ACHTERSTAND=1008, RONDES_TE_GAAN=9;
+const BUDGET=112264000, JOKERS_OVER=4, ACHTERSTAND=1232, RONDES_TE_GAAN=8;
 
 /* Puntentabellen en verwachte punten komen uit VERWACHT, gegenereerd door
    f1meester/src/expectations.js met dezelfde motor als optimize.js. Deze pagina
@@ -345,8 +346,8 @@ const VENSTER=5, WIN=ROUNDS.slice(-VENSTER);
 
 function pts(tab,pen,pos,ses){ if(typeof pos==='number'){const r=tab[pos-1];return r?r[SI[ses]]:0;} return pen[pos]??0; }
 
-const S={sel:{a1:{c:'VER',ch:'RBR',mo:'MER'},a2:{c:'NOR',ch:'MER',mo:'ALP'}},
-  joker:null, bonus:['VER','RUS','ANT'], pens:{}, excl:new Set(), notitie:'', checks:{}, goedgekeurd:null};
+const S={sel:{a1:{c:'NOR',ch:'MER',mo:'MER'},a2:{c:'LEC',ch:'RBR',mo:'RBR'}},
+  joker:null, bonus:['ANT','VER','RUS'], pens:{}, excl:new Set(), notitie:'', checks:{}, goedgekeurd:null};
 const $=id=>document.getElementById(id);
 const eur=n=>'€ '+n.toLocaleString('nl-NL');
 const eurK=n=>'€'+(n/1e6).toFixed(3).replace('.',',')+'m';
@@ -443,56 +444,46 @@ function totalen(){
    evaluatie vervangen. Dit zijn uitkomsten en omstandigheden, geen verwachte
    punten: die rekent de pagina zelf door onder het kopje Vooruitblik. */
 const TERUGBLIK={
-  ronde:14, naam:'Madrid',
-  cijfers:[['Opstelling','1.071','verwacht 1.065'],['Bonusvragen','25','1 van 3 goed'],
-           ['Optimum achteraf','1.140','69 laten liggen'],['Subleague','2e','was 3e · 1.008 achter']],
+  ronde:15, naam:'Baku',
+  cijfers:[['Opstelling','821','verwacht 1.096'],['Bonusvragen','0','0 van 3 goed'],
+           ['Optimum achteraf','1.210','389 laten liggen'],['Subleague','2e','1.232 achter · 30 voor Pedaf1']],
   punten:[
-    '<b>Van derde naar tweede.</b> Pedaf1 scoorde 1.020 en staat nu 33 punten achter je. GrijzeLeverWorst liep 54 punten verder uit, naar 1.008.',
-    '<b>Het verschil met de koploper zat in de bonusvragen.</b> Zijn opstelling scoorde 1.075 tegen jouw 1.071: Antonelli (306) in plaats van Norris (278), maar de Mercedes-motor van McLaren (150) in plaats van die van Mercedes (174). Hij voorspelde Antonelli, Verstappen en Norris exact en haalde 75 bonuspunten, jij 25.',
-    '<b>Waar het model ernaast zat.</b> Ferrari scoorde 97 in plaats van 152, doordat Hamilton uitviel; dat is de tweede Ferrari-uitvaller op rij. Red Bull scoorde 157 in plaats van 123 met Verstappen als tweede. Norris (278 tegen 271) en Mercedes (174 tegen 171) klopten.',
-    '<b>Wat goed ging.</b> Twee Mercedes-onderdelen in plaats van een tweede Ferrari scheelde 77 punten. De FP3-waarnemingen wezen alle vier de goede kant op en maakten de voorspelling 71 punten nauwkeuriger.',
-    '<b>Waar de 69 punten bleven.</b> Het optimum was Norris + Antonelli met Alpine, 2× Red Bull en McLaren. Antonelli in plaats van Lawson leverde 115 op; de goedkopere onderdelen die dat betaalden kostten 46.',
-    '<b>Jokers.</b> Kamertjes zette als eerste een joker op een onderdeel, het SF26-chassis: 97 extra. Op Leclerc was het 236 geweest. Verder zette niemand een joker in.'
+    '<b>Nog tweede, maar de ronde ging verloren.</b> GrijzeLeverWorst scoorde 1.045 en liep uit van 1.008 naar 1.232. Pedaf1 scoorde 824 en staat nog maar 30 punten achter je. Adtssss... won de ronde met 1.334.',
+    '<b>Het verschil met de koploper was één joker.</b> Zijn opstelling was bijna gelijk aan de jouwe: Verstappen, W17, RB22 en de Alpine-motor hadden jullie allebei. Hij had Antonelli met joker (352) waar jij Norris had (53): +299. Jouw Mercedes-motor (164) tegenover zijn McLaren-motor (64) haalde er 100 van terug. Hij had ook 25 bonuspunten, jij 0.',
+    '<b>Waar het model ernaast zat.</b> Norris 53 in plaats van 240 en Alpine 19 in plaats van 96, allebei door hetzelfde incident: Colapinto schoof bij de herstart in ronde 36 door in bocht 1 en nam Gasly en Norris mee. Antonelli kwalificeerde zich als 16e (176 in plaats van 308). Russell (315) en Red Bull (170) scoorden juist ruim boven verwachting.',
+    '<b>Wat goed ging.</b> Verstappen scoorde 251 (verwacht 259) en Red Bull 170 (verwacht 141). De Windsor-analyse van donderdag klopte grotendeels: Red Bull sterk, Hadjar goed (257, derde), McLaren zwak en Piastri beter dan Norris. Alleen Antonelli, die volgens Windsor even snel was als Russell, viel tegen.',
+    '<b>Waar de 389 punten bleven.</b> Het optimum was Hadjar + Russell met RB22, 2× Ferrari en Mercedes. Hadjar (257 voor 8,5 miljoen) in plaats van Norris leverde al 204 op. De Alpine-motor bleef staan omdat Alpine in VT3 voor Racing Bulls stond; dat kostte 68 (19 tegen 87). Bij de bonusvragen stonden Verstappen en Russell precies verwisseld: andersom had 50 punten opgeleverd.',
+    '<b>Jokers.</b> Twee in deze ronde. GrijzeLeverWorst op Antonelli: 352, dus 176 extra. Adtssss... op Russell, de winnaar: 630, dus 315 extra. De koploper en jij hebben er allebei nog 4, Adtssss... nog 2.'
   ]
 };
 const VOORUITBLIK={
-  ronde:15, naam:'Baku',
+  ronde:16, naam:'Bahrain op Sepang',
   punten:[
-    '<b>Baku is een stratencircuit.</b> Uitval komt vaker voor, en een uitvaller levert zijn coureur −10 en zijn onderdeel −5 op in plaats van punten. Twee elementen van één renstal verliezen dan samen.',
-    '<b>1.008 achter met negen rondes te gaan: 112 per ronde.</b> Met dezelfde keuzes als de koploper loop je niets in. Winst zit in de bonusvragen (hij had er dit seizoen 14 goed, jij 7), een joker op het goede moment en een coureur die hij niet heeft.',
-    '<b>Waarom Verstappen + Norris en niet de top van de optimizer.</b> Opstellingen met Antonelli komen na VT3 nog 11 punten hoger uit, maar hangen voor 44 procent aan Mercedes. Antonelli viel donderdag al stil met hydrauliekpech, en op een stratencircuit kost één uitvaller dan twee plekken. Belangrijker: de koploper had vorige week Antonelli. Met hem kopiëren loop je niets in; met Verstappen en Norris verschillen jullie op beide coureurs, en valt Antonelli uit dan pak je in één ronde een flink deel van de achterstand terug.',
-    '<b>Stoelwissel.</b> Hadjar is terug bij Red Bull (8,5 miljoen), Lawson terug bij Racing Bulls (7,0 miljoen), Tsunoda is weg. De site heeft Lawson in jouw opstelling zelf vervangen door Hadjar.',
-    '<b>Leclerc start achteraan.</b> Dat kost alleen racepunten, zijn kwalificatie telt gewoon. Het model zet hem op 175 in plaats van 213 en Ferrari zakt mee naar 121.'
+    '<b>Een circuit waar niemand vorm heeft.</b> De Bahrain GP verhuisde naar Sepang, waar sinds 2017 geen F1 meer reed. De vorm van de laatste vijf rondes is het enige wat het model heeft; de vrije trainingen worden daarom belangrijker dan normaal. Een joker is hier afgeraden: de onzekerheid is te groot.',
+    '<b>Tropisch weer.</b> Middagbuien met onweer zijn in Sepang normaal. Regen vergroot de spreiding en daarmee de kans op uitvallers. Dat pleit tegen veel punten in één renstal.',
+    '<b>1.232 achter met acht rondes te gaan: 154 per ronde.</b> Met dezelfde keuzes als de koploper loop je niets in. Hij had vorige week Antonelli en Verstappen. Winst zit in coureurs die hij niet heeft, de bonusvragen (15 goed tegen jouw 7) en een joker op een bekend circuit.',
+    '<b>Straffen.</b> Colapinto krijgt vijf plekken gridstraf voor het ongeluk in Baku. Red Bull onderzoekt de motor van Verstappen; een nieuwe motor betekent een gridstraf. Beide raken alleen de race, niet de kwalificatie.',
+    '<b>Voorlopig advies, nog zonder trainingen.</b> Norris + Leclerc met 2× Red Bull en 2× Mercedes. Dat verschilt van de koploper op beide coureurs. Het definitieve advies komt in de voorbereiding, na VT3.'
   ]
 };
 
-const BIJGEWERKT='25 september 2026, 11:50';
+const BIJGEWERKT='29 september 2026, 19:30';
 const NIEUWS=[
- {kop:'VT3: Verstappen snelst, Alpine met beide auto\'s in de top tien',
-  tekst:'Verstappen 1:43,922 zonder slipstream, 0,1 voor Russell en Hamilton. Gasly zesde, Colapinto tiende; Racing Bulls pas 18e en 19e. Norris achtste, opnieuw achter Piastri. Hamilton kreeg voor het ophouden van Lawson alleen een berisping, geen gridstraf. Stroll in de muur bij bocht 1.',
-  bron:'racingnews365.nl · 25 sep', betreft:['RBR','VER','ALP','GAS','COL','MCL','NOR','RAC']},
- {kop:'Windsor: Red Bull sterk in Baku, McLaren worstelt',
-  tekst:'Red Bull bracht veel upgrades en oogt "really racable": Verstappen reed de constantste lange run (1:47,8 tot 1:48,1), Hadjar was goed op soft en op de lange runs. Antonelli even snel als Russell op de lange run, ondanks weinig rijtijd. Bij McLaren liet de nieuwe vloer los en raakte Norris de muur; Piastri was de betere van de twee.',
-  bron:'Peter Windsor · 24 sep', betreft:['RBR','VER','HAD','MER','ANT','MCL','NOR','PIA']},
- {kop:'Hadjar terug bij Red Bull, Lawson terug naar Racing Bulls',
-  tekst:'Hadjar is hersteld van zijn polsblessure. Lawson verhuist terug naar Racing Bulls en Tsunoda valt af. Hadjar kost 8,5 miljoen, Lawson nu 7,0 miljoen. De site heeft Lawson in jouw opstelling zelf vervangen door Hadjar.',
-  bron:'formule1meester.nl · 25 sep', betreft:['RBR','HAD','RAC','LAW']},
- {kop:'Leclerc start achteraan — Alonso en Stroll ook',
-  tekst:'Ferrari neemt een extra motor voor Leclerc; Aston Martin wisselde bij beide coureurs Honda-onderdelen. Alle drie naar achteren op de grid. Dat kost géén kwalificatiepunten, alleen de race. Het model zet Leclerc op 175 in plaats van 213.',
-  bron:'crash.net · formula1.com · 24 sep', betreft:['FER','LEC','AST','ALO','STR']},
- {kop:'Russell snelste in beide trainingen, Antonelli zonder straf',
-  tekst:'Russell een halve seconde voor Antonelli in VT2. Antonelli viel in VT1 stil met hydrauliekpech en kreeg een gebruikte motor terug: geen gridstraf. Bearman had in VT2 een motorschade, Alonso een olielek.',
-  bron:'formula1.com · planetf1 · 24 sep', betreft:['MER','RUS','ANT','HAS','BEA']},
- {kop:'Hamilton onderzocht na ophouden van Lawson',
-  tekst:'Lawson moest in VT2 uitwijken voor een langzame Hamilton. Een gridstraf van een paar plekken is mogelijk en raakt dan alleen de race.',
-  bron:'planetf1 · 24 sep', betreft:['FER','HAM']},
- {kop:'Droog en warm, maar harde wind',
-  tekst:'Vrijdag 20 tot 24 graden en onbewolkt. Windstoten tot 65 km/u kunnen het lange rechte stuk grillig maken. Baku blijft een stratencircuit: uitval kost coureur én onderdeel tegelijk.',
-  bron:'formula1.com · 24 sep', betreft:[]}
+ {kop:'Colapinto vijf plekken terug op Sepang',
+  tekst:'Zijn niet-uitgezeten tijdstraf uit Baku is omgezet in een gridstraf van vijf plekken. Hij veroorzaakte bij de herstart in ronde 36 het ongeluk waarin Gasly en Norris uitvielen. De straf raakt alleen zijn race; zijn kwalificatiepunten blijven staan.',
+  bron:'formula1.com · racingnews365 · 28 sep', betreft:['ALP','COL']},
+ {kop:'Red Bull wacht op motoranalyse Verstappen',
+  tekst:'Red Bull onderzoekt de motor die in Baku is uitgebouwd en beslist daarna of Verstappen een nieuwe nodig heeft. Dan volgt een gridstraf, die alleen de race raakt. Nog niet bevestigd.',
+  bron:'grandepremio · 28 sep', betreft:['RBR','VER']},
+ {kop:'Bahrain GP op Sepang: eerste F1-race daar sinds 2017',
+  tekst:'De race is op 4 oktober, de kwalificatie op zaterdag 3 oktober. Niemand in het veld heeft recente data van deze baan. Middagonweer is daar normaal, dus rekening houden met regen in de kwalificatie of de race.',
+  bron:'planetf1 · wikipedia', betreft:[]},
+ {kop:'Baku: Russell wint, Red Bull dubbel op het podium',
+  tekst:'Russell hield Verstappen met 0,2 seconde achter zich, Hadjar werd derde. Leclerc reed van de laatste startplek naar P4. Norris, Gasly en Colapinto vielen uit na de herstart. Bortoleto kreeg achteraf 10 seconden straf (13e naar 15e); de site rekent al met die uitslag.',
+  bron:'racingnews365 · 26 sep', betreft:['MER','RUS','RBR','VER','HAD','MCL','NOR','ALP']}
 ];
-const FP3_SESSIE='VT3 Baku';
-const FP3=[['VER','RBR'],['RUS','MER'],['HAM','FER'],['ANT','MER'],['LEC','FER'],
-           ['GAS','ALP'],['PIA','MCL'],['NOR','MCL'],['HAD','RBR'],['COL','ALP']];
+const FP3_SESSIE='VT3 Sepang nog niet gereden';
+const FP3=[];
 
 function nieuwsPaneel(){
   const gekozen=new Set();
@@ -515,11 +506,11 @@ function fp3Paneel(){
     +'<span class="nm">'+TEAMS[r.t][0]+'</span>'
     +'<span class="tvbar" style="width:'+Math.max(3,Math.round(r.v/max*100))+'%" title="'+TEAMS[r.t][0]+': '+Math.round(r.v)+' punten per ronde"></span>'
     +'<span class="v">'+Math.round(r.v)+'</span></div>').join('');
-  return '<div class="vormpaneel"><div class="vormkop">Training &mdash; '+FP3_SESSIE+'<em>ronde 15</em></div>'
-    +'<div class="fp3">'+fp3+'</div>'
+  return '<div class="vormpaneel"><div class="vormkop">Training &mdash; '+FP3_SESSIE+'<em>ronde 16</em></div>'
+    +(FP3.length?'<div class="fp3">'+fp3+'</div>':'<p style="margin:4px 0 8px;font-size:13px;color:var(--mute)">Het trainingsbeeld ontbreekt nog. VT3 is zaterdagochtend; de voorbereiding verwerkt het vóór de deadline.</p>')
     +'<div class="vormkop" style="margin-top:4px">Teamvorm<em>punten per onderdeel, laatste 5 rondes</em></div>'
     +'<div class="tv">'+tv+'</div>'
-    +'<div class="vormvoet"><b>VT3 voorspelt de kwalificatie, niet de race</b>, dus de bijstellingen zijn klein. Verstappen +15 procent, Alpine omhoog (Gasly en Colapinto in de top tien), Racing Bulls 10 procent omlaag. VT2 en de analyse van Windsor wezen al naar Red Bull; Norris blijft 12 procent lager.</div></div>';
+    +'<div class="vormvoet"><b>Nog geen bijstellingen:</b> dit is pure vorm over ronde 11 tot en met 15. Op een baan waar sinds 2017 niet is gereden zijn de vrije trainingen de enige echte informatie, dus verwacht na VT3 grotere verschuivingen dan normaal.</div></div>';
 }
 function drvOpties(sel){
   return Object.keys(DRIVERS).sort((a,b)=>DRIVERS[b][2]-DRIVERS[a][2])
@@ -580,8 +571,8 @@ function tekenBonus(){
 function tekenWaarschuwing(){
   const t=totalen(), w=$('waarschuwing');
   const regels=[...t.fouten];
-  regels.push('<b>De bonusvragen beslisten ronde 14.</b> De koploper won met 54 punten verschil, en 50 daarvan kwamen uit de drie voorspellingen. Kies per plek de waarschijnlijkste naam.');
-  regels.push('<b>Baku is een stratencircuit</b> — uitval komt vaker voor dan gemiddeld, en een uitvaller kost een coureur én zijn onderdeel tegelijk. Let op concentratie in één renstal.');
+  regels.push('<b>Voorlopig advies, nog zonder vrije trainingen.</b> Sepang is voor dit veld een onbekend circuit. Wacht op VT3 voordat je opslaat, en zet hier geen joker in.');
+  regels.push('<b>Kans op onweer</b> — regen vergroot de spreiding, en een uitvaller kost een coureur én zijn onderdeel tegelijk. Let op concentratie in één renstal.');
   w.hidden=false;
   w.innerHTML=regels.map(r=>'<div>'+(t.fouten.includes(r)?'<b>Niet geldig:</b> ':'')+r+'</div>').join('');
 }
