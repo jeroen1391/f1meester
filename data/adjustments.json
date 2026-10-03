@@ -1,5 +1,5 @@
 {
-  "notitie": "Ronde 16 Sepang: nog geen bijstellingen (evaluatie 29 sep, vóór de vrije trainingen).",
+  "notitie": "Ronde 16 Sepang: bijstellingen na VT1-VT3 en gridstraffen (3 okt).",
 
   "_hoe": [
     "Hier zet je alles wat de vorm van de laatste rondes niet weet: vrije trainingen,",
@@ -107,10 +107,25 @@
   },
 
   "notitie_ronde16": [
-    "Ronde 16 Bahrain, gereden op Sepang (Maleisië). Nog geen vrije trainingen; bijstellingen volgen in de voorbereiding."
+    "Ronde 16 Bahrain, gereden op Sepang (Maleisië). Nog geen vrije trainingen; bijstellingen volgen in de voorbereiding.",
+    "Voorbereiding 3 okt 07:50 (automatische run, niet ingelogd: prijzen en budget van 29 sep).",
+    "Nieuw circuit voor deze generatie auto's (laatste F1 op Sepang 2017): geen joker.",
+    "VT1: Verstappen snelste (1:37,520, snelste tijd van de vrijdag).",
+    "VT2 (racingnews365.nl): 1 LEC 2 HAD 3 NOR 4 VER (harde band) 5 HAM 6 PIA 7 RUS 8 ANT 9 LAW 10 GAS 11 LIN.",
+    "Lange runs vrijdag (the-race.com): 1 ANT 1:44,34, 2 LEC 1:44,58, 3 VER 1:44,81, 4 NOR 1:44,99, 5 PIA 1:45,11.",
+    "Bandenslijtage extreem (0,2-0,3 s per ronde), twee- of driestopper; het asfalt brokkelt af.",
+    "VT3 (racingnews365.nl, tabel in de browser): 1 ANT 1:36,302, 2 VER +0,278, 3 HAD +0,558, 4 RUS +0,610,",
+    "5 LEC, 6 HAM, 7 NOR (medium), 8 PIA, 9 COL, 10 LIN, 11 BOR, 12 ALO, 13 GAS, 14 OCO, 15 LAW, 16 HUL,",
+    "17 BEA, 18 SAI, 19 STR, 20 ALB, 21 BOT, 22 PER.",
+    "Gridstraffen (alleen de race, kwalificatie telt gewoon): HAD 5 plekken (7e motor), LIN achteraan",
+    "(30 plekken), COL 15 plekken (5e motor).",
+    "Weer: grote kans op buien het hele weekend; vrijdag bleef het net droog. Regen vergroot de spreiding.",
+    "Bijgesteld: ANT 1.10 (VT3 P1 en beste lange run), VER 1.10 (VT1 P1, VT3 P2, lange run P3),",
+    "LEC 1.05 (VT2 P1, lange run P2), RUS 0.95 (zes tienden achter Antonelli), HAD 0.95 (snel, VT3 P3 en",
+    "VT2 P2, maar race vijf plekken verder), LIN 0.75 en COL 0.75 (race vanaf achteraan)."
   ],
 
-  "coureurs": {},
+  "coureurs": { "ANT": 1.10, "VER": 1.10, "LEC": 1.05, "RUS": 0.95, "HAD": 0.95, "LIN": 0.75, "COL": 0.75 },
   "onderdelen": {},
   "uitgesloten": []
 }

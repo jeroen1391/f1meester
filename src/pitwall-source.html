@@ -347,7 +347,7 @@ const VENSTER=5, WIN=ROUNDS.slice(-VENSTER);
 function pts(tab,pen,pos,ses){ if(typeof pos==='number'){const r=tab[pos-1];return r?r[SI[ses]]:0;} return pen[pos]??0; }
 
 const S={sel:{a1:{c:'NOR',ch:'MER',mo:'MER'},a2:{c:'LEC',ch:'RBR',mo:'RBR'}},
-  joker:null, bonus:['ANT','VER','RUS'], pens:{}, excl:new Set(), notitie:'', checks:{}, goedgekeurd:null};
+  joker:null, bonus:['ANT','VER','LEC'], pens:{}, excl:new Set(), notitie:'', checks:{}, goedgekeurd:null};
 const $=id=>document.getElementById(id);
 const eur=n=>'€ '+n.toLocaleString('nl-NL');
 const eurK=n=>'€'+(n/1e6).toFixed(3).replace('.',',')+'m';
@@ -462,28 +462,34 @@ const VOORUITBLIK={
     '<b>Een circuit waar niemand vorm heeft.</b> De Bahrain GP verhuisde naar Sepang, waar sinds 2017 geen F1 meer reed. De vorm van de laatste vijf rondes is het enige wat het model heeft; de vrije trainingen worden daarom belangrijker dan normaal. Een joker is hier afgeraden: de onzekerheid is te groot.',
     '<b>Tropisch weer.</b> Middagbuien met onweer zijn in Sepang normaal. Regen vergroot de spreiding en daarmee de kans op uitvallers. Dat pleit tegen veel punten in één renstal.',
     '<b>1.232 achter met acht rondes te gaan: 154 per ronde.</b> Met dezelfde keuzes als de koploper loop je niets in. Hij had vorige week Antonelli en Verstappen. Winst zit in coureurs die hij niet heeft, de bonusvragen (15 goed tegen jouw 7) en een joker op een bekend circuit.',
-    '<b>Straffen.</b> Colapinto krijgt vijf plekken gridstraf voor het ongeluk in Baku. Red Bull onderzoekt de motor van Verstappen; een nieuwe motor betekent een gridstraf. Beide raken alleen de race, niet de kwalificatie.',
-    '<b>Voorlopig advies, nog zonder trainingen.</b> Norris + Leclerc met 2× Red Bull en 2× Mercedes. Dat verschilt van de koploper op beide coureurs. Het definitieve advies komt in de voorbereiding, na VT3.'
+    '<b>Straffen, alleen in de race.</b> Hadjar vijf plekken terug (zevende motor), Lindblad achteraan (30 plekken), Colapinto 15 plekken (vijf uit Baku plus tien voor een vijfde motor). Verstappen houdt zijn motor: geen straf. De kwalificatiepunten van alle drie blijven staan.',
+    '<b>Het trainingsbeeld: Mercedes en Red Bull vooraan.</b> Antonelli snelste in VT3 en de beste lange run van vrijdag. Verstappen snelste in VT1 en tweede in VT3, Hadjar derde. Leclerc won VT2 en had de tweede lange run. McLaren pas zevende en achtste in VT3, maar Norris reed zijn tijd op mediums en was vierde op de lange run.',
+    '<b>Advies: Norris + Leclerc met 2× Red Bull en 2× Mercedes, geen joker.</b> Hoogste verwachting (1.103) en goed gespreid: geen renstal boven 33 procent. Antonelli en Verstappen zitten via de W17 en RB22 toch in je team, terwijl je met Norris en Leclerc op twee coureurs afwijkt van de koploper. Bonusvragen: Antonelli, Verstappen, Leclerc.'
   ]
 };
 
-const BIJGEWERKT='29 september 2026, 19:30';
+const BIJGEWERKT='3 oktober 2026, 08:15';
 const NIEUWS=[
- {kop:'Colapinto vijf plekken terug op Sepang',
-  tekst:'Zijn niet-uitgezeten tijdstraf uit Baku is omgezet in een gridstraf van vijf plekken. Hij veroorzaakte bij de herstart in ronde 36 het ongeluk waarin Gasly en Norris uitvielen. De straf raakt alleen zijn race; zijn kwalificatiepunten blijven staan.',
-  bron:'formula1.com · racingnews365 · 28 sep', betreft:['ALP','COL']},
- {kop:'Red Bull wacht op motoranalyse Verstappen',
-  tekst:'Red Bull onderzoekt de motor die in Baku is uitgebouwd en beslist daarna of Verstappen een nieuwe nodig heeft. Dan volgt een gridstraf, die alleen de race raakt. Nog niet bevestigd.',
-  bron:'grandepremio · 28 sep', betreft:['RBR','VER']},
- {kop:'Bahrain GP op Sepang: eerste F1-race daar sinds 2017',
-  tekst:'De race is op 4 oktober, de kwalificatie op zaterdag 3 oktober. Niemand in het veld heeft recente data van deze baan. Middagonweer is daar normaal, dus rekening houden met regen in de kwalificatie of de race.',
-  bron:'planetf1 · wikipedia', betreft:[]},
+ {kop:'Hadjar vijf plekken terug, Lindblad achteraan',
+  tekst:'Hadjar kreeg zijn zevende motor van het seizoen: vijf plekken gridstraf. Lindblad kreeg een vijfde motor plus turbo en uitlaat, samen 30 plekken, dus achteraan. Alleen de race wordt geraakt; de kwalificatie telt gewoon.',
+  bron:'speedcafe · the-race · 2 okt', betreft:['RBR','HAD','RAC','LIN']},
+ {kop:'Colapinto vijftien plekken terug',
+  tekst:'Bovenop de vijf plekken uit Baku kreeg hij voor een vijfde motor nog eens tien, samen vijftien; in de praktijk start hij achteraan. Verstappen houdt zijn motor en heeft geen straf.',
+  bron:'grandepremio · formula1.com · 2 okt', betreft:['ALP','COL']},
+ {kop:'Slijtage extreem, asfalt brokkelt af',
+  tekst:'Banden verliezen 0,2 tot 0,3 seconde per ronde; twee of zelfs drie stops. Het oude asfalt laat los. Op de lange runs: 1 Antonelli, 2 Leclerc, 3 Verstappen, 4 Norris, 5 Piastri.',
+  bron:'the-race · 2 okt', betreft:['MER','ANT','FER','LEC','RBR','VER','MCL','NOR']},
+ {kop:'Grote kans op buien',
+  tekst:'Vrijdag bleef het ondanks 90 procent regenkans net droog. Voor zaterdag en zondag blijft onweer waarschijnlijk. Regen in de kwalificatie of race gooit alles open en vergroot de kans op uitvallers.',
+  bron:'the-race · 2 okt', betreft:[]},
  {kop:'Baku: Russell wint, Red Bull dubbel op het podium',
   tekst:'Russell hield Verstappen met 0,2 seconde achter zich, Hadjar werd derde. Leclerc reed van de laatste startplek naar P4. Norris, Gasly en Colapinto vielen uit na de herstart. Bortoleto kreeg achteraf 10 seconden straf (13e naar 15e); de site rekent al met die uitslag.',
   bron:'racingnews365 · 26 sep', betreft:['MER','RUS','RBR','VER','HAD','MCL','NOR','ALP']}
 ];
-const FP3_SESSIE='VT3 Sepang nog niet gereden';
-const FP3=[];
+const FP3_SESSIE='VT3 Sepang';
+const FP3=[['Kimi Antonelli','1:36,302'],['Max Verstappen','+0,278'],['Isack Hadjar','+0,558'],['George Russell','+0,610'],
+ ['Charles Leclerc','+0,714'],['Lewis Hamilton','+0,739'],['Lando Norris','+0,859 (medium)'],['Oscar Piastri','+1,064'],
+ ['Franco Colapinto','+1,618'],['Arvid Lindblad','+1,782']];
 
 function nieuwsPaneel(){
   const gekozen=new Set();
@@ -510,7 +516,7 @@ function fp3Paneel(){
     +(FP3.length?'<div class="fp3">'+fp3+'</div>':'<p style="margin:4px 0 8px;font-size:13px;color:var(--mute)">Het trainingsbeeld ontbreekt nog. VT3 is zaterdagochtend; de voorbereiding verwerkt het vóór de deadline.</p>')
     +'<div class="vormkop" style="margin-top:4px">Teamvorm<em>punten per onderdeel, laatste 5 rondes</em></div>'
     +'<div class="tv">'+tv+'</div>'
-    +'<div class="vormvoet"><b>Nog geen bijstellingen:</b> dit is pure vorm over ronde 11 tot en met 15. Op een baan waar sinds 2017 niet is gereden zijn de vrije trainingen de enige echte informatie, dus verwacht na VT3 grotere verschuivingen dan normaal.</div></div>';
+    +'<div class="vormvoet"><b>Bijgesteld na VT1 tot en met VT3:</b> Antonelli en Verstappen +10%, Leclerc +5%, Russell en Hadjar −5% (Hadjar om zijn gridstraf), Lindblad en Colapinto −25% (race vanaf achteraan). Bewust klein: VT3 voorspelt vooral de kwalificatie.</div></div>';
 }
 function drvOpties(sel){
   return Object.keys(DRIVERS).sort((a,b)=>DRIVERS[b][2]-DRIVERS[a][2])
@@ -571,7 +577,7 @@ function tekenBonus(){
 function tekenWaarschuwing(){
   const t=totalen(), w=$('waarschuwing');
   const regels=[...t.fouten];
-  regels.push('<b>Voorlopig advies, nog zonder vrije trainingen.</b> Sepang is voor dit veld een onbekend circuit. Wacht op VT3 voordat je opslaat, en zet hier geen joker in.');
+  regels.push('<b>Prijzen en budget van 29 september.</b> De automatische run kon niet inloggen op formule1meester.nl. Controleer bij het opslaan of de prijzen nog kloppen. Geen joker: Sepang is voor dit veld een onbekend circuit.');
   regels.push('<b>Kans op onweer</b> — regen vergroot de spreiding, en een uitvaller kost een coureur én zijn onderdeel tegelijk. Let op concentratie in één renstal.');
   w.hidden=false;
   w.innerHTML=regels.map(r=>'<div>'+(t.fouten.includes(r)?'<b>Niet geldig:</b> ':'')+r+'</div>').join('');
