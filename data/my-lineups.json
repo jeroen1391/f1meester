@@ -50,6 +50,18 @@
     "_fp3": "Madrid FP3: 1 Antonelli, 2 Leclerc, 3 Piastri, 4 Norris, 5 Verstappen, 6 Russell, 7 Lawson. Hamilton rond P8 met een rode vlag, Bearman zwaar gecrasht."
   },
 
+  "ronde16_ingezonden": {
+    "_bevestigd": "Op 3 oktober om ongeveer 08:35 opgeslagen via de site (ingelogd) en daarna gelezen van /ajax/team_lineup/ronde-16. Teamwaarde € 110.758.000, geen joker. Prijzen, budget en jokers waren gelijk aan prices-round16.json.",
+    "auto1": { "coureur": "LEC", "chassis": "RBR", "motor": "MER" },
+    "auto2": { "coureur": "NOR", "chassis": "MER", "motor": "RBR" },
+    "coureurs": ["LEC", "NOR"],
+    "onderdelen": ["RBR", "MER", "MER", "RBR"],
+    "voorspelling": ["ANT", "VER", "LEC"],
+    "joker": null,
+    "teamwaarde": 110758000,
+    "verwacht_totaal": 1103
+  },
+
   "stand_na_ronde12": { "score": 9208, "positie_algemeen": 1148, "positie_ronde": 1104 },
   "stand_na_ronde13": {
     "score": 10097,
