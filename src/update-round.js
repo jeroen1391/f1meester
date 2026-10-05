@@ -167,7 +167,9 @@ try { bijstel = lees('adjustments.json'); } catch (e) {}
 // zodat ze niet in de volgende ronde doorwerken. Staan ze daar, dan gaan die voor.
 if (bijstel && bijstel['bijstellingen_ronde' + ronde]) bijstel = { ...bijstel, ...bijstel['bijstellingen_ronde' + ronde] };
 if (bijstel && bijstel['notitie_ronde' + ronde] && bijstel.coureurs && Object.keys(bijstel.coureurs).length) {
-  const vorige5 = rondesVoor(+ronde).slice(-5);
+  // Venster van het model dat die ronde voorspelde: 5 tot en met ronde 16, 8 vanaf ronde 17.
+  const MODELVENSTER = +ronde <= 16 ? 5 : 8;
+  const vorige5 = rondesVoor(+ronde).slice(-MODELVENSTER);
   const metBijstelling = (basis, b) => {
     if (b == null) return basis;
     if (typeof b === 'number') return basis * b;
@@ -190,7 +192,7 @@ if (bijstel && bijstel['notitie_ronde' + ronde] && bijstel.coureurs && Object.ke
     somZonder += Math.abs(basis - echt); somMet += Math.abs(bij - echt);
     console.log(pad(code, 8) + lpad(basis.toFixed(0), 7) + lpad(bij.toFixed(0), 12) + lpad(echt, 11) + '   ' + oordeel(basis, bij, echt));
   };
-  console.log(`\nBIJSTELLINGEN RONDE ${ronde} ACHTERAF — venster 5`);
+  console.log(`\nBIJSTELLINGEN RONDE ${ronde} ACHTERAF — venster ${MODELVENSTER}`);
   console.log(pad('element', 8) + lpad('vorm', 7) + lpad('bijgesteld', 12) + lpad('werkelijk', 11));
   for (const c of Object.keys(bijstel.coureurs)) {
     const basis = voorspel(vorige5, c, coureurPunten);

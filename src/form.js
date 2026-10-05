@@ -10,7 +10,7 @@ const results = require(path.join(__dirname, '..', 'data', 'results-2026.json'))
 const prijzen = require('./prices');
 const { coureurPunten, onderdeelPunten, heeftSprint } = require('./scoring');
 
-const VENSTER = Number(process.argv[2]) || 5;
+const VENSTER = Number(process.argv[2]) || 8;
 const RONDES = Object.keys(results).filter(k => /^r\d+$/.test(k)).sort((a, b) => +a.slice(1) - +b.slice(1));
 const RECENT = RONDES.slice(-VENSTER);
 

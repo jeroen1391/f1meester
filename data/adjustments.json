@@ -1,5 +1,5 @@
 {
-  "notitie": "Ronde 16 Sepang: bijstellingen na VT1-VT3 en gridstraffen (3 okt).",
+  "notitie": "Ronde 17 Singapore (sprintweekend): nog geen bijstellingen (5 okt).",
 
   "_hoe": [
     "Hier zet je alles wat de vorm van de laatste rondes niet weet: vrije trainingen,",
@@ -125,7 +125,14 @@
     "VT2 P2, maar race vijf plekken verder), LIN 0.75 en COL 0.75 (race vanaf achteraan)."
   ],
 
-  "coureurs": { "ANT": 1.10, "VER": 1.10, "LEC": 1.05, "RUS": 0.95, "HAD": 0.95, "LIN": 0.75, "COL": 0.75 },
+  "bijstellingen_ronde16": {
+    "_let_op": "Archief. Op 5 oktober uit 'coureurs' gehaald zodat ze niet in ronde 17 doorwerken.",
+    "coureurs": { "ANT": 1.10, "VER": 1.10, "LEC": 1.05, "RUS": 0.95, "HAD": 0.95, "LIN": 0.75, "COL": 0.75 },
+    "onderdelen": {},
+    "uitkomst": "Vorm (venster 5) / bijgesteld / werkelijk: ANT 266/292/273, VER 221/243/315, LEC 210/221/236, RUS 262/249/73 (P8 in de kwalificatie, P20 in de race), HAD 184/174/233, LIN 145/109/114, COL 107/80/89; MER 176/181/116, RBR 135/139/183, FER 134/138/169. Totale fout zonder bijstelling 580, met 521: de bijstellingen hielpen per saldo. Alleen ANT (1,10 te zwaar) en HAD (gridstraf te zwaar ingeschat) schaadden."
+  },
+
+  "coureurs": {},
   "onderdelen": {},
   "uitgesloten": []
 }

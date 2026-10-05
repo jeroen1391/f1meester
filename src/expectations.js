@@ -24,7 +24,8 @@ const arg = (naam, standaard) => {
   const i = process.argv.indexOf('--' + naam);
   return i >= 0 && process.argv[i + 1] ? process.argv[i + 1] : standaard;
 };
-const VENSTER = Number(arg('venster', 5));
+// Venster 8 sinds 5 oktober (was 5): won in ronde 15 en 16 en ligt over r9-r16 voor. Zie MODELWIJZIGINGEN.
+const VENSTER = Number(arg('venster', 8));
 
 const RONDES = Object.keys(results).filter(k => /^r\d+$/.test(k)).sort((a, b) => +a.slice(1) - +b.slice(1));
 const RECENT = RONDES.slice(-VENSTER);

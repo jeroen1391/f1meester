@@ -7,7 +7,7 @@
  * en nooit naar toeval in het model.
  *
  * Draaien:
- *   node src/optimize.js                       gebruikt vorm over de laatste 5 rondes
+ *   node src/optimize.js                       gebruikt vorm over de laatste 8 rondes
  *   node src/optimize.js --venster 3           korter vormvenster
  *   node src/optimize.js --budget 91000000     ander budget
  *   node src/optimize.js --top 10              meer alternatieven tonen
@@ -25,7 +25,8 @@ function arg(naam, standaard) {
   const i = process.argv.indexOf('--' + naam);
   return i > -1 ? process.argv[i + 1] : standaard;
 }
-const VENSTER = Number(arg('venster', 5));
+// Venster 8 sinds 5 oktober (was 5): won in ronde 15 en 16 en ligt over r9-r16 voor. Zie MODELWIJZIGINGEN.
+const VENSTER = Number(arg('venster', 8));
 const BUDGET = Number(arg('budget', prijzen.budget.totaal));
 const TOP = Number(arg('top', 5));
 
@@ -161,10 +162,10 @@ kandidaten.slice(0, TOP).forEach((k, n) => {
 });
 
 // Ter vergelijking: de opstelling die nu daadwerkelijk staat.
-const huidig = { coureurs: ['VER', 'NOR'], onderdelen: ['RBR', 'MER', 'MER', 'ALP'] };
+const huidig = { coureurs: ['LEC', 'NOR'], onderdelen: ['RBR', 'MER', 'MER', 'RBR'] };
 const huidigPunten = huidig.coureurs.reduce((a, c) => a + eC[c], 0) + huidig.onderdelen.reduce((a, t) => a + eT[t], 0);
 const huidigKosten = huidig.coureurs.reduce((a, c) => a + pC(c), 0) + huidig.onderdelen.reduce((a, t) => a + pT(t), 0);
-console.log('Ter vergelijking, de opstelling van ronde 15:');
+console.log('Ter vergelijking, de opstelling van ronde 16:');
 console.log(`   ${Math.round(huidigPunten)} punten verwacht — ${mln(huidigKosten)}`);
 console.log(`   verschil met de beste optie: ${Math.round(kandidaten[0].punten - huidigPunten)} punten per ronde`);
 console.log('');

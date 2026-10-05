@@ -24,7 +24,11 @@
     { "ronde": 15, "coureurs": [["VER",251,false],["NOR",53,false]], "onderdelen": [["RBR",170],["MER",164],["MER",164],["ALP",19]], "voorspelling": ["VER","RUS","ANT"], "bonus": 0, "totaal": 821,
       "_toelichting": "Opgehaald van /ajax/team_score/ronde-15 op 29 september. RB22 170, W17 164, Mercedes-motor (MER) 164, Mercedes-motor (ALP) 19. Bonus 0: Russell won (Verstappen voorspeld), Verstappen werd tweede (Russell voorspeld), Hadjar derde (Antonelli voorspeld). Norris viel uit, beide Alpines ook.",
       "stand_na": { "score": 12014, "positie_algemeen": 1158, "positie_ronde": 1615, "positie_subleague": 2 },
-      "budget": { "vorig": 105499000, "basissalaris": 1000000, "prijswijzigingen": 1660000, "puntensalaris": 4105000, "nieuw": 112264000 } }
+      "budget": { "vorig": 105499000, "basissalaris": 1000000, "prijswijzigingen": 1660000, "puntensalaris": 4105000, "nieuw": 112264000 } },
+    { "ronde": 16, "coureurs": [["LEC",236,false],["NOR",164,false]], "onderdelen": [["RBR",183],["MER",116],["MER",116],["RBR",183]], "voorspelling": ["ANT","VER","LEC"], "bonus": 0, "totaal": 998,
+      "_toelichting": "Opgehaald van /ajax/team_score/ronde-16 op 5 oktober. RB22 183, W17 116, Mercedes-motor (MER) 116, Red Bull Ford (RBR) 183. Bonus 0: Verstappen won (Antonelli voorspeld), Antonelli tweede (Verstappen voorspeld), Hamilton derde (Leclerc voorspeld, werd vierde). Russell P8 in de kwalificatie, P20 in de race.",
+      "stand_na": { "score": 13012, "positie_algemeen": 1238, "positie_ronde": 1613, "positie_subleague": 3 },
+      "budget": { "vorig": 112264000, "basissalaris": 1000000, "prijswijzigingen": 1957000, "puntensalaris": 4990000, "nieuw": 120211000 } }
   ],
   "ronde13_ingezonden": {
     "_let_op": "Vlak voor de deadline is één Alpine-motor ingeruild voor de Red Bull Ford van Racing Bulls.",

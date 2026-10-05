@@ -1,5 +1,5 @@
 {
- "_bron": "formule1meester.nl/formule1-kalender/<ronde>_<land>_<circuit>/ — ronde 1 t/m 12 opgehaald 5 september 2026, ronde 13 (Monza) opgehaald 7 september 2026, ronde 14 (Madrid) opgehaald 14 september 2026",
+ "_bron": "formule1meester.nl/formule1-kalender/<ronde>_<land>_<circuit>/ — ronde 1 t/m 12 opgehaald 5 september 2026, ronde 13 (Monza) opgehaald 7 september 2026, ronde 14 (Madrid) opgehaald 14 september 2026, ronde 16 (Sepang) opgehaald 5 oktober 2026 (de site noemt Hadjar daar ISA)",
  "_stoelen": "Per stoel, zoals de site het sinds 25 september doet: de Red Bull-stoel heet in ronde 1 t/m 14 HAD (was LAW:RBR), de Racing Bulls-stoel LAW (was TSU:RAC). Omgezet op 29 september, zodat de vorm van Hadjar en Lawson de stoel volgt en niet op nul begint.",
  "_formaat": "positie:coureurcode:teamcode. q=kwalificatie, s=sprintrace, r=race. Ronde zonder 's' had geen sprint.",
  "r1": {
@@ -870,6 +870,56 @@
    "DNF:GAS:ALP",
    "DNF:NOR:MCL",
    "DNF:ALB:WIL"
+  ]
+ },
+ "r16": {
+  "q": [
+   "1:VER:RBR",
+   "2:HAM:FER",
+   "3:HAD:RBR",
+   "4:ANT:MER",
+   "5:LEC:FER",
+   "6:NOR:MCL",
+   "7:PIA:MCL",
+   "8:RUS:MER",
+   "9:GAS:ALP",
+   "10:BOR:AUD",
+   "11:LAW:RAC",
+   "12:ALO:AST",
+   "13:SAI:WIL",
+   "14:STR:AST",
+   "15:COL:ALP",
+   "16:LIN:RAC",
+   "17:HUL:AUD",
+   "18:BEA:HAS",
+   "19:OCO:HAS",
+   "20:ALB:WIL",
+   "21:BOT:CAD",
+   "22:PER:CAD"
+  ],
+  "r": [
+   "1:VER:RBR",
+   "2:ANT:MER",
+   "3:HAM:FER",
+   "4:LEC:FER",
+   "5:HAD:RBR",
+   "6:PIA:MCL",
+   "7:LAW:RAC",
+   "8:ALO:AST",
+   "9:NOR:MCL",
+   "10:LIN:RAC",
+   "11:HUL:AUD",
+   "12:STR:AST",
+   "13:COL:ALP",
+   "14:BEA:HAS",
+   "15:OCO:HAS",
+   "16:GAS:ALP",
+   "17:SAI:WIL",
+   "18:BOR:AUD",
+   "19:PER:CAD",
+   "20:RUS:MER",
+   "DNF:ALB:WIL",
+   "DNF:BOT:CAD"
   ]
  }
 }
