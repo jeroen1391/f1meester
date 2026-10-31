@@ -4,6 +4,41 @@
   "naam": "Keihard in je achterbak",
   "spelers": 8,
 
+  "stand_na_ronde_18": [
+    { "pos": 1, "speler": "GrijzeLeverWorst",             "score": 17532, "ronde18": 1460, "jokers_over": 2, "bonus_goed": 20, "negatief": 0,  "opstelling": "Hamilton 236, Verstappen met joker 538, W17 164, RB22 163, Mercedes-motor Mercedes 164, Ferrari-motor 170" },
+    { "pos": 2, "speler": "SleuF1",                        "score": 16327, "ronde18": 1591, "jokers_over": 2, "bonus_goed": 9,  "negatief": 0,  "opstelling": "Verstappen 269, Antonelli met joker 630, RB22 163, SF26 170, Ferrari-motor 170, Mercedes-motor Mercedes 164" },
+    { "pos": 3, "speler": "Pedaf1",                        "score": 16231, "ronde18": 1439, "jokers_over": 3, "bonus_goed": 10, "negatief": 0,  "opstelling": "Verstappen met joker 538, Leclerc 273, W17 164, SF26 170, Mercedes-motor Mercedes 164, Mercedes-motor McLaren 130" },
+    { "pos": 4, "speler": "RolloThomassi",                 "score": 15290, "ronde18": 1160, "jokers_over": 3, "bonus_goed": 13, "negatief": 0,  "opstelling": "Verstappen 269, Leclerc 273, RB22 163, SF26 170, 2x Mercedes-motor McLaren 130" },
+    { "pos": 5, "speler": "Adtssss...",                    "score": 14177, "ronde18": 1000, "jokers_over": 2, "bonus_goed": 9,  "negatief": -5, "opstelling": "Leclerc 273, Verstappen 269, Cadillac-chassis 9, W17 164, 2x Mercedes-motor McLaren 130" },
+    { "pos": 6, "speler": "Kamertjes verhoerder uit BaZ",  "score": 14139, "ronde18": 1143, "jokers_over": 3, "bonus_goed": 5,  "negatief": -5, "opstelling": "Verstappen 269, Antonelli 315, SF26 170, MCL40 130, Mercedes-motor Alpine 46, Red Bull Ford Red Bull 163" },
+    { "pos": 7, "speler": "Markiezzz",                     "score": 10610, "ronde18": 546,  "jokers_over": 6, "bonus_goed": 8,  "negatief": -20, "opstelling": "Piastri 183, Hadjar 219, A526 46, VF26 26, Ferrari-motor Haas 26, Mercedes-motor Alpine 46" },
+    { "pos": 8, "speler": "ApexTwins",                     "score": 10527, "ronde18": 584,  "jokers_over": 6, "bonus_goed": 9,  "negatief": 0,  "opstelling": "Lindblad 119, Sainz 47, SF26 170, FW48 33, Ferrari-motor 170, Honda 45" }
+  ],
+  "_ronde18_notitie": [
+    "Opgehaald 31 oktober (ingelogd), een week te laat. Rondescores = verschil in totaalscore sinds ronde 17.",
+    "SleuF1 van drie naar twee en won de ronde in de subleague (1591). Gat tot de koploper slonk van 1336 naar 1205; 96 voor Pedaf1.",
+    "De koploper verschilde op twee plekken: Verstappen met joker (538) en Hamilton (236) tegen Antonelli met joker (630)",
+    "en Verstappen (269): +125 voor SleuF1. W17 (164) in plaats van SF26 (170): +6. Bonus 25 tegen 25.",
+    "Jokers: GrijzeLeverWorst en Pedaf1 op Verstappen (538), SleuF1 op Antonelli (630, pole en winst)."
+  ],
+
+  "stand_na_ronde_17": [
+    { "pos": 1, "speler": "GrijzeLeverWorst",             "score": 16072, "ronde17": 1375, "jokers_over": 3, "bonus_goed": 19, "negatief": -15, "opstelling": "Leclerc 322, Verstappen 360, SF26 193, RB22 142, Mercedes-motor McLaren 161, Mercedes-motor Mercedes 147" },
+    { "pos": 2, "speler": "Pedaf1",                        "score": 14792, "ronde17": 1601, "jokers_over": 4, "bonus_goed": 10, "negatief": -20, "opstelling": "Norris 259, Verstappen met joker 720, W17 147, RB22 142, Mercedes-motor Mercedes 147, Mercedes-motor McLaren 161" },
+    { "pos": 3, "speler": "SleuF1",                        "score": 14736, "ronde17": 1724, "jokers_over": 3, "bonus_goed": 8,  "negatief": -10, "opstelling": "Verstappen met joker 720, Leclerc 322, RB22 142, MCL40 161, Ferrari-motor 193, Mercedes-motor McLaren 161" },
+    { "pos": 4, "speler": "RolloThomassi",                 "score": 14130, "ronde17": 1749, "jokers_over": 3, "bonus_goed": 12, "negatief": -10, "opstelling": "Verstappen met joker 720, Leclerc 322, RB22 142, SF26 193, 2x Mercedes-motor McLaren 161" },
+    { "pos": 5, "speler": "Adtssss...",                    "score": 13177, "ronde17": 1098, "jokers_over": 2, "bonus_goed": 8,  "negatief": -25, "opstelling": "Hadjar 76, Verstappen 360, W17 147, MCL40 161, Mercedes-motor McLaren 161, Ferrari-motor 193" },
+    { "pos": 6, "speler": "Kamertjes verhoerder uit BaZ",  "score": 12996, "ronde17": 1739, "jokers_over": 3, "bonus_goed": 3,  "negatief": -10, "opstelling": "Verstappen met joker 720, Leclerc 322, SF26 met joker 386, MCL40 161, Mercedes-motor Alpine 48, Red Bull Ford Racing Bulls 102" },
+    { "pos": 7, "speler": "Markiezzz",                     "score": 10064, "ronde17": 585,  "jokers_over": 6, "bonus_goed": 8,  "negatief": -40, "opstelling": "Piastri 222, Hadjar 76, A526 48, VF26 83, Ferrari-motor Haas 83, Mercedes-motor Alpine 48" },
+    { "pos": 8, "speler": "ApexTwins",                     "score": 9943,  "ronde17": 653,  "jokers_over": 6, "bonus_goed": 9,  "negatief": -15, "opstelling": "Lindblad 104, Sainz 99, SF26 193, FW48 44, Ferrari-motor 193, Honda 20" }
+  ],
+  "_ronde17_notitie": [
+    "Opgehaald 31 oktober (ingelogd). Singapore, sprintweekend. Rondescores = verschil in totaalscore sinds ronde 16.",
+    "Vier spelers zetten een joker op Verstappen (pole, sprint- en racewinst, 360 x 2 = 720): Pedaf1, SleuF1, RolloThomassi, Kamertjes.",
+    "Alleen de koploper hield zijn joker vast en verloor zo 349 op SleuF1. Gat slonk van 1685 naar 1336; SleuF1 bleef derde, 56 achter Pedaf1.",
+    "Kamertjes zette er een tweede joker bij op het SF26-chassis (386)."
+  ],
+
   "stand_na_ronde_16": [
     { "pos": 1, "speler": "GrijzeLeverWorst",             "score": 14697, "ronde16": 1451, "jokers_over": 3, "bonus_goed": 17, "negatief": 0,  "opstelling": "Leclerc 236, Verstappen met joker 630, W17 116, RB22 183, Mercedes-motor Mercedes 116, Mercedes-motor McLaren 120" },
     { "pos": 2, "speler": "Pedaf1",                        "score": 13191, "ronde16": 1207, "jokers_over": 5, "bonus_goed": 9,  "negatief": 0,  "opstelling": "Russell 73, Verstappen met joker 630, W17 116, RB22 183, Mercedes-motor Alpine 60, Mercedes-motor McLaren 120" },
@@ -98,6 +133,14 @@
     "_gemiddelde_geen_sprint": 206,
     "_allemaal_op_coureurs": "Tot en met ronde 13 gingen alle acht jokers op een coureur. In ronde 14 zette Kamertjes de eerste op een onderdeel (SF26-chassis): 97 extra, waar Leclerc 236 extra had opgeleverd. Onderdelen scoren ongeveer een derde tot de helft van een topcoureur.",
     "log": [
+      { "ronde": 18, "sprint": false, "speler": "SleuF1",           "op": "Antonelli",  "punten": 630 },
+      { "ronde": 18, "sprint": false, "speler": "GrijzeLeverWorst", "op": "Verstappen", "punten": 538 },
+      { "ronde": 18, "sprint": false, "speler": "Pedaf1",           "op": "Verstappen", "punten": 538 },
+      { "ronde": 17, "sprint": true,  "speler": "SleuF1",           "op": "Verstappen", "punten": 720 },
+      { "ronde": 17, "sprint": true,  "speler": "Pedaf1",           "op": "Verstappen", "punten": 720 },
+      { "ronde": 17, "sprint": true,  "speler": "RolloThomassi",    "op": "Verstappen", "punten": 720 },
+      { "ronde": 17, "sprint": true,  "speler": "Kamertjes verhoerder uit BaZ", "op": "Verstappen", "punten": 720 },
+      { "ronde": 17, "sprint": true,  "speler": "Kamertjes verhoerder uit BaZ", "op": "SF26-chassis", "punten": 386 },
       { "ronde": 16, "sprint": false, "speler": "GrijzeLeverWorst", "op": "Verstappen", "punten": 630 },
       { "ronde": 16, "sprint": false, "speler": "Pedaf1",           "op": "Verstappen", "punten": 630 },
       { "ronde": 15, "sprint": false, "speler": "Adtssss...",       "op": "Russell",   "punten": 630 },

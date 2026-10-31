@@ -28,7 +28,15 @@
     { "ronde": 16, "coureurs": [["LEC",236,false],["NOR",164,false]], "onderdelen": [["RBR",183],["MER",116],["MER",116],["RBR",183]], "voorspelling": ["ANT","VER","LEC"], "bonus": 0, "totaal": 998,
       "_toelichting": "Opgehaald van /ajax/team_score/ronde-16 op 5 oktober. RB22 183, W17 116, Mercedes-motor (MER) 116, Red Bull Ford (RBR) 183. Bonus 0: Verstappen won (Antonelli voorspeld), Antonelli tweede (Verstappen voorspeld), Hamilton derde (Leclerc voorspeld, werd vierde). Russell P8 in de kwalificatie, P20 in de race.",
       "stand_na": { "score": 13012, "positie_algemeen": 1238, "positie_ronde": 1613, "positie_subleague": 3 },
-      "budget": { "vorig": 112264000, "basissalaris": 1000000, "prijswijzigingen": 1957000, "puntensalaris": 4990000, "nieuw": 120211000 } }
+      "budget": { "vorig": 112264000, "basissalaris": 1000000, "prijswijzigingen": 1957000, "puntensalaris": 4990000, "nieuw": 120211000 } },
+    { "ronde": 17, "coureurs": [["VER",720,true],["LEC",322,false]], "onderdelen": [["RBR",142],["MCL",161],["FER",193],["MCL",161]], "voorspelling": ["VER","VER","LEC"], "bonus": 25, "totaal": 1724,
+      "_toelichting": "Opgehaald van /ajax/team_score/ronde-17 op 31 oktober. Joker op Verstappen (360 × 2). RB22 142, MCL40 161, Ferrari-motor 193, Mercedes-motor (MCL) 161. Bonus 25: Verstappen won (slot 1 raak), Leclerc tweede (Verstappen voorspeld), Antonelli derde (Leclerc voorspeld).",
+      "stand_na": { "score": 14736, "positie_algemeen": 1049, "positie_ronde": 301, "positie_subleague": 3 },
+      "budget": { "vorig": 120211000, "basissalaris": 1000000, "prijswijzigingen": 2382000, "puntensalaris": 8620000, "nieuw": 132213000 } },
+    { "ronde": 18, "coureurs": [["VER",269,false],["ANT",630,true]], "onderdelen": [["RBR",163],["FER",170],["FER",170],["MER",164]], "voorspelling": ["ANT","VER","LEC"], "bonus": 25, "totaal": 1591,
+      "_toelichting": "Opgehaald van /ajax/team_score/ronde-18 op 31 oktober. Joker op Antonelli (315 × 2). RB22 163, SF26 170, Ferrari-motor 170, Mercedes-motor (MER) 164. Bonus 25: Antonelli won (raak), Leclerc tweede (Verstappen voorspeld), Verstappen derde (Leclerc voorspeld).",
+      "stand_na": { "score": 16327, "positie_algemeen": 869, "positie_ronde": 61, "positie_subleague": 2 },
+      "budget": { "vorig": 132213000, "basissalaris": 1000000, "prijswijzigingen": 2894000, "puntensalaris": 7955000, "nieuw": 144062000 } }
   ],
   "ronde13_ingezonden": {
     "_let_op": "Vlak voor de deadline is één Alpine-motor ingeruild voor de Red Bull Ford van Racing Bulls.",
