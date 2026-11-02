@@ -127,7 +127,9 @@ const gem = xs => xs.length ? xs.reduce((a, b) => a + b, 0) / xs.length : 0;
 const rondesVoor = n => Object.keys(results).filter(k => /^r\d+$/.test(k) && +k.slice(1) < n)
   .sort((a, b) => +a.slice(1) - +b.slice(1));
 const voorspel = (rs, code, fn) => gem(rs.map(r => fn(results[r], code)));
-const VENSTERS = [3, 5, 8];
+// 11 sinds 2 november als meetvenster: 8 won vier rondes op rij, dus toetsen of langer nog beter is.
+// Voor r9 t/m r11 zijn er minder dan 11 eerdere rondes; daar valt 11 samen met alles wat er is.
+const VENSTERS = [3, 5, 8, 11];
 
 function vensterFout(n, venster) {
   const vorige = rondesVoor(n).slice(-venster), doel = results['r' + n];

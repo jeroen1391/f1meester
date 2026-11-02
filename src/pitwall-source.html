@@ -179,12 +179,12 @@ footer b{color:var(--mute);font-weight:600}
   <div class="top-in">
     <div>
       <p class="eyebrow">Formule 1 Meester &middot; Strakka Haas F1</p>
-      <h1>Ronde 19 &mdash; Mexico</h1>
-      <p class="sub">Autódromo Hermanos Rodríguez &middot; de database sluit vijf minuten voor de kwalificatie</p>
+      <h1>Ronde 20 &mdash; Brazilië</h1>
+      <p class="sub">Autódromo José Carlos Pace (Interlagos) &middot; de database sluit vijf minuten voor de kwalificatie</p>
     </div>
     <div class="doel">
       <b>Doel: 1e in de subleague</b>
-      Tweede, 1.205 achter GrijzeLeverWorst en 96 voor Pedaf1 &middot; 5 rondes &middot; 241 per ronde in te lopen
+      Na Austin tweede, 1.205 achter GrijzeLeverWorst &middot; stand na Mexico nog niet opgehaald &middot; 4 rondes te gaan
     </div>
   </div>
 </header>
@@ -269,7 +269,7 @@ footer b{color:var(--mute);font-weight:600}
   </section>
 
   <section class="blok">
-    <div class="blokkop">Jokerplan <span>2 over, 5 rondes</span></div>
+    <div class="blokkop">Jokerplan <span>1 over (aangenomen), 4 rondes</span></div>
     <div class="jokerplan" id="jokerplan"></div>
   </section>
 
@@ -284,7 +284,7 @@ footer b{color:var(--mute);font-weight:600}
 <footer class="wrap">
   Vormgeving volgens de merkgids van Formula 1: <b>F1 Warm Red #FF1E00</b> als highlight, <b>Carbon Black #15151E</b> en <b>Off-White #F7F4F1</b> in de grote vlakken, gezet uit Titillium.
   Scoremodel geverifieerd tegen 108 werkelijk toegekende waarden over ronde 1 t/m 18 &mdash; alle 108 exact. Vormvenster: laatste 8 rondes (sinds 5 oktober, was 5).
-  Uitslagen, prijzen, budget en subleaguestand van formule1meester.nl, opgehaald 31 oktober 2026 (ingelogd). Coureurcodes per stoel: HAD is de Red Bull-stoel, LAW de Racing Bulls-stoel, OCO de tweede Haas-stoel (sinds Singapore Ryo Hirakawa).
+  Uitslagen tot en met Mexico van formule1meester.nl, opgehaald 2 november 2026 (openbare pagina). Prijzen, budget en subleaguestand nog van 31 oktober (ronde 19): de update van 2 november kon niet inloggen. Coureurcodes per stoel: HAD is de Red Bull-stoel, LAW de Racing Bulls-stoel, OCO de tweede Haas-stoel (sinds Singapore Ryo Hirakawa).
 </footer>
 
 <script>
@@ -323,12 +323,11 @@ const HUIDIG={coureurs:["VER","ANT"],onderdelen:["RBR","FER","FER","MER"]};
 const STAND=[["GrijzeLeverWorst",17532,2,20,1460],["SleuF1",16327,2,9,1591],["Pedaf1",16231,3,10,1439],["RolloThomassi",15290,3,13,1160],
 ["Adtssss...",14177,2,9,1000],["Kamertjes verhoerder uit BaZ",14139,3,5,1143],["Markiezzz",10610,6,8,546],["ApexTwins",10527,6,9,584]];
 const JOKERPLAN=[
- [19,"Mexico","ja","Geen sprints meer, dus wachten levert niets op. Op Antonelli: hoogste verwachting en de koploper koos twee keer Verstappen"],
- [20,"Brazilië","ja","Tweede joker als Mexico goed uitpakt; anders doorschuiven naar Qatar"],
+ [20,"Brazilië","ja","Laatste joker, als Mexico met de joker op Antonelli is ingevoerd. Antonelli heeft de hoogste verwachting; Verstappen won drie van de laatste vier races"],
  [21,"Las Vegas","nee","Straatcircuit, koud, veel uitval"],
- [22,"Qatar","reserve","Als er na Brazilië nog een joker over is"],
+ [22,"Qatar","reserve","Als de joker in Brazilië niet is ingezet"],
  [23,"Abu Dhabi","reserve","Laatste kans; een joker die overblijft is verloren"]];
-const BUDGET=144062000, JOKERS_OVER=2, ACHTERSTAND=1205, RONDES_TE_GAAN=5;
+const BUDGET=144062000, JOKERS_OVER=1, ACHTERSTAND=1205, RONDES_TE_GAAN=4;
 
 /* Puntentabellen en verwachte punten komen uit VERWACHT, gegenereerd door
    f1meester/src/expectations.js met dezelfde motor als optimize.js. Deze pagina
@@ -441,30 +440,32 @@ function totalen(){
    evaluatie vervangen. Dit zijn uitkomsten en omstandigheden, geen verwachte
    punten: die rekent de pagina zelf door onder het kopje Vooruitblik. */
 const TERUGBLIK={
-  ronde:18, naam:'Verenigde Staten — Austin',
-  cijfers:[['Opstelling','1.566','met joker · venster 8 achteraf 1.410'],['Bonusvragen','25','1 van 3 goed'],
-           ['Optimum achteraf','1.566','0 laten liggen'],['Subleague','2e','1.205 achter · 96 voor Pedaf1']],
+  ronde:19, naam:'Mexico',
+  cijfers:[['Opstelling','1.468','als het advies is ingevoerd · verwacht 1.418'],['Bonusvragen','0','0 van 3 goed'],
+           ['Optimum achteraf','1.532','64 laten liggen'],['Subleague','?','niet opgehaald: niet ingelogd']],
   punten:[
-    '<b>Terug naar twee, en de beste ronde van de subleague.</b> 1.591 inclusief bonus, tegen 1.460 voor GrijzeLeverWorst en 1.439 voor Pedaf1. Het gat met de koploper slonk van 1.336 naar 1.205; Pedaf1 staat nu 96 achter je.',
-    '<b>Het verschil met de koploper zat in de joker.</b> Hij zette hem op Verstappen (P2 in de kwalificatie, P3 in de race: 538), jij op Antonelli (pole en winst: 630). Daarnaast had jij Verstappen (269) en hij Hamilton (236): samen 125 voor jou. SF26 (170) tegen zijn W17 (164) was +6. Bonus 25 om 25.',
-    '<b>Je opstelling wás het optimum.</b> Verstappen + Antonelli met RB22, 2× Ferrari en de Mercedes-motor, plus de joker op de beste coureur van de ronde. Achteraf was er geen punt meer te halen.',
-    '<b>Het model zat er dichter bij dan ooit.</b> Gemiddelde fout bij venster 8: 23,5 per coureur en 12,8 per onderdeel, tegen 30,2 en 14,6 bij venster 5. Grootste missers: Bearman viel uit (8) en Hadjar haalde 219 vanaf P3 in de kwalificatie.',
-    '<b>Singapore (ronde 17), een week eerder.</b> 1.724 met een joker op Verstappen (pole, sprint- en racewinst: 720). Vier spelers zetten hem op Verstappen; alleen de koploper niet, en die verloor zo 349 op je. Het gat slonk van 1.685 naar 1.336. Het optimum met joker was 1.704; jij haalde 1.699.',
-    '<b>Jokers.</b> Koploper en Pedaf1 zetten in Austin hun joker op Verstappen (538). Over: koploper 2, Pedaf1 3, jij 2.'
+    '<b>Niet ingelogd, dus niet geverifieerd.</b> Deze terugblik rekent met het advies (Verstappen + Antonelli met joker, RB22, 2× Ferrari, Mercedes-motor, bonus Antonelli/Verstappen/Leclerc). Je eigen score, de subleaguestand, de jokers van de tegenstanders en de nieuwe prijzen komen pas na inloggen in het browserpaneel.',
+    '<b>Verstappen won, Hamilton pakte pole.</b> Verstappen 294 (P4 in de kwalificatie, winst), Antonelli 251 (P5, P3) en dus 502 met joker. Ferrari-onderdelen 181, RB22 151, Mercedes-motor 159. Zonder bonus en joker 1.217, 75 boven de verwachting van 1.142.',
+    '<b>De punten tot het optimum zaten in Hamilton.</b> Achteraf was Verstappen + Hamilton met RB22, één Ferrari en 2× Mercedes het beste (1.238), met de joker op Hamilton of Verstappen 1.532. Joker op Hamilton in plaats van Antonelli was +86; doordat Hamilton een Ferrari-plek kost, ging daar 22 vanaf.',
+    '<b>Waar het model ernaast zat.</b> Hamilton 294 tegen 216 verwacht (pole en P2), Piastri 98 tegen 181 (P12, P13), Lindblad 37 tegen 133 (uitval). Gemiddelde fout bij venster 8: 38,2 per coureur en 19,2 per onderdeel, tegen 40,3 en 19,7 bij venster 5. Venster 8 wint voor de vierde ronde op rij.',
+    '<b>Bonusvragen: nul.</b> Uitslag Verstappen, Hamilton, Antonelli; voorspeld Antonelli, Verstappen, Leclerc. Elke naam stond één plek te hoog of ontbrak.'
   ]
 };
 const VOORUITBLIK={
-  ronde:19, naam:'Mexico',
+  ronde:20, naam:'Brazilië',
   punten:[
-    '<b>Dunne lucht op 2.240 meter.</b> Weinig downforce en koeling op het randje: motoren en remmen hebben het zwaar, en uitval ligt hoger dan op een gewoon circuit. De lange rechte naar bocht 1 maakt de start belangrijker dan de kwalificatie doet vermoeden.',
-    '<b>1.205 achter met vijf rondes te gaan: 241 per ronde.</b> De koploper had in Austin Hamilton, Verstappen, W17, RB22 en de Mercedes- en Ferrari-motor. Met dezelfde keuzes loop je niets in. Winst zit in de joker op een andere coureur, en in de bonusvragen (hij 20 goed, jij 9).',
-    '<b>Budget speelt geen rol meer.</b> € 144 miljoen is genoeg voor bijna elke combinatie. De beperking is de regel van maximaal twee elementen per renstal: met Verstappen en Antonelli past er maar één Red Bull- en één Mercedes-onderdeel bij. Daarom 2× Ferrari, verdeeld over twee coureurs.',
-    '<b>Advies: Verstappen + Antonelli met RB22, 2× Ferrari en Mercedes, joker op Antonelli.</b> Mercedes draagt 38 procent van de verwachte score, maar dat hangt aan twee coureurs. Twee jokers voor vijf rondes zonder sprint: wachten levert niets op.'
+    '<b>Interlagos: kort rondje, tegen de klok in, op 800 meter hoogte.</b> Veel inhaalkansen op het rechte stuk naar bocht 1 en wisselvallig weer: een regenbui zet de kwalificatie snel op zijn kop. Kijk vóór het opslaan naar de weersverwachting.',
+    '<b>Achterstand: na Austin 1.205, na Mexico nog onbekend.</b> Met vier rondes te gaan is dat ruim 300 per ronde. Haal na het inloggen de stand en de jokers van de tegenstanders op: dat bepaalt of de laatste joker in Brazilië of later moet.',
+    '<b>Advies: Verstappen + Antonelli met RB22, 2× Ferrari en de Mercedes-motor, 1.151 verwacht.</b> Hetzelfde als Mexico. Mercedes draagt 38 procent, verdeeld over twee coureurs. Hamilton (pole in Mexico) staat in de vorm nog onder Leclerc.',
+    '<b>Let op: prijzen en budget op deze pagina zijn nog die van Mexico.</b> Het budget stijgt na Mexico met zeker € 6 miljoen, dus het advies past; de precieze prijzen volgen na inloggen.'
   ]
 };
 
-const BIJGEWERKT='31 oktober 2026';
+const BIJGEWERKT='2 november 2026';
 const NIEUWS=[
+ {kop:'Mexico: Verstappen wint, Hamilton pole',
+  tekst:'Hamilton op pole, Russell en Leclerc naast hem. Verstappen won vanaf P4, Hamilton tweede, Antonelli derde vanaf P5. Lawson gediskwalificeerd in de kwalificatie, toch zevende. Lindblad, Bearman, Alonso, Stroll en Bottas vielen uit. Piastri 13e.',
+  bron:'formule1meester.nl · 1 nov', betreft:['RBR','VER','FER','HAM','LEC','MER','ANT','RUS','RAC','LAW','LIN','HAS','BEA','MCL','PIA']},
  {kop:'Austin: Antonelli pole en winst',
   tekst:'Antonelli won vanaf pole, Leclerc werd tweede en Verstappen derde. Hamilton vierde, Norris vijfde, Hadjar zesde vanaf P3 in de kwalificatie. Russell achtste. Bearman viel uit.',
   bron:'formule1meester.nl · 25 okt', betreft:['MER','ANT','RUS','FER','LEC','HAM','RBR','VER','HAD','HAS','BEA']},
@@ -475,7 +476,7 @@ const NIEUWS=[
   tekst:'Sinds Singapore rijdt Ryo Hirakawa in plaats van Esteban Ocon. Het spel telt per stoel, dus het model neemt de vorm van de stoel over.',
   bron:'formule1meester.nl · 31 okt', betreft:['HAS','OCO']}
 ];
-const FP3_SESSIE='VT3 Mexico';
+const FP3_SESSIE='VT3 Brazilië';
 const FP3=[];
 
 function nieuwsPaneel(){
@@ -499,11 +500,11 @@ function fp3Paneel(){
     +'<span class="nm">'+TEAMS[r.t][0]+'</span>'
     +'<span class="tvbar" style="width:'+Math.max(3,Math.round(r.v/max*100))+'%" title="'+TEAMS[r.t][0]+': '+Math.round(r.v)+' punten per ronde"></span>'
     +'<span class="v">'+Math.round(r.v)+'</span></div>').join('');
-  return '<div class="vormpaneel"><div class="vormkop">Training &mdash; '+FP3_SESSIE+'<em>ronde 19</em></div>'
-    +(FP3.length?'<div class="fp3">'+fp3+'</div>':'<p style="margin:4px 0 8px;font-size:13px;color:var(--mute)">Het trainingsbeeld van Mexico is niet verwerkt: deze update kwam vlak voor de deadline.</p>')
+  return '<div class="vormpaneel"><div class="vormkop">Training &mdash; '+FP3_SESSIE+'<em>ronde 20</em></div>'
+    +(FP3.length?'<div class="fp3">'+fp3+'</div>':'<p style="margin:4px 0 8px;font-size:13px;color:var(--mute)">VT3 in Brazilië is zaterdag; deze update is van maandag. Geef je trainingsblik door, dan werk ik hem bij.</p>')
     +'<div class="vormkop" style="margin-top:4px">Teamvorm<em>punten per onderdeel, laatste '+VENSTER+' rondes</em></div>'
     +'<div class="tv">'+tv+'</div>'
-    +'<div class="vormvoet"><b>Geen bijstellingen voor Mexico.</b> Dit is de kale vorm over de laatste '+VENSTER+' rondes (ronde 11 tot en met 18, met twee sprintweekenden erin).</div></div>';
+    +'<div class="vormvoet"><b>Geen bijstellingen voor Brazilië.</b> Dit is de kale vorm over de laatste '+VENSTER+' rondes (ronde 12 tot en met 19, met twee sprintweekenden erin).</div></div>';
 }
 function drvOpties(sel){
   return Object.keys(DRIVERS).sort((a,b)=>DRIVERS[b][2]-DRIVERS[a][2])
@@ -564,7 +565,8 @@ function tekenBonus(){
 function tekenWaarschuwing(){
   const t=totalen(), w=$('waarschuwing');
   const regels=[...t.fouten];
-  regels.push('<b>De database sluit zaterdag om 21:55</b>, vijf minuten vóór de kwalificatie in Mexico.');
+  regels.push('<b>Prijzen en budget zijn nog die van Mexico.</b> De update van 2 november kon niet inloggen; log in en controleer de prijzen vóór je opslaat.');
+  regels.push('<b>De database sluit zaterdag 7 november om 18:55</b>, vijf minuten vóór de kwalificatie in Brazilië.');
   regels.push('<b>Maximaal twee elementen per renstal, coureur meegeteld.</b> Met Verstappen en Antonelli past er maar één Red Bull- en één Mercedes-onderdeel bij.');
   w.hidden=false;
   w.innerHTML=regels.map(r=>'<div>'+(t.fouten.includes(r)?'<b>Niet geldig:</b> ':'')+r+'</div>').join('');

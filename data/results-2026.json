@@ -932,5 +932,10 @@
   "_let_op": "Opgehaald 31 oktober 2026. ISA = HAD, RYO = OCO (stoelcodes).",
   "q": ["1:ANT:MER","2:VER:RBR","3:HAD:RBR","4:LEC:FER","5:HAM:FER","6:RUS:MER","7:PIA:MCL","8:NOR:MCL","9:LIN:RAC","10:LAW:RAC","11:GAS:ALP","12:HUL:AUD","13:BOR:AUD","14:COL:ALP","15:ALO:AST","16:BEA:HAS","17:OCO:HAS","18:STR:AST","19:SAI:WIL","20:ALB:WIL","21:PER:CAD","22:BOT:CAD"],
   "r": ["1:ANT:MER","2:LEC:FER","3:VER:RBR","4:HAM:FER","5:NOR:MCL","6:HAD:RBR","7:PIA:MCL","8:RUS:MER","9:LAW:RAC","10:GAS:ALP","11:HUL:AUD","12:LIN:RAC","13:BOR:AUD","14:OCO:HAS","15:STR:AST","16:ALO:AST","17:ALB:WIL","18:SAI:WIL","19:PER:CAD","DNF:COL:ALP","DNF:BOT:CAD","DNF:BEA:HAS"]
+ },
+ "r19": {
+  "_let_op": "Opgehaald 2 november 2026 van de openbare uitslagpagina (niet ingelogd). ISA = HAD, RYO = OCO (stoelcodes). Lawson gediskwalificeerd in de kwalificatie, reed de race (P7).",
+  "q": ["1:HAM:FER","2:RUS:MER","3:LEC:FER","4:VER:RBR","5:ANT:MER","6:NOR:MCL","7:HAD:RBR","8:LIN:RAC","9:GAS:ALP","10:HUL:AUD","11:COL:ALP","12:PIA:MCL","13:BOR:AUD","14:BEA:HAS","15:SAI:WIL","16:ALB:WIL","17:ALO:AST","18:OCO:HAS","19:STR:AST","20:PER:CAD","21:BOT:CAD","DSQ:LAW:RAC"],
+  "r": ["1:VER:RBR","2:HAM:FER","3:ANT:MER","4:LEC:FER","5:NOR:MCL","6:RUS:MER","7:LAW:RAC","8:BOR:AUD","9:HAD:RBR","10:OCO:HAS","11:ALB:WIL","12:SAI:WIL","13:PIA:MCL","14:HUL:AUD","15:COL:ALP","16:PER:CAD","17:GAS:ALP","DNF:STR:AST","DNF:LIN:RAC","DNF:BEA:HAS","DNF:BOT:CAD","DNF:ALO:AST"]
  }
 }
