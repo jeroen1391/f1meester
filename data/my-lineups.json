@@ -36,7 +36,11 @@
     { "ronde": 18, "coureurs": [["VER",269,false],["ANT",630,true]], "onderdelen": [["RBR",163],["FER",170],["FER",170],["MER",164]], "voorspelling": ["ANT","VER","LEC"], "bonus": 25, "totaal": 1591,
       "_toelichting": "Opgehaald van /ajax/team_score/ronde-18 op 31 oktober. Joker op Antonelli (315 × 2). RB22 163, SF26 170, Ferrari-motor 170, Mercedes-motor (MER) 164. Bonus 25: Antonelli won (raak), Leclerc tweede (Verstappen voorspeld), Verstappen derde (Leclerc voorspeld).",
       "stand_na": { "score": 16327, "positie_algemeen": 869, "positie_ronde": 61, "positie_subleague": 2 },
-      "budget": { "vorig": 132213000, "basissalaris": 1000000, "prijswijzigingen": 2894000, "puntensalaris": 7955000, "nieuw": 144062000 } }
+      "budget": { "vorig": 132213000, "basissalaris": 1000000, "prijswijzigingen": 2894000, "puntensalaris": 7955000, "nieuw": 144062000 } },
+    { "ronde": 19, "coureurs": [["VER",294,false],["ANT",251,false]], "onderdelen": [["RBR",151],["FER",181],["FER",181],["MER",159]], "voorspelling": ["ANT","NOR","LEC"], "bonus": 0, "totaal": 1217,
+      "_toelichting": "Opgehaald van /ajax/team_score/ronde-19 op 2 november. Geen joker ingezet (het advies was joker op Antonelli). RB22 151, SF26 181, Ferrari-motor 181, Mercedes-motor (MER) 159. Bonus 0: Verstappen won (Antonelli voorspeld), Hamilton tweede (Norris voorspeld), Antonelli derde (Leclerc voorspeld).",
+      "stand_na": { "score": 17544, "positie_algemeen": 865, "positie_ronde": 705, "positie_subleague": 3 },
+      "budget": { "vorig": 144062000, "basissalaris": 1000000, "prijswijzigingen": 3057000, "puntensalaris": 6085000, "nieuw": 154204000 } }
   ],
   "ronde13_ingezonden": {
     "_let_op": "Vlak voor de deadline is één Alpine-motor ingeruild voor de Red Bull Ford van Racing Bulls.",

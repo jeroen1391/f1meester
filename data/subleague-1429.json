@@ -4,6 +4,26 @@
   "naam": "Keihard in je achterbak",
   "spelers": 8,
 
+  "stand_na_ronde_19": [
+    { "pos": 1, "speler": "GrijzeLeverWorst",             "score": 18832, "ronde19": 1300, "jokers_over": 1, "bonus_goed": 20, "negatief": 0,   "opstelling": "Antonelli met joker 502, Leclerc 248, W17 159, SF26 181, 2x Mercedes-motor McLaren 105" },
+    { "pos": 2, "speler": "Pedaf1",                        "score": 17653, "ronde19": 1422, "jokers_over": 2, "bonus_goed": 10, "negatief": 0,   "opstelling": "Antonelli met joker 502, Verstappen 294, W17 159, SF26 181, Mercedes-motor McLaren 105, Ferrari-motor 181" },
+    { "pos": 3, "speler": "SleuF1",                        "score": 17544, "ronde19": 1217, "jokers_over": 2, "bonus_goed": 9,  "negatief": 0,   "opstelling": "Verstappen 294, Antonelli 251, RB22 151, SF26 181, Ferrari-motor 181, Mercedes-motor Mercedes 159" },
+    { "pos": 4, "speler": "RolloThomassi",                 "score": 16431, "ronde19": 1141, "jokers_over": 3, "bonus_goed": 13, "negatief": 0,   "opstelling": "Antonelli 251, Leclerc 248, W17 159, SF26 181, 2x Red Bull Ford Red Bull 151" },
+    { "pos": 5, "speler": "Kamertjes verhoerder uit BaZ",  "score": 15178, "ronde19": 1039, "jokers_over": 3, "bonus_goed": 5,  "negatief": 0,   "opstelling": "Verstappen 294, Antonelli 251, SF26 181, MCL40 105, Mercedes-motor Alpine 57, Red Bull Ford Red Bull 151" },
+    { "pos": 6, "speler": "Adtssss...",                    "score": 15129, "ronde19": 952,  "jokers_over": 2, "bonus_goed": 10, "negatief": -5,  "opstelling": "Leclerc 248, Verstappen 294, Cadillac-chassis 16, W17 159, 2x Mercedes-motor McLaren 105" },
+    { "pos": 7, "speler": "ApexTwins",                     "score": 11091, "ronde19": 564,  "jokers_over": 6, "bonus_goed": 9,  "negatief": -20, "opstelling": "Lindblad 37, Sainz 98, SF26 181, FW48 68, Ferrari-motor 181, Honda -1" },
+    { "pos": 8, "speler": "Markiezzz",                     "score": 11084, "ronde19": 474,  "jokers_over": 6, "bonus_goed": 9,  "negatief": -10, "opstelling": "Piastri 98, Hadjar 159, A526 57, VF26 39, Ferrari-motor Haas 39, Mercedes-motor Alpine 57" }
+  ],
+  "_ronde19_notitie": [
+    "Opgehaald 2 november (ingelogd). Rondescores = verschil in totaalscore sinds ronde 18; alle opstellingen tellen exact op.",
+    "SleuF1 van twee naar drie: 1288 achter de koploper (was 1205), 109 achter Pedaf1 (was 96 voor).",
+    "SleuF1 zette GEEN joker in (advies was joker op Antonelli, 251 extra). Koploper en Pedaf1 deden dat wel: Antonelli 502.",
+    "De koploper verschilde verder: Leclerc (248) in plaats van Verstappen (294), -46; W17 (159) in plaats van RB22 (151), +8;",
+    "2x Mercedes-motor McLaren (105) in plaats van Ferrari-motor (181) en Mercedes-motor Mercedes (159), -130. Bonus 0 om 0.",
+    "Met de geadviseerde joker had SleuF1 168 ingelopen (1468 tegen 1300); nu verloor hij 83. Tegen Pedaf1 was het 46 bij in plaats van 205 kwijt.",
+    "Hamilton (294, pole en P2) stond bij niemand in het team."
+  ],
+
   "stand_na_ronde_18": [
     { "pos": 1, "speler": "GrijzeLeverWorst",             "score": 17532, "ronde18": 1460, "jokers_over": 2, "bonus_goed": 20, "negatief": 0,  "opstelling": "Hamilton 236, Verstappen met joker 538, W17 164, RB22 163, Mercedes-motor Mercedes 164, Ferrari-motor 170" },
     { "pos": 2, "speler": "SleuF1",                        "score": 16327, "ronde18": 1591, "jokers_over": 2, "bonus_goed": 9,  "negatief": 0,  "opstelling": "Verstappen 269, Antonelli met joker 630, RB22 163, SF26 170, Ferrari-motor 170, Mercedes-motor Mercedes 164" },
@@ -133,6 +153,8 @@
     "_gemiddelde_geen_sprint": 206,
     "_allemaal_op_coureurs": "Tot en met ronde 13 gingen alle acht jokers op een coureur. In ronde 14 zette Kamertjes de eerste op een onderdeel (SF26-chassis): 97 extra, waar Leclerc 236 extra had opgeleverd. Onderdelen scoren ongeveer een derde tot de helft van een topcoureur.",
     "log": [
+      { "ronde": 19, "sprint": false, "speler": "GrijzeLeverWorst", "op": "Antonelli",  "punten": 502 },
+      { "ronde": 19, "sprint": false, "speler": "Pedaf1",           "op": "Antonelli",  "punten": 502 },
       { "ronde": 18, "sprint": false, "speler": "SleuF1",           "op": "Antonelli",  "punten": 630 },
       { "ronde": 18, "sprint": false, "speler": "GrijzeLeverWorst", "op": "Verstappen", "punten": 538 },
       { "ronde": 18, "sprint": false, "speler": "Pedaf1",           "op": "Verstappen", "punten": 538 },

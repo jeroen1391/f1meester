@@ -1,0 +1,42 @@
+{
+  "_bron": "formule1meester.nl /ajax/team_changelineup — opgehaald 2 november 2026 (ingelogd), ronde 20 (Brazilië, geen sprint)",
+  "_let_op": "Chassis en motor van dezelfde renstal hebben dezelfde prijs en scoren identiek. Codes per stoel: HAD = Red Bull, LAW = Racing Bulls, OCO = tweede Haas-stoel (sinds Singapore Ryo Hirakawa).",
+  "budget": { "totaal": 154204000, "jokers_over": 2 },
+  "coureurs": {
+    "BOT": { "naam": "Valtteri Bottas",   "team": "CAD", "prijs": 1773000 },
+    "PER": { "naam": "Sergio Perez",      "team": "CAD", "prijs": 1828000 },
+    "ALB": { "naam": "Alexander Albon",   "team": "WIL", "prijs": 2368000 },
+    "STR": { "naam": "Lance Stroll",      "team": "AST", "prijs": 3912000 },
+    "SAI": { "naam": "Carlos Sainz",      "team": "WIL", "prijs": 4521000 },
+    "ALO": { "naam": "Fernando Alonso",   "team": "AST", "prijs": 4470000 },
+    "OCO": { "naam": "Ryo Hirakawa",      "team": "HAS", "prijs": 4863000 },
+    "HUL": { "naam": "Nico Hulkenberg",   "team": "AUD", "prijs": 4883000 },
+    "BEA": { "naam": "Oliver Bearman",    "team": "HAS", "prijs": 4794000 },
+    "BOR": { "naam": "Gabriel Bortoleto", "team": "AUD", "prijs": 5180000 },
+    "COL": { "naam": "Franco Colapinto",  "team": "ALP", "prijs": 5706000 },
+    "LIN": { "naam": "Arvid Lindblad",    "team": "RAC", "prijs": 5794000 },
+    "GAS": { "naam": "Pierre Gasly",      "team": "ALP", "prijs": 8174000 },
+    "LAW": { "naam": "Liam Lawson",       "team": "RAC", "prijs": 8216000 },
+    "HAD": { "naam": "Isack Hadjar",      "team": "RBR", "prijs": 9372000 },
+    "PIA": { "naam": "Oscar Piastri",     "team": "MCL", "prijs": 27173000 },
+    "VER": { "naam": "Max Verstappen",    "team": "RBR", "prijs": 30016000 },
+    "NOR": { "naam": "Lando Norris",      "team": "MCL", "prijs": 29854000 },
+    "LEC": { "naam": "Charles Leclerc",   "team": "FER", "prijs": 31465000 },
+    "RUS": { "naam": "George Russell",    "team": "MER", "prijs": 36893000 },
+    "HAM": { "naam": "Lewis Hamilton",    "team": "FER", "prijs": 37558000 },
+    "ANT": { "naam": "Kimi Antonelli",    "team": "MER", "prijs": 40467000 }
+  },
+  "onderdelen": {
+    "CAD": { "chassis": "Unknown",   "motor": "Ferrari",       "prijs": 893000 },
+    "WIL": { "chassis": "FW48",      "motor": "Mercedes",      "prijs": 1714000 },
+    "AST": { "chassis": "AMR26",     "motor": "Honda",         "prijs": 2087000 },
+    "AUD": { "chassis": "R26",       "motor": "Audi",          "prijs": 2509000 },
+    "HAS": { "chassis": "VF26",      "motor": "Ferrari",       "prijs": 2555000 },
+    "RAC": { "chassis": "VCARB 03",  "motor": "Red Bull Ford", "prijs": 3146000 },
+    "ALP": { "chassis": "A526",      "motor": "Mercedes",      "prijs": 3466000 },
+    "RBR": { "chassis": "RB22",      "motor": "Red Bull Ford", "prijs": 9718000 },
+    "MCL": { "chassis": "MCL40",     "motor": "Mercedes",      "prijs": 14250000 },
+    "FER": { "chassis": "SF26",      "motor": "Ferrari",       "prijs": 17249000 },
+    "MER": { "chassis": "W17",       "motor": "Mercedes",      "prijs": 19334000 }
+  }
+}
